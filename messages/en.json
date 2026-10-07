@@ -1,0 +1,1757 @@
+{
+  "accessRequestForm": {
+    "fullName": "Full name",
+    "fullNamePlaceholder": "Your name",
+    "email": "Work email",
+    "emailPlaceholder": "you@company.com",
+    "organization": "Organization",
+    "organizationPlaceholder": "Company or team",
+    "organizationDescription": "Optional. It helps us understand the context of your request.",
+    "message": "What would you like to evaluate?",
+    "messagePlaceholder": "Briefly describe your use case and what you would like to validate with the demo.",
+    "messageDescription": "Do not include passwords, payment information, recordings, or sensitive personal data.",
+    "privacyNotice": "Submitting prepares an email in your mail application. This website does not store the form contents. Review the message and send it from your email account to complete the request.",
+    "submit": "Prepare access request",
+    "preparing": "Preparing email...",
+    "preparedTitle": "Your email is ready",
+    "preparedDescription": "Review and send the message addressed to {email}. Sending it does not create an account or reserve capacity.",
+    "validation": {
+      "nameRequired": "Enter your full name.",
+      "invalidEmail": "Enter a valid email address.",
+      "messageRequired": "Describe what you would like to evaluate.",
+      "messageTooShort": "Add a little more context (at least 20 characters).",
+      "tooLong": "This field exceeds the allowed length."
+    },
+    "emailTemplate": {
+      "subject": "Request for access to Conversation Processing Demo",
+      "name": "Name",
+      "email": "Reply email",
+      "organization": "Organization",
+      "message": "Evaluation context",
+      "notProvided": "Not provided"
+    }
+  },
+  "accessRequests": {
+    "eyebrow": "Controlled access",
+    "title": "Request an evaluated demo trial.",
+    "description": "Tell us what you want to evaluate. The team reviews each request against current capacity and replies through the email address you provide.",
+    "formTitle": "Tell us about your use case",
+    "formDescription": "Preparing this message does not create an identity, grant credits, or guarantee access.",
+    "unavailableTitle": "Access requests are temporarily paused",
+    "unavailableDescription": "The team is not accepting new requests through this channel right now. Please check again later.",
+    "steps": {
+      "send": {
+        "title": "Send your context",
+        "description": "Your mail application opens with a structured message that you review before sending."
+      },
+      "review": {
+        "title": "Human review",
+        "description": "The team evaluates fit and available zero-cost capacity; no place is reserved automatically."
+      },
+      "reply": {
+        "title": "Personal response",
+        "description": "If access can be offered, the team contacts you privately with the next steps."
+      }
+    },
+    "errors": {
+      "VALIDATION_ERROR": "Review the contact information and message.",
+      "CONTACT_NOT_CONFIGURED": "Access requests are temporarily paused.",
+      "INTERNAL_ERROR": "The request could not be prepared. Please try again later."
+    }
+  },
+  "activateAccount": {
+    "title": "Complete Your Profile",
+    "description": "Please provide your information to activate your account",
+    "userInformation": "User Information",
+    "security": "Security",
+    "email": "Email",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "John Doe",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Confirm your password",
+    "cancel": "Cancel",
+    "activating": "Activating...",
+    "activate": "Activate Account"
+  },
+  "app": {
+    "name": "Conversation Processing Demo",
+    "version": "Demo",
+    "subtitle": "Human-reviewed conversation workflow"
+  },
+  "clientDetails": {
+    "title": "Client details",
+    "description": "Contact information and associated requests saved in your workspace.",
+    "editTitle": "Edit client",
+    "editDescription": "Update the client's saved contact information.",
+    "deleteTitle": "Delete {name}?",
+    "deleteDescription": "This permanently deletes the client. Clients with associated requests cannot be deleted.",
+    "deleteConfirm": "Delete client",
+    "cancel": "Cancel"
+  },
+  "clientForm": {
+    "contactHint": "Enter a name and at least one email address or international phone number.",
+    "phoneHint": "Include + and the country code. No country is assumed.",
+    "cancel": "Cancel",
+    "review": "Review client",
+    "save": "Save changes",
+    "saving": "Saving…",
+    "editDuplicatesTitle": "{count, plural, one {# possible duplicate} other {# possible duplicates}}",
+    "editDuplicatesHint": "The changed contact information matches another client. Review the matches before saving.",
+    "acknowledgeEditDuplicates": "I reviewed the matches and want to save these contact changes.",
+    "preparing": "Preparing review…",
+    "previewTitle": "Review the client to create",
+    "previewHint": "Check these normalized values before confirming creation.",
+    "expiresAt": "Review valid until {date} (UTC).",
+    "expired": "This review is no longer valid. Go back and prepare a new review.",
+    "duplicatesTitle": "{count, plural, one {# possible duplicate} other {# possible duplicates}}",
+    "duplicatesHint": "Choose an existing client to open its details, or explicitly confirm that you need another client.",
+    "useExisting": "Use existing: {name}",
+    "acknowledgeDuplicates": "I have reviewed the matches and want to create a separate client.",
+    "back": "Back to form",
+    "confirm": "Confirm and create client",
+    "confirming": "Confirming…",
+    "retryConfirmation": "Check and retry this confirmation",
+    "validation": {
+      "nameRequired": "Enter the client's name.",
+      "invalidEmail": "Enter a valid email address.",
+      "invalidPhone": "Enter an international number starting with + and the country code.",
+      "contactRequired": "Provide an email address or an international phone number.",
+      "tooLong": "This field exceeds the allowed length."
+    }
+  },
+  "clients": {
+    "title": "Clients",
+    "description": "Manage the contacts in your workspace.",
+    "loading": "Loading clients…",
+    "empty": "No clients found. Create a client or adjust your search.",
+    "searchPlaceholder": "Search by name, email, phone or company…",
+    "notProvided": "Not provided",
+    "actions": "Actions",
+    "actionsFor": "Actions for {name}",
+    "view": "View client",
+    "editAction": "Edit client",
+    "deleteAction": "Delete client",
+    "retry": "Try again",
+    "close": "Close",
+    "detailsTabs": {
+      "information": "Information",
+      "requests": "Requests"
+    },
+    "fields": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "company": "Company",
+      "address": "Address",
+      "notes": "Notes",
+      "createdAt": "Created"
+    },
+    "create": {
+      "trigger": "New client",
+      "title": "Create client",
+      "description": "Enter contact details, review matches and confirm creation.",
+      "success": "Client created successfully."
+    },
+    "edit": {
+      "success": "Client updated successfully."
+    },
+    "delete": {
+      "success": "Client deleted successfully."
+    },
+    "errors": {
+      "VALIDATION_ERROR": "Check the client information and try again.",
+      "UNAUTHENTICATED": "Sign in again to continue.",
+      "ACCOUNT_INACTIVE": "This account is inactive.",
+      "FORBIDDEN": "You do not have access to this client.",
+      "NOT_FOUND": "The client or review is no longer available.",
+      "SENSITIVE_DATA": "Remove payment information, credentials or sensitive personal information before continuing.",
+      "PLAN_STALE": "This review has changed. Go back and review the client again.",
+      "PLAN_EXPIRED": "This review has expired. Go back and review the client again.",
+      "DUPLICATES_CHANGED": "Possible duplicates have changed. Go back and review the updated matches.",
+      "DUPLICATE_ACKNOWLEDGMENT_REQUIRED": "Review the possible duplicates and acknowledge creating a separate client.",
+      "STALE_VERSION": "This client changed while you were working. Close and reopen the form to load the latest version.",
+      "CLIENT_HAS_REQUESTS": "Reassign or delete this client's requests before deleting the client.",
+      "CONFIRMATION_UNCERTAIN": "The confirmation result could not be verified. Keep this window open and retry this same confirmation to safely recover the result.",
+      "CONFIRMATION_REAUTHENTICATE": "Keep this window open. Sign in again with the same account in another tab, then retry this confirmation here to recover its result.",
+      "INTERNAL_ERROR": "Client information could not be loaded or saved. Please try again."
+    }
+  },
+  "common": {
+    "error": "An error occurred",
+    "notFound": "Page not found",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "search": "Search",
+    "loading": "Loading...",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "back": "Back",
+    "events": "Events",
+    "incidents": "Incidents",
+    "overrides": "Overrides",
+    "corrections": "Corrections",
+    "transactions": "Transactions",
+    "date": "Date",
+    "users": "Users",
+    "type": "Type",
+    "role": "Role",
+    "status": "Status",
+    "filters": "Filters",
+    "actions": "Actions",
+    "columns": "Columns",
+    "noData": "No data",
+    "selectDate": "Select a date"
+  },
+  "conversationCreation": {
+    "acknowledgeDuplicates": "I reviewed these matches and want to create a different client for all these requests.",
+    "back": "Back to editing",
+    "client": "Client identifier",
+    "completedAt": "Confirmed on {date}",
+    "confirmExisting": "{count, plural, one {Create # request} other {Create # requests}}",
+    "confirmNew": "{count, plural, one {Create client and # request} other {Create client and # requests}}",
+    "confirming": "Confirming…",
+    "created": "{count, plural, one {Client linked and # request created.} other {Client linked and # requests created.}}",
+    "deletedClient": "Client subsequently deleted",
+    "duplicatesHint": "Choose one client for the entire batch. Matches use this review’s email or phone.",
+    "duplicatesTitle": "{count, plural, one {# possible duplicate} other {# possible duplicates}}",
+    "errors": {
+      "ACCOUNT_INACTIVE": "Your account is inactive.",
+      "CONFIRMATION_REAUTHENTICATE": "Sign in again, then retry this confirmation to recover its result.",
+      "CONFIRMATION_UNCERTAIN": "We could not verify the result. Retry this same confirmation to recover it safely; do not start another creation.",
+      "DUPLICATE_ACKNOWLEDGMENT_REQUIRED": "Confirm that you reviewed the possible duplicates before creating a different client.",
+      "DUPLICATES_CHANGED": "The matching clients changed. Reload and review the summary again.",
+      "FORBIDDEN": "You do not have access to this conversation.",
+      "INTERNAL_ERROR": "We could not load or prepare the creation. Please try again.",
+      "INVALID_TRANSITION": "This conversation is no longer ready for creation. Return to the review.",
+      "NOT_FOUND": "The conversation, plan or client is no longer available.",
+      "PLAN_EXPIRED": "This summary expired. Regenerate it and review it again.",
+      "PLAN_STALE": "The review or selected client changed. Reload before preparing another summary.",
+      "PROPOSAL_NOT_READY": "Save the corrections and mark the current revision as ready first.",
+      "SENSITIVE_DATA": "Remove sensitive data before continuing.",
+      "STALE_VERSION": "The conversation changed. Reload and review the current revision.",
+      "UNAUTHENTICATED": "Sign in to continue.",
+      "VALIDATION_ERROR": "Check the review and your client selection.",
+      "CLIENT_CHANGED": "The selected client changed. Reload and review the summary again."
+    },
+    "existingClient": "Saved client to reuse",
+    "expired": "This summary has expired or changed. Review a new summary before confirming.",
+    "expiresAt": "Summary valid until {date}.",
+    "hint": "Confirm the client and every request below. The entire batch will be saved together, without consuming another credit.",
+    "loading": "Loading creation…",
+    "newClient": "Client to create",
+    "operation": "Receipt identifier",
+    "preserveClient": "These are the client’s saved details. Reusing this client will not change them.",
+    "receiptHint": "The records are available in Clients and Requests. This receipt remains available even if records are later deleted.",
+    "receiptTitle": "Creation receipt",
+    "regenerate": "Regenerate summary",
+    "reload": "Reload current state",
+    "replayed": "This conversation was already confirmed. This is its existing result.",
+    "requestNumber": "Request {number}",
+    "requests": "{count, plural, one {# request} other {# requests}}",
+    "retry": "Retry",
+    "retryConfirmation": "Recover confirmation result",
+    "start": "Create client and requests",
+    "title": "Review final creation",
+    "useExisting": "Use {name}",
+    "useNew": "Create a different client",
+    "viewClient": "View client",
+    "viewRequest": "View request {number}"
+  },
+  "conversationDetails": {
+    "title": "Conversation details",
+    "description": "Audio and persisted information for this conversation.",
+    "loading": "Loading conversation",
+    "loadingSubtitle": "Please wait a moment",
+    "notFound": "This conversation is no longer available.",
+    "retry": "Try again",
+    "verification": "Audio: {state}",
+    "verificationStates": {
+      "pending": "Pending verification",
+      "uploaded": "Uploaded",
+      "verified": "Verified",
+      "rejected": "Rejected"
+    },
+    "originalFilename": "Original filename",
+    "mimeType": "Verified media type",
+    "container": "Verified container",
+    "fileSize": "Verified size",
+    "megabytes": "{value} MB",
+    "audio": "Private audio",
+    "audioError": "The private audio could not be loaded.",
+    "retryAudio": "Reload audio",
+    "audioUnsupported": "Your browser cannot play this audio.",
+    "tabs": {
+      "label": "Conversation detail views",
+      "information": "Information",
+      "transcript": "Transcript"
+    },
+    "transcriptPending": "The original transcript will appear here after processing finishes.",
+    "deleteTitle": "Delete this conversation?",
+    "deleteDescription": "Access will be removed immediately. Its private audio will then be cleaned up safely.",
+    "deleteConfirm": "Delete conversation",
+    "cancel": "Cancel"
+  },
+  "conversationProcessing": {
+    "title": "Processing",
+    "description": "Transcribe this private audio and prepare a proposal for human review.",
+    "start": "Process",
+    "starting": "Starting…",
+    "currentStage": "Current stage",
+    "progress": "Processing progress: {stage}",
+    "credits": {
+      "title": "Processing credit balance",
+      "available": "Available",
+      "reserved": "Reserved",
+      "consumed": "Consumed"
+    },
+    "stages": {
+      "queued": "Queued",
+      "transcribing": "Transcribing",
+      "diarizing": "Separating speakers",
+      "extracting": "Extracting proposal",
+      "validating": "Validating",
+      "publishing": "Publishing"
+    },
+    "noCredits": "No processing credits are currently available.",
+    "unavailable": "Processing is unavailable for this conversation.",
+    "retryable": "You can try processing this conversation again.",
+    "preservedReviewFailure": "This run has ended. Your saved proposal and corrections remain available in Review. You can mark that version ready again or choose Generate another proposal to start a new run.",
+    "notRetryable": "This run has ended and will not retry automatically. If the Process button is available, you can start a new run.",
+    "errors": {
+      "PROCESSING_FAILED": "Processing could not be completed.",
+      "EXTRACTION_ACCESS_DENIED": "Groq denied access. Check the provider credentials and network access before retrying.",
+      "EXTRACTION_DISABLED": "AI extraction is disabled. The transcript remains available.",
+      "EXTRACTION_INVALID_RESPONSE": "The extraction could not be validated. The transcript remains available and the reservation was released.",
+      "EXTRACTION_SUBMISSION_UNCERTAIN": "The extraction result could not be confirmed. The reservation was released; you can start a new attempt.",
+      "PROVIDER_ERROR": "The speech service could not complete this transcript.",
+      "PROVIDER_TIMEOUT": "The speech service did not finish in time.",
+      "TRANSCRIPTION_FAILED": "The audio could not be transcribed.",
+      "DIARIZATION_FAILED": "The transcript was saved, but speakers could not be separated.",
+      "SPEECH_PROVIDER_NOT_CONFIGURED": "The speech service is not configured.",
+      "SPEECH_PROVIDER_REJECTED": "The speech service rejected this transcription request.",
+      "SPEECH_PROVIDER_INVALID_RESPONSE": "The speech service returned an invalid transcription result.",
+      "SPEECH_TRANSCRIPTION_FAILED": "The speech service could not transcribe this audio.",
+      "SUBMISSION_UNCERTAIN": "The transcription submission could not be confirmed safely.",
+      "TRANSCRIPTION_POLL_TIMEOUT": "The transcription did not finish within the allowed time."
+    }
+  },
+  "conversationRecording": {
+    "trigger": "Record conversation",
+    "title": "Record a conversation",
+    "description": "Capture a conversation with this device's microphone, then review it before saving.",
+    "close": "Close recording dialog",
+    "consentTitle": "Recording notice and consent",
+    "consentDescription": "Tell every participant that the conversation will be recorded and processed before you begin.",
+    "consentLabel": "I confirm that the participants have been informed and consent to this recording.",
+    "consentHint": "This confirmation is required for every new recording session.",
+    "limits": "WebM audio · up to {maxSize} MB and {maxDuration} minutes. The server verifies the final recording before it can be processed.",
+    "localeLabel": "Audio language",
+    "localePlaceholder": "Select the language",
+    "locales": { "en": "English", "es": "Spanish" },
+    "start": "Start recording",
+    "stop": "Stop recording",
+    "cancel": "Cancel",
+    "active": "Recording in progress",
+    "maximumDuration": "Maximum {minutes} minutes",
+    "microphoneActivity": "Microphone activity",
+    "activityValue": "{value}%",
+    "permissionPending": "Respond to your browser's microphone permission request.",
+    "finalizingHint": "Keeping the captured audio available for your review.",
+    "reviewTitle": "Review your recording",
+    "recordingMetadata": "{duration} · {size} MB · stored only in this browser until you save",
+    "audioUnsupported": "Your browser cannot play this recording.",
+    "save": "Save conversation",
+    "retrySave": "Retry save",
+    "discard": "Discard recording",
+    "discardTitle": "Discard this recording?",
+    "discardDescription": "The local recording will be removed and cannot be recovered.",
+    "closeDiscardDescription": "Closing this dialog will remove the unsaved local recording.",
+    "discardConfirm": "Discard recording",
+    "keepRecording": "Keep recording",
+    "tryAgain": "Try again",
+    "failureHint": "You can retry the microphone or close this dialog and import an audio file instead.",
+    "unavailable": "Microphone recording is temporarily unavailable.",
+    "success": "The recording was saved and verified successfully.",
+    "stages": {
+      "requesting": "Waiting for microphone permission…",
+      "stopping": "Finalizing recording…"
+    },
+    "notices": {
+      "limitReached": {
+        "title": "Recording limit reached",
+        "description": "Recording stopped automatically at the configured time limit. Review the captured audio before saving."
+      },
+      "interrupted": {
+        "title": "Recording was interrupted",
+        "description": "The microphone stopped unexpectedly. The captured portion is still available to review, save or discard."
+      }
+    },
+    "errors": {
+      "unsupportedBrowser": "Microphone recording requires the desktop version of Chrome or Edge with WebM audio support.",
+      "permissionDenied": "Microphone permission was denied. Allow access in your browser settings and try again.",
+      "deviceNotFound": "No microphone was found on this device.",
+      "deviceUnavailable": "The microphone is unavailable or is being used by another application.",
+      "captureFailed": "Recording was interrupted before usable audio could be captured.",
+      "emptyRecording": "No audio was captured. Check the microphone and try again.",
+      "recordingTooLarge": "The recording is larger than this workspace allows and cannot be saved."
+    },
+    "validation": {
+      "consentRequired": "Confirm participant consent before recording.",
+      "localeRequired": "Select the language spoken in the conversation."
+    }
+  },
+  "conversationReview": {
+    "reprocessing": {
+      "start": "Generate another proposal",
+      "startHint": "Run extraction again from the original transcript while preserving your saved corrections.",
+      "saveFirst": "Save your changes before generating another proposal.",
+      "noCredits": "You need one available credit to generate another proposal.",
+      "confirmTitle": "Generate another proposal?",
+      "confirmDescription": "This reserves one credit. Publishing a reviewable proposal consumes it, even if you keep your previous version; a terminal failure releases the reservation. Your saved corrections remain intact. Readiness and any previous creation preview will be invalidated. You must review and prepare creation again.",
+      "confirm": "Generate proposal · 1 credit",
+      "processing": "Another extraction is running. Your saved revision remains available below in read-only mode. It will not be replaced automatically.",
+      "failed": "The new extraction failed. Your previous revision is preserved: you can review it, mark it ready again, or retry.",
+      "compareTitle": "Compare proposals",
+      "compareDescription": "Your saved revision remains the starting point. Select only the new values you want to adopt. Requests are never matched automatically.",
+      "current": "Saved revision",
+      "candidate": "New proposal",
+      "fieldSource": "{field} ({source})",
+      "takeField": "Adopt new {field}",
+      "noTarget": "No existing request selected",
+      "currentRequests": "Saved requests",
+      "removeHint": "Saved requests are kept unless you explicitly choose to remove them. A mapped request cannot also be removed.",
+      "removeCurrent": "Remove request {number}: {title}",
+      "inspectCurrent": "View saved request and evidence",
+      "candidateRequest": "New proposal · request {number}",
+      "requestChoice": "What should happen to this request?",
+      "ignoreRequest": "Do not adopt this request",
+      "addRequest": "Add as a new request",
+      "mapRequest": "Use selected fields in request {number}: {title}",
+      "addHint": "Adding a new request adopts all its fields.",
+      "mapHint": "Select the fields to adopt. Unselected fields keep their saved values.",
+      "selectionSummary": "{count, plural, one {# selected change} other {# selected changes}} · {requests, plural, one {# resulting request} other {# resulting requests}}",
+      "decisionHint": "Adopting saves a new human revision. After either decision, review the result and mark it ready again before preparing a new creation preview.",
+      "adopt": "Adopt selected changes",
+      "keepPrevious": "Keep saved revision",
+      "keepTitle": "Keep the saved revision?",
+      "keepDescription": "The new proposal will remain in history, but its values and your comparison selections will not be adopted. The extraction credit remains consumed.",
+      "kept": "Saved revision retained. Review it and mark it ready again.",
+      "adopted": "Selected changes saved in a new revision. Review the result before marking it ready."
+    },
+    "tab": "Review",
+    "client": "Proposed client",
+    "contactHint": "Keep missing contact details blank. Add only information you can confirm.",
+    "requests": "{count, plural, one {# request} other {# requests}}",
+    "requestNumber": "Request {number}",
+    "removeRequestNumber": "Remove request {number}",
+    "removeRequest": "Remove",
+    "addRequest": "Add request",
+    "evidence": "Original evidence",
+    "evidenceFor": "Show evidence for {field}",
+    "showEvidence": "View evidence",
+    "selectField": "Select a field to see its original evidence.",
+    "observedValue": "Observed in the conversation",
+    "noEvidence": "This field has no linked original evidence.",
+    "listenEvidence": "Listen to this fragment",
+    "noTimestamp": "Playback at this fragment is unavailable.",
+    "immutableEvidence": "The original transcript and evidence remain unchanged when you edit a field.",
+    "provenance": {
+      "extracted": "Extracted",
+      "manual": "Entered manually",
+      "default": "Default value"
+    },
+    "findings": "{count, plural, one {# issue} other {# issues}}",
+    "noFindings": "No issues detected.",
+    "resolved": "Resolved",
+    "severity": {
+      "blocking": "Blocks readiness",
+      "warning": "Warning",
+      "info": "Information"
+    },
+    "findingCodes": {
+      "MISSING_REQUIRED": "Required information is missing. Complete the field and save to check it again.",
+      "INVALID_FORMAT": "This value does not meet the field rules. Correct it and save to check it again.",
+      "NONEXISTENT_EVIDENCE": "This field could not be validated and its proposed value was discarded. Review the original transcript, complete or correct the field, and record your decision. Other verified data remains available.",
+      "AMBIGUITY": "The conversation leaves more than one possible interpretation. Record your decision.",
+      "CONTRADICTION": "The conversation contains conflicting information. Record which information you confirmed.",
+      "LOW_CONFIDENCE": "This value needs careful review.",
+      "SENSITIVE_DATA_OMITTED": "Sensitive information was omitted from the proposal."
+    },
+    "contactReview": {
+      "phone": "The phone could not be confirmed safely from the transcript. Review its evidence, correct it or leave it empty, and record your decision. Other extracted information is still available.",
+      "email": "The email could not be confirmed safely from the transcript. Review its evidence, correct it or leave it empty, and record your decision. Other extracted information is still available."
+    },
+    "resolutionReason": "Your decision and reason",
+    "resolutionHint": "Saving records this decision with the new revision and your name.",
+    "history": "Revision history",
+    "moreHistory": "Load older revisions",
+    "preview": "Read-only revision",
+    "returnToDraft": "Return to my draft",
+    "emptyValue": "Not provided",
+    "revisionAttribution": "Revision {number} · {author} · {date}",
+    "aiAuthor": "AI extraction",
+    "unknownAuthor": "Workspace member",
+    "readyAttribution": "Marked ready by {author} · {date}",
+    "draftHint": "Save incomplete drafts as you work. A saved proposal can be marked ready once all required information and blocking issues are resolved.",
+    "invalidDraft": "Check field lengths and keep between 1 and 50 requests before saving.",
+    "save": "Save revision",
+    "saving": "Saving…",
+    "saved": "Revision saved.",
+    "markReady": "Mark as ready",
+    "markedReady": "The proposal is ready.",
+    "unsaved": "Unsaved changes. Save before marking ready.",
+    "readyHint": "This saved revision can be marked ready.",
+    "notReadyHint": "Resolve blocking issues and complete required fields before marking ready.",
+    "pending": "The proposal will appear here after extraction finishes.",
+    "loading": "Loading proposal…",
+    "retry": "Try again",
+    "conflictHint": "Another change was saved first. Your local draft is still here. View the current version before deciding whether to discard your draft.",
+    "viewCurrent": "View current version",
+    "discardReload": "Discard and reload",
+    "discardTitle": "Discard unsaved changes?",
+    "discardDescription": "Your unsaved edits will be lost. Previously saved revisions will remain available.",
+    "discardClose": "Discard and close",
+    "keepEditing": "Keep editing",
+    "continueExtraction": "Continue extraction",
+    "continuing": "Continuing extraction…",
+    "errors": {
+      "INTERNAL_ERROR": "The proposal could not be loaded or saved. Try again.",
+      "REPROCESSING_CANDIDATE_PENDING": "Compare the pending proposal and adopt changes or keep your saved revision before continuing.",
+      "INSUFFICIENT_CREDITS": "You need one available credit to generate another proposal.",
+      "PROCESSING_ALREADY_ACTIVE": "Another extraction is already running. Refresh to see its progress.",
+      "AUDIO_NOT_VERIFIED": "The original audio is no longer available for processing.",
+      "STALE_VERSION": "The conversation has changed since you opened this revision.",
+      "NOT_FOUND": "This conversation or revision is no longer available.",
+      "VALIDATION_ERROR": "Check the proposal values and try again.",
+      "INVALID_STATUS_TRANSITION": "This action is unavailable in the current conversation state.",
+      "PROPOSAL_NOT_READY": "Resolve the blocking issues and complete the required fields first.",
+      "SENSITIVE_DATA_DETECTED": "Remove sensitive information from the proposal before saving.",
+      "IDEMPOTENCY_CONFLICT": "This save attempt conflicts with an earlier operation. Reload the current revision.",
+      "EXTRACTION_DISABLED": "AI extraction is currently unavailable.",
+      "EXTRACTION_CONFIGURATION_ERROR": "The extraction service is not configured correctly."
+    }
+  },
+  "conversationTranscript": {
+    "original": "Original transcript",
+    "completedAt": "Completed {date}",
+    "locales": { "en": "English", "es": "Spanish" },
+    "warnings": {
+      "title": "Speaker separation notice",
+      "diarizationUnavailable": "Reliable speaker separation is unavailable. The complete original transcript remains accessible.",
+      "DIARIZATION_UNAVAILABLE": "Reliable speaker separation is unavailable. The complete original transcript remains accessible.",
+      "ALIGNMENT_FALLBACK": "Word-level alignment was not reliable, so the transcript is shown with global evidence only.",
+      "SPEAKER_LABELS_UNAVAILABLE": "The speech service did not return reliable speaker labels."
+    },
+    "segments": {
+      "title": "Evidence segments",
+      "description": "Time-aligned transcript evidence when reliable timing is available.",
+      "empty": "No reliable speaker segments are available. Use the complete original transcript above.",
+      "speaker": "Speaker {speaker}",
+      "evidence": "Transcript evidence",
+      "timeRange": "{start}–{end}",
+      "confidence": "Confidence {value}"
+    }
+  },
+  "conversationUpload": {
+    "trigger": "Import audio",
+    "title": "Import a conversation",
+    "description": "Upload a prepared recording for secure verification.",
+    "close": "Close import dialog",
+    "fileLabel": "Audio file",
+    "choose": "Drag and drop an audio file, or click to select",
+    "drop": "Drop the audio file here",
+    "acceptedTypes": "MP3/MPEG, M4A/MP4, WAV, OGG or WebM · up to {maxSize} MB and {maxDuration} minutes",
+    "consentHint": "Only upload a conversation you are authorized to record and process.",
+    "remove": "Remove selected file",
+    "selected": "Audio file selected",
+    "size": "{size} MB",
+    "progress": "Uploading: {value}%",
+    "localeLabel": "Audio language",
+    "localePlaceholder": "Select the language",
+    "locales": { "en": "English", "es": "Spanish" },
+    "submit": "Upload and verify",
+    "cancel": "Cancel",
+    "cancelUpload": "Cancel upload",
+    "retry": "Retry upload",
+    "unavailable": "Audio imports are temporarily unavailable.",
+    "success": "Audio imported and verified successfully.",
+    "stages": {
+      "idle": "Ready to upload",
+      "preparing": "Preparing secure upload…",
+      "uploading": "Uploading audio…",
+      "verifying": "Verifying audio…",
+      "discarding": "Discarding upload…",
+      "failed": "Upload interrupted",
+      "success": "Audio verified"
+    },
+    "validation": {
+      "fileRequired": "Select one audio file.",
+      "fileTooLarge": "The audio file is larger than this workspace allows.",
+      "unsupportedFile": "Use one of the supported audio formats shown above.",
+      "localeRequired": "Select the language spoken in the audio."
+    }
+  },
+  "conversations": {
+    "title": "Conversations",
+    "description": "Record, import, review and securely manage workspace conversations.",
+    "loading": "Loading conversations…",
+    "empty": "No conversations found. Record or import audio, or adjust the filters.",
+    "notAvailable": "Not available",
+    "actions": "Actions",
+    "actionsFor": "Actions for conversation from {label}",
+    "view": "View conversation",
+    "deleteAction": "Delete conversation",
+    "retry": "Try again",
+    "close": "Close",
+    "fields": { "source": "Source", "locale": "Language", "status": "Status", "duration": "Duration", "createdAt": "Created", "updatedAt": "Updated" },
+    "filters": { "allSources": "All sources", "allLocales": "All languages", "allStatuses": "All statuses" },
+    "sources": { "upload": "Imported file", "microphone": "Microphone" },
+    "locales": { "en": "English", "es": "Spanish" },
+    "statuses": {
+      "draft": "Draft", "audio_ready": "Audio ready", "queued": "Queued", "transcribing": "Transcribing",
+      "diarizing": "Separating speakers", "transcribed": "Transcribed", "extracting": "Extracting", "validating": "Validating", "needs_review": "Needs review",
+      "ready": "Ready", "record_plan_pending": "Plan pending", "completed": "Completed", "failed": "Failed",
+      "quota_blocked": "Credit limit reached", "cancelled": "Cancelled"
+    },
+    "delete": { "success": "Conversation deleted successfully." },
+    "errors": {
+      "VALIDATION_ERROR": "Check the conversation information and try again.",
+      "UNAUTHENTICATED": "Sign in again to continue.",
+      "ACCOUNT_INACTIVE": "This account is inactive.",
+      "FORBIDDEN": "You do not have access to this conversation.",
+      "NOT_FOUND": "The conversation is no longer available.",
+      "STALE_VERSION": "This conversation changed. Refresh and try again.",
+      "SPEECH_DISABLED": "Speech processing is temporarily unavailable.",
+      "EXTRACTION_DISABLED": "AI extraction is disabled. Enable it before processing.",
+      "EXTRACTION_CONFIGURATION_ERROR": "The extraction service is not configured correctly.",
+      "INSUFFICIENT_CREDITS": "There are not enough available credits to process this conversation.",
+      "AUDIO_NOT_READY": "The audio must finish verification before it can be processed.",
+      "PROCESSING_ALREADY_ACTIVE": "This conversation is already being processed.",
+      "IDEMPOTENCY_CONFLICT": "This processing attempt conflicts with an earlier request. Refresh and try again.",
+      "INVALID_STATUS_TRANSITION": "This conversation cannot be processed from its current status.",
+      "AUDIO_NOT_VERIFIED": "The audio must finish verification before it can be processed.",
+      "UPLOAD_EXPIRED": "The secure upload expired. Start the import again.",
+      "UPLOAD_INCOMPLETE": "The audio upload was interrupted. Retry it or choose another file.",
+      "UPLOAD_MISMATCH": "The stored audio does not match the selected file. Choose the file again and retry.",
+      "MEDIA_TOO_LARGE": "The uploaded audio exceeds the allowed size.",
+      "MEDIA_TOO_LONG": "The uploaded audio exceeds the allowed duration.",
+      "UNSUPPORTED_MEDIA": "The uploaded file is not a supported audio format.",
+      "MEDIA_VERIFICATION_FAILED": "The audio could not be verified. Check the file and try again.",
+      "INTERNAL_ERROR": "Conversation information could not be loaded or saved. Please try again."
+    }
+  },
+  "detailsContainer": {
+    "client": "client",
+    "loading": "Loading",
+    "loadingSubtitle": "Please wait a moment",
+    "error": "Error loading",
+    "notFound": "not found",
+    "serviceRequest": "service request",
+    "user": "user"
+  },
+  "error403": {
+    "title": "Access Denied",
+    "description": "You don't have permission to access this page",
+    "message": "Please contact your administrator if you believe this is an error.",
+    "goHome": "Go Home",
+    "goDashboard": "Go to Dashboard"
+  },
+  "filters": {
+    "activeFilters": "{count, plural, one {# active filter} other {# active filters}}",
+    "clearAll": "Clear all",
+    "removeFilter": "Remove filter",
+    "search": "Search",
+    "searchByName": "Search by name...",
+    "status": "Status",
+    "sortBy": "Sort by",
+    "sortByStatus": "Status",
+    "sortByCreated": "Created",
+    "sortAscending": "Sort ascending",
+    "sortDescending": "Sort descending",
+    "searchByNameOrEmail": "Search by name or email...",
+    "eventType": "Event type",
+    "user": "User",
+    "sortByName": "Name",
+    "sortByEmail": "Email",
+    "sortByRole": "Role",
+    "active": "Active",
+    "inactive": "Inactive"
+  },
+  "forgotPassword": {
+    "pageTitle": "Forgot Password",
+    "pageDescription": "Enter your email address and we will send you a reset link",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "submit": "Send Reset Link",
+    "submitting": "Sending...",
+    "successTitle": "Check your email",
+    "successDescription": "If an account exists for {email}, a password reset link has been sent.",
+    "cancel": "Back",
+    "backToLogin": "Back to Login"
+  },
+  "imageUpload": {
+    "avatarPreview": "Avatar preview",
+    "dropImageHere": "Drop the image here",
+    "processingImage": "Processing image...",
+    "optimizingImage": "Optimizing image...",
+    "clickToChangePhoto": "Click to change photo",
+    "waitForProcessing": "Wait while the image is being processed...",
+    "dragAndDropOrClick": "Drag and drop an image, or click to select",
+    "fileFormats": "PNG, JPG, GIF up to {maxSize}MB",
+    "willConvertToWebP": "(will be converted to WebP)",
+    "preview": "Preview"
+  },
+  "landing": {
+    "nav": {
+      "primaryLabel": "Primary navigation",
+      "workflow": "Workflow",
+      "capabilities": "What it proves",
+      "safeguards": "Safeguards",
+      "contact": "Request access",
+      "signIn": "Sign in",
+      "openWorkspace": "Open demo",
+      "requestAccess": "Request access"
+    },
+    "hero": {
+      "badge": "Focused product demonstration",
+      "titleLead": "Turn real conversations into",
+      "titleAccent": "reviewed business records.",
+      "description": "Conversation Processing Demo follows one concrete workflow from authorized audio to transcript evidence, structured client and service-request proposals, human review, and an explicitly confirmed write.",
+      "primaryCta": "Request access",
+      "secondaryCta": "See the workflow",
+      "footnote": "Designed to demonstrate the pattern safely—not to imply autonomous decisions, silent writes, or a production integration that is not there."
+    },
+    "preview": {
+      "session": "Processing a prepared demo recording",
+      "duration": "02:18",
+      "transcript": "Transcript evidence",
+      "source": "Original preserved",
+      "speakerA": "Speaker A · 00:24",
+      "speakerB": "Speaker B · 00:31",
+      "lineA": "The air conditioner in the front office stopped cooling yesterday.",
+      "lineB": "Tuesday afternoon works. You can reach me by email.",
+      "proposal": "Structured proposal",
+      "awaitingReview": "Human review",
+      "client": "Client candidate",
+      "clientValue": "Jordan Lee · Northwind Studio",
+      "contactValue": "jordan@example.com",
+      "request": "Service request",
+      "requestValue": "Inspect front-office air conditioner",
+      "requestMeta": "Inspection · Normal priority",
+      "evidenceLinked": "Fields linked to source evidence",
+      "ready": "Ready to review"
+    },
+    "proof": {
+      "label": "Demo foundations",
+      "recording": {
+        "title": "Record or upload",
+        "description": "Browser microphone and prepared audio"
+      },
+      "bilingual": {
+        "title": "English + Spanish",
+        "description": "Equivalent product journeys"
+      },
+      "review": {
+        "title": "Human in the loop",
+        "description": "Correct before anything is saved"
+      },
+      "confirmation": {
+        "title": "No silent writes",
+        "description": "Preview and explicit confirmation"
+      }
+    },
+    "workflow": {
+      "eyebrow": "One focused journey",
+      "title": "From spoken context to governed action.",
+      "description": "The demo makes every transformation visible. Original evidence stays distinct from AI-derived structure, and the person reviewing it remains the authority.",
+      "steps": {
+        "capture": {
+          "title": "Capture",
+          "description": "Record in the browser or upload an authorized prepared audio file."
+        },
+        "transcribe": {
+          "title": "Preserve",
+          "description": "Keep the original transcript and separate, fallible speaker segments."
+        },
+        "structure": {
+          "title": "Propose",
+          "description": "Extract one client candidate and one or more service-request drafts."
+        },
+        "review": {
+          "title": "Review",
+          "description": "Correct gaps, ambiguity, duplicates, and evidence before readiness."
+        },
+        "confirm": {
+          "title": "Confirm",
+          "description": "Preview the exact record plan and approve one atomic creation."
+        }
+      }
+    },
+    "capabilities": {
+      "eyebrow": "What the demonstration proves",
+      "title": "A narrow workflow with serious product boundaries.",
+      "description": "Built for conversations that need to become useful operational data without hiding uncertainty or handing authority to a model.",
+      "cards": {
+        "evidence": {
+          "title": "Evidence before automation",
+          "description": "Proposed fields point back to transcript evidence. Original and derived artifacts remain visibly different, so confidence never replaces verification."
+        },
+        "requests": {
+          "title": "One conversation, multiple needs",
+          "description": "A single reviewed conversation can prepare one client and several independent service requests, then create the complete set atomically."
+        },
+        "assistant": {
+          "title": "The same rules for the assistant",
+          "description": "A workspace-scoped AI assistant can retrieve context and prepare a plan, but it uses the same validation, approval, and write path as the direct UI."
+        }
+      }
+    },
+    "safeguards": {
+      "eyebrow": "Trust is part of the demo",
+      "title": "AI proposes. Application code decides.",
+      "description": "The target baseline is designed around controlled access, inspectable evidence, bounded providers, and an exact approval step—not a magic black box.",
+      "items": {
+        "workspace": {
+          "title": "Workspace isolation",
+          "description": "The authenticated server context owns scope; browser or model input cannot choose another workspace."
+        },
+        "approval": {
+          "title": "Operation-bound approval",
+          "description": "Every create shows the exact current plan. Stale, expired, or replayed approvals cannot create another batch."
+        },
+        "provenance": {
+          "title": "Preserved provenance",
+          "description": "Original transcript, speaker segmentation, corrections, and saved records keep their roles and history distinct."
+        },
+        "portable": {
+          "title": "Provider-neutral contracts",
+          "description": "Speech and model providers sit behind application-owned capabilities so the demonstrated pattern is reusable."
+        }
+      }
+    },
+    "demo": {
+      "badge": "Built to be shown",
+      "title": "A concrete reference for your own conversation workflow.",
+      "description": "Use the demo to explore what a similar solution could look like for intake, field service, support, or any process where spoken context must become reviewed structured work.",
+      "disclosure": "This repository is being implemented in documented phases. Screens marked as demo use representative data and must not be read as production capability claims.",
+      "cta": "Request access"
+    },
+    "footer": {
+      "description": "A bilingual portfolio demonstration of evidence-first conversation processing and human-confirmed record creation.",
+      "bilingual": "English and Spanish experience",
+      "copyright": "© {year} Conversation Processing Demo."
+    }
+  },
+  "languageToggle": {
+    "label": "Language",
+    "en": "English",
+    "es": "Spanish"
+  },
+  "loginContent": {
+    "title": "Sign In",
+    "description": "Enter your credentials to access your account"
+  },
+  "loginErrors": {
+    "invalidCredentials": "Invalid email or password.",
+    "loginFailed": "Login failed. Please try again.",
+    "missing_code": "The link is incomplete. Please request a new one.",
+    "invalid_code": "The link has expired or has already been used. Please request a new one.",
+    "legacy_link": "This link format is no longer supported. Please request a new one."
+  },
+  "loginForm": {
+    "credentials": "Credentials",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "invalidCredentials": "Invalid email or password.",
+    "invalidEmail": "Enter a valid email address.",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "passwordRequired": "Enter your password.",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "signingIn": "Signing in...",
+    "signIn": "Sign In",
+    "dontHaveAccount": "Don't have an account?. Contact an administrator to request the creation of your account.",
+    "signUp": "Sign Up",
+    "forgotPassword": "Forgot password?"
+  },
+  "metadata": {
+    "title": "Conversation Processing Demo",
+    "description": "A focused demonstration of turning recorded conversations into reviewed client and service-request records."
+  },
+  "multiFileUpload": {
+    "uploadFiles": "Upload files",
+    "dropFilesHere": "Drop the files here",
+    "processingFiles": "Processing files...",
+    "dragAndDropOrClick": "Drag and drop files, or click to select",
+    "maxFilesReached": "Maximum {maxFiles} files reached",
+    "fileSizeInfo": "Up to {maxSize}MB per file • {remaining} remaining",
+    "uploadedFiles": "Uploaded files ({count}/{max})",
+    "clearAll": "Clear all",
+    "processing": "Processing...",
+    "maxFilesAllowed": "Maximum {maxFiles} files allowed"
+  },
+  "operationalDashboard": {
+    "title": "Work overview",
+    "description": "Continue working with your current clients and service requests.",
+    "metrics": {
+      "totalClients": "Clients",
+      "totalRequests": "Service requests",
+      "pending": "Pending",
+      "inProgress": "In progress",
+      "resolved": "Resolved",
+      "cancelled": "Cancelled"
+    },
+    "sections": {
+      "summary": "Current workspace summary",
+      "recentRequests": "Recent service requests",
+      "recentRequestsDescription": "The five most recently updated requests, ready to continue working."
+    },
+    "navigation": {
+      "label": "Workspace navigation",
+      "clients": "View all clients",
+      "requests": "View all requests",
+      "allRequests": "Open requests"
+    },
+    "loading": "Loading workspace data",
+    "noRecentRequests": "There are no recent service requests yet.",
+    "retry": "Try again",
+    "errors": {
+      "INTERNAL_ERROR": "The workspace data could not be loaded."
+    }
+  },
+  "pagination": {
+    "showing": "Showing",
+    "of": "of",
+    "rows": "Rows",
+    "previousPage": "Previous page",
+    "nextPage": "Next page"
+  },
+  "platformSettings": {
+    "title": "Platform settings",
+    "description": "Review the public access contact and control whether new access requests are admitted.",
+    "contact": {
+      "title": "Demo access contact",
+      "description": "The public form prepares an email in the visitor's mail application. It does not store the visitor's form data or create an account.",
+      "ownerOnly": "Only the owner can change the contact email.",
+      "success": "Access contact email updated."
+    },
+    "admission": {
+      "title": "Access-request admission",
+      "description": "Pause new public access requests without changing the configured contact email.",
+      "statusLabel": "Current status",
+      "enabled": "Accepting requests",
+      "paused": "Requests paused",
+      "pause": "Pause access requests",
+      "pausing": "Pausing...",
+      "resume": "Resume access requests",
+      "resuming": "Resuming...",
+      "ownerOnlyResume": "Access requests are paused. Only the owner can resume them.",
+      "pauseSuccess": "Access requests paused.",
+      "resumeSuccess": "Access requests resumed."
+    },
+    "security": {
+      "title": "Administrator account security",
+      "description": "Two-factor authentication is mandatory. Replace your backup codes from a recent verified session; existing codes are invalidated immediately.",
+      "manageBackupCodes": "Manage backup codes"
+    },
+    "form": {
+      "contactEmail": "Access contact email",
+      "contactEmailPlaceholder": "demo-access@company.com",
+      "contactEmailDescription": "Requests are addressed to this mailbox. Use a monitored business address rather than a personal account.",
+      "save": "Save contact email",
+      "saving": "Saving...",
+      "validation": {
+        "invalidEmail": "Enter a valid contact email address."
+      }
+    },
+    "errors": {
+      "UNAUTHENTICATED": "Sign in again to continue.",
+      "ACCOUNT_INACTIVE": "This account is inactive.",
+      "ADMIN_PROFILE_REQUIRED": "This administrator account needs an owner or operator profile before settings can be accessed.",
+      "ADMIN_PROFILE_INCONSISTENT": "This account has an inconsistent administrator profile.",
+      "FORBIDDEN": "You do not have permission to manage platform settings.",
+      "SETTINGS_CONFLICT": "Platform settings changed. Refresh and try again.",
+      "SETTINGS_NOT_CONFIGURED": "Platform settings have not been configured yet.",
+      "VALIDATION_ERROR": "Review the configured contact email.",
+      "INTERNAL_ERROR": "Platform settings could not be loaded or saved."
+    }
+  },
+  "refresh": {
+    "dataRefreshed": "Data refreshed",
+    "refreshData": "Refresh Data",
+    "refreshDataAria": "Refresh data"
+  },
+  "requestDetails": {
+    "title": "Request details",
+    "description": "Service-request information saved in your workspace.",
+    "editTitle": "Edit service request",
+    "editDescription": "Update the request information, priority or assigned client.",
+    "statusTitle": "Change the status of {title}?",
+    "statusDescription": "This will move {title} to {status}.",
+    "deleteTitle": "Delete {title}?",
+    "deleteDescription": "This permanently deletes the request. Its client and originating conversation will be preserved.",
+    "deleteConfirm": "Delete request",
+    "cancel": "Cancel"
+  },
+  "requestForm": {
+    "hint": "Select an existing client and describe one independent service need.",
+    "clientPlaceholder": "Select a client",
+    "searchClients": "Search clients…",
+    "noClients": "No clients found. Create a client first.",
+    "scheduleHint": "This is a preference, not a confirmed appointment.",
+    "cancel": "Cancel",
+    "review": "Review request",
+    "preparing": "Preparing review…",
+    "save": "Save changes",
+    "saving": "Saving…",
+    "previewTitle": "Review the request to create",
+    "previewHint": "Check the exact client and request values before confirming.",
+    "expiresAt": "Review valid until {date} (UTC).",
+    "expired": "This review has expired. Go back and prepare another review.",
+    "back": "Back to form",
+    "confirm": "Confirm and create request",
+    "confirming": "Confirming…",
+    "retryConfirmation": "Check and retry this confirmation",
+    "validation": {
+      "clientRequired": "Select a client.",
+      "titleRequired": "Enter a request title.",
+      "descriptionRequired": "Describe the requested service.",
+      "serviceTypeRequired": "Select a service type.",
+      "priorityRequired": "Select a priority.",
+      "tooLong": "This field exceeds the allowed length."
+    }
+  },
+  "requests": {
+    "title": "Service requests",
+    "description": "Register and review the service needs in your workspace.",
+    "empty": "No service requests found. Create one or adjust your filters.",
+    "searchPlaceholder": "Search by title, description or client…",
+    "notProvided": "Not provided",
+    "actions": "Actions",
+    "actionsFor": "Actions for {title}",
+    "view": "View request",
+    "editAction": "Edit request",
+    "deleteAction": "Delete request",
+    "retry": "Try again",
+    "close": "Close",
+    "fields": {
+      "client": "Client",
+      "title": "Title",
+      "description": "Description",
+      "serviceType": "Service type",
+      "priority": "Priority",
+      "status": "Status",
+      "preferredSchedule": "Preferred availability",
+      "serviceAddress": "Service address",
+      "nextSteps": "Next steps",
+      "createdAt": "Created",
+      "updatedAt": "Updated"
+    },
+    "serviceTypes": {
+      "installation": "Installation",
+      "repair": "Repair",
+      "maintenance": "Maintenance",
+      "inspection": "Inspection",
+      "other": "Other"
+    },
+    "priorities": { "low": "Low", "normal": "Normal", "high": "High" },
+    "statuses": { "pending": "Pending", "in_progress": "In progress", "resolved": "Resolved", "cancelled": "Cancelled" },
+    "statusActions": {
+      "pending": "Move to pending",
+      "in_progress": "Start work",
+      "resolved": "Resolve request",
+      "cancelled": "Cancel request",
+      "reopen": "Reopen request"
+    },
+    "summary": { "total": "Total", "pending": "Pending", "in_progress": "In progress", "resolved": "Resolved", "cancelled": "Cancelled" },
+    "filters": {
+      "allClients": "All clients",
+      "noClients": "No clients found",
+      "searchClients": "Search clients…",
+      "selectedClient": "Selected client",
+      "allServiceTypes": "All service types",
+      "allPriorities": "All priorities",
+      "allStatuses": "All statuses"
+    },
+    "pagination": {
+      "showing": "Showing {start}-{end} of {total}",
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "create": {
+      "trigger": "New request",
+      "title": "Create service request",
+      "description": "Select a client, review the exact values and confirm creation.",
+      "success": "Service request created successfully."
+    },
+    "edit": { "success": "Service request updated successfully." },
+    "status": { "success": "Request status updated successfully." },
+    "delete": { "success": "Service request deleted successfully." },
+    "errors": {
+      "VALIDATION_ERROR": "Check the request information and try again.",
+      "UNAUTHENTICATED": "Sign in again to continue.",
+      "ACCOUNT_INACTIVE": "This account is inactive.",
+      "FORBIDDEN": "You do not have access to this request.",
+      "NOT_FOUND": "The client, request or review is no longer available.",
+      "SENSITIVE_DATA": "Remove payment information, credentials or sensitive personal information before continuing.",
+      "PLAN_STALE": "This review changed. Go back and review the request again.",
+      "PLAN_EXPIRED": "This review expired. Go back and review the request again.",
+      "CLIENT_CHANGED": "The selected client changed. Go back and prepare the request again.",
+      "INVALID_STATUS_TRANSITION": "That status change is not allowed. Close this dialog and reopen the request to see its current status.",
+      "STALE_VERSION": "This request changed since it was opened. Close this dialog and reopen the request before trying again.",
+      "CONFIRMATION_UNCERTAIN": "The confirmation result could not be verified. Keep this window open and retry the same confirmation.",
+      "INTERNAL_ERROR": "Request information could not be loaded or saved. Please try again."
+    }
+  },
+  "resetPassword": {
+    "pageTitle": "Reset Your Password",
+    "pageDescription": "Enter your new password below",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Reset Password",
+    "submitting": "Resetting...",
+    "successTitle": "Password reset successfully",
+    "successDescription": "Your password has been updated. Please sign in with your new password.",
+    "backToLogin": "Back to Login"
+  },
+  "sidebar": {
+    "groups": {
+      "workspace": "CLIENT MANAGEMENT",
+      "metrics": "WORKSPACE",
+      "admin": "ADMINISTRATION"
+    },
+    "navigation": {
+      "clients": "Clients",
+      "conversations": "Conversations",
+      "dashboard": "Dashboard",
+      "requests": "Requests",
+      "settings": "Settings",
+      "users": "Users"
+    }
+  },
+  "stats": {
+    "totalUsers": "Total Users",
+    "platformAdmins": "Platform Administrators",
+    "trialUsers": "Trial Users",
+    "active": "Active",
+    "suspended": "Suspended"
+  },
+  "table": {
+    "name": "Name",
+    "email": "Email",
+    "role": "Role",
+    "signOutError": "Could not sign out. Please try again.",
+    "status": "Status",
+    "created": "Created",
+    "actions": "Actions",
+    "viewDetails": "View details",
+    "edit": "Edit",
+    "cannotEditYourself": "Cannot edit yourself",
+    "cannotDeactivateYourself": "You cannot suspend your own account",
+    "deactivateUsers": "Suspend users",
+    "deactivateUsersDescription": "The selected users will be suspended and lose access. This can be reversed by activating them again.",
+    "confirmDeactivate": "Suspend",
+    "deactivate": "Suspend",
+    "activate": "Activate",
+    "user": "user",
+    "users": "users",
+    "noUsersFound": "No users found",
+    "selectAll": "Select all",
+    "selectRow": "Select row",
+    "noName": "No name",
+    "resendInvitation": "Resend invitation",
+    "confirmDelete": "Delete",
+    "suspendUser": "Suspend user",
+    "suspendUserDescription": "The user will lose access until an administrator activates the account again.",
+    "cancel": "Cancel"
+  },
+  "temporaryPassword": {
+    "title": "Secure your trial account",
+    "description": "Replace the temporary password before entering your workspace. Your 14-day trial begins only after this step succeeds.",
+    "recoveryTitle": "Replace your recovery password",
+    "recoveryDescription": "Choose a private password to regain access. Your original trial activation and expiration dates will not change.",
+    "expiresAt": "Temporary credential valid until {date} UTC.",
+    "currentPassword": "Temporary password",
+    "currentPasswordPlaceholder": "Enter the password provided by the team",
+    "newPassword": "New password",
+    "newPasswordPlaceholder": "Create a new password",
+    "confirmPassword": "Confirm new password",
+    "confirmPasswordPlaceholder": "Repeat your new password",
+    "passwordHint": "Use 8 to 128 characters and do not reuse the temporary password.",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "signOut": "Sign out",
+    "saving": "Securing account...",
+    "submit": "Change password and continue",
+    "expiredTitle": "Temporary credential expired",
+    "expiredSummary": "This credential can no longer be used to replace the account password.",
+    "expiredDescription": "For your security, password replacement is disabled after the 72-hour credential window.",
+    "expiredContact": "Contact the team through the access-request channel so they can verify the account and provide a safe next step.",
+    "contactTeam": "Contact the team",
+    "validation": {
+      "currentPasswordRequired": "Enter the temporary password.",
+      "passwordLength": "The password must contain between 8 and 128 characters.",
+      "passwordMustChange": "Choose a password different from the temporary password.",
+      "passwordMismatch": "The new passwords do not match."
+    },
+    "errors": {
+      "VALIDATION_ERROR": "Review the password fields and try again.",
+      "UNAUTHENTICATED": "Sign in again with the temporary credential.",
+      "ACCOUNT_INACTIVE": "This account is not active. Contact the team.",
+      "TEMPORARY_PASSWORD_EXPIRED": "The temporary credential has expired. Contact the team.",
+      "TEMPORARY_PASSWORD_CHANGE_NOT_REQUIRED": "This account no longer requires temporary-password replacement.",
+      "INVALID_CURRENT_PASSWORD": "The temporary password is incorrect.",
+      "PASSWORD_REPLACEMENT_FAILED": "The password may have changed, but the account update could not be completed. Retry with the new password or contact the team.",
+      "INTERNAL_ERROR": "The account could not be secured. Please try again."
+    }
+  },
+  "timeAgo": {
+    "justNow": "just now",
+    "minutes": "{count} minute{count, plural, one{} other{s}} ago",
+    "hours": "{count} hour{count, plural, one{} other{s}} ago",
+    "days": "{count} day{count, plural, one{} other{s}} ago",
+    "months": "{count} month{count, plural, one{} other{s}} ago",
+    "years": "{count} year{count, plural, one{} other{s}} ago"
+  },
+  "twoFactor": {
+    "metadata": { "setupTitle": "Set up two-factor authentication", "setupDescription": "Protect administrative access with an authenticator app.", "challengeTitle": "Two-factor verification", "challengeDescription": "Complete the second verification step to continue." },
+    "setup": {
+      "title": "Secure your administrator account",
+      "description": "Two-factor authentication is required before you can use administrative features.",
+      "limitedTitle": "Administrative access is temporarily limited",
+      "limitedDescription": "Confirm your password, connect an authenticator app, and verify one code. Only setup and sign out are available until this is complete.",
+      "passwordLabel": "Current password", "passwordPlaceholder": "Enter your current password", "passwordDescription": "Your password is verified securely and is never displayed or stored by this screen.",
+      "showPassword": "Show password", "hidePassword": "Hide password", "signOut": "Sign out", "start": "Set up authenticator", "starting": "Starting setup...",
+      "scanTitle": "Connect your authenticator app", "scanDescription": "Scan this QR code with your authenticator app. The QR is generated on this device and is not sent to an external QR service.", "qrLabel": "Authenticator setup QR code",
+      "manualToggle": "Cannot scan the QR code?", "manualDescription": "Enter this temporary secret manually in your authenticator app. Do not share it.", "manualSecretLabel": "Temporary manual setup secret",
+      "verificationCodeLabel": "Six-digit verification code", "verificationCodeDescription": "Enter the current code from your authenticator app. You can paste the full code.",
+      "cancelSetup": "Start over", "verify": "Verify and enable", "verifying": "Verifying..."
+    },
+    "backupCodes": {
+      "saveTitle": "Save these backup codes now", "saveDescription": "This is the only time these codes will be shown. Each code works once and is replaced after regeneration.", "listLabel": "One-time backup codes",
+      "copy": "Copy all codes", "copied": "Codes copied", "savedConfirmation": "I saved these backup codes in a secure place.",
+      "lossWarning": "If you lose both your authenticator and every backup code, contact the team through the established secure support process. Automatic recovery is not available.",
+      "continue": "Continue securely", "continuing": "Continuing..."
+    },
+    "regeneration": {
+      "enabledTitle": "Two-factor authentication is active", "enabledDescription": "You may replace your backup codes after confirming your current password. Existing codes will stop working immediately.",
+      "passwordLabel": "Current password", "passwordPlaceholder": "Enter your current password", "confirmation": "I understand that all existing backup codes will be invalidated.",
+      "warning": "Store the replacement codes before leaving this page. Existing codes cannot be revealed.", "regenerate": "Replace backup codes", "regenerating": "Replacing codes..."
+    },
+    "challenge": {
+      "title": "Verify it is you", "description": "Your password was accepted. Complete two-factor verification before a usable session is created.",
+      "totpLabel": "Six-digit authenticator code", "totpDescription": "Enter or paste the current code from your authenticator app.",
+      "backupLabel": "Backup code", "backupPlaceholder": "Enter one backup code", "backupDescription": "A backup code can be used only once.",
+      "verify": "Verify and continue", "verifying": "Verifying...", "useBackupCode": "Use a backup code instead", "useAuthenticator": "Use an authenticator code instead",
+      "lostFactorsTitle": "Lost both verification methods?", "lostFactorsDescription": "Contact the team through the established secure support process. This screen cannot bypass two-factor authentication or promise automatic recovery.",
+      "restart": "Restart sign in", "signOut": "Sign out"
+    },
+    "validation": {
+      "passwordRequired": "Enter your current password.", "invalidTotp": "Enter the complete six-digit code.", "backupCodeRequired": "Enter a valid backup code.",
+      "savedConfirmationRequired": "Confirm that you saved the backup codes before continuing.", "regenerationConfirmationRequired": "Confirm that existing backup codes will be invalidated."
+    },
+    "errors": {
+      "INVALID_INPUT": "Check the information and try again.", "UNAUTHENTICATED": "Your verification context is no longer valid. Restart sign in.", "UNAUTHORIZED": "This operation is not available for this account.",
+      "ENROLLMENT_REQUIRED": "Complete two-factor setup before continuing.", "ADMIN_MFA_ENROLLMENT_REQUIRED": "Complete two-factor setup before continuing.", "INVALID_PASSWORD": "The password could not be verified.",
+      "INVALID_CODE": "The code could not be verified. Check it and try again.", "TWO_FACTOR_INVALID_CODE": "The code could not be verified. Check it and try again.",
+        "LOCKED_OUT": "Too many attempts were made. Wait before trying again or restart sign in.", "MFA_TEMPORARILY_LOCKED": "Too many attempts were made. Wait 15 minutes before trying again.", "MFA_CHALLENGE_EXPIRED": "This verification attempt expired. Restart sign in.", "STALE_STATE": "The security state changed. Reload this page and try again.", "STATE_CHANGED": "The security state changed. Restart sign in and try again.",
+        "CONFLICT": "The operation could not be completed because the security state changed.", "OPERATION_NOT_ALLOWED": "This operation is not allowed.", "INTERNAL_ERROR": "The verification could not be completed safely. Please try again."
+        ,"INVALID_CURRENT_PASSWORD": "The password could not be verified.", "INVALID_TWO_FACTOR_CODE": "The code could not be verified. Check it and try again.", "MFA_ALREADY_ENABLED": "Two-factor authentication is already active.", "MFA_ENROLLMENT_NOT_PENDING": "Start two-factor setup before verifying a code.", "MFA_STATE_INCONSISTENT": "The security state cannot be used safely. Contact the team through the established secure process.", "RECENT_SESSION_REQUIRED": "Sign in again before replacing backup codes.", "TEMPORARY_PASSWORD_CHANGE_REQUIRED": "Replace the temporary password before setting up two-factor authentication.", "ACCOUNT_INACTIVE": "This account cannot complete the operation."
+    }
+  },
+  "user": {
+    "signOut": "Sign Out",
+    "signOutError": "Could not sign out. Please try again.",
+    "signingOut": "Signing out...",
+    "role": "Role",
+    "signOutDemo": "Demo mode — authentication is not connected yet."
+  },
+  "userDetails": {
+    "title": "User details",
+    "description": "Account information and timestamps.",
+    "editUser": "Edit user",
+    "editUserDescription": "Update the user's name and preferred language. Administrator profile is read-only here."
+  },
+  "userDetailsSection": {
+    "account": "Account",
+    "initialCreditAllocation": "Initial credit allocation",
+    "temporaryPasswordExpiresAt": "Temporary credential expires",
+    "trialActivatedAt": "Trial activated",
+    "trialExpiresAt": "Trial expires",
+    "timestamps": "Timestamps",
+    "lastUpdated": "Last updated",
+    "locale": "Preferred language",
+    "adminOwnerOnly": "Only the owner can change or manage administrator accounts.",
+    "unknownUser": "Unknown user"
+  },
+  "userForm": {
+    "userInformation": "User Information",
+    "email": "Email",
+    "emailPlaceholder": "user@example.com",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "John Doe",
+    "access": "Access",
+    "role": "Role",
+    "rolePlaceholder": "Select role",
+    "status": "Status",
+    "statusPlaceholder": "Select status",
+    "locale": "Preferred language",
+    "localePlaceholder": "Select a language",
+    "initialCreditAllocation": "Initial credit allocation",
+    "initialCreditAllocationDescription": "Configuration stored for the future processing-credit ledger.",
+    "generatedTemporaryPasswordNotice": "A secure temporary password will be generated on the server and shown once after the account is created.",
+    "roleReadOnly": "Role and administrator profile changes use separate owner-only actions.",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "cancel": "Cancel",
+    "creating": "Creating...",
+    "create": "Create account",
+    "saving": "Saving",
+    "save": "Save",
+    "sendingInvite": "Sending Invite",
+    "sendInvite": "Send Invite",
+    "user": "User",
+    "fullNameLabel": "Full name",
+    "validation": {
+      "nameMin": "Name must contain at least 2 characters.",
+      "invalidEmail": "Enter a valid email address.",
+      "initialCreditAllocation": "Enter a nonnegative whole number."
+    }
+  },
+  "userProfile": {
+    "menuItem": "View Profile",
+    "modalTitle": "My Profile",
+    "modalDescription": "View and edit your account information",
+    "noName": "No name",
+    "editName": "Edit",
+    "loading": "Loading profile",
+    "loadingSubtitle": "Please wait a moment",
+    "error": "Error loading profile",
+    "notFound": "Profile not found",
+    "sections": {
+      "personalInfo": "Personal Information",
+      "systemInfo": "System Information",
+      "security": "Account Security"
+    },
+    "fields": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "role": "Role",
+      "status": "Status",
+      "createdAt": "Member Since",
+      "updatedAt": "Last Updated"
+    },
+    "form": {
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Your full name",
+      "save": "Save Changes",
+      "saving": "Saving...",
+      "cancel": "Cancel",
+      "successToast": "Profile updated successfully"
+    },
+    "security": {
+      "changePassword": "Change Password",
+      "forgotPassword": "Forgot Password",
+      "changeTitle": "Change your password",
+      "forgotTitle": "Password Reset",
+      "forgotDescription": "To reset your password, contact your administrator or use the login page.",
+      "currentPassword": "Current Password",
+      "newPassword": "New Password",
+      "confirmPassword": "Confirm New Password",
+      "savePassword": "Update Password",
+      "back": "Back",
+      "changing": "Changing...",
+      "comingSoon": "Coming soon",
+      "forgotSent": "Check your email",
+      "forgotSentDescription": "A password reset link was sent to {email}.",
+      "forgotEmail": "Email"
+    }
+  },
+  "users": {
+    "title": "User Management",
+    "loadingUsers": "Loading users...",
+    "fetchingUsersData": "Fetching user data",
+    "description": "Manage user accounts, roles and access.",
+    "accessValues": {
+      "active": "Active",
+      "suspended": "Suspended",
+      "temporary_pending": "Password replacement pending",
+      "temporary_expired": "Temporary credential expired"
+    },
+    "actions": {
+      "activate": "Activate",
+      "adminOwnerOnly": "Administrator controls are available only to the owner.",
+      "delete": "Delete account",
+      "demoteOperator": "Remove operator",
+      "edit": "Edit",
+      "confirmCredentialDelivery": "Confirm credential delivery",
+      "menuLabel": "Open user actions",
+      "ownerProtected": "The platform owner cannot be removed, suspended, or deleted here.",
+      "promoteOperator": "Promote to operator",
+      "promotionRequiresActive": "Only an active trial user can be promoted to operator.",
+      "recoverOperatorMfa": "Reset operator MFA",
+      "reissueActivationCredential": "Reissue activation credential",
+      "revokeSessions": "Revoke sessions",
+      "resetAccess": "Reset access",
+      "suspend": "Suspend",
+      "transferOwnership": "Transfer ownership",
+      "view": "View details"
+    },
+    "confirmations": {
+      "activateConfirm": "Activate",
+      "activateDescription": "{name} will be able to sign in again. No new session will be created.",
+      "activateTitle": "Activate {name}?",
+      "cancel": "Cancel",
+      "demoteOperatorConfirm": "Remove operator",
+      "demoteOperatorDescription": "{name} will become a trial user and all active sessions will be revoked.",
+      "demoteOperatorTitle": "Remove operator access from {name}?",
+      "closeCredentialModal": "Close credential dialog",
+      "closeCredentialDeliveryModal": "Close delivery confirmation dialog",
+      "closeSecurityModal": "Close administrative security dialog",
+      "credentialActivationDescription": "Generate a replacement activation credential after confirming the reason.",
+      "credentialActivationTitle": "Reissue activation credential for {name}?",
+      "credentialDeliveryDescription": "Record delivery of the current credential without reissuing it or revealing it again.",
+      "credentialDeliveryTitle": "Confirm credential delivery for {name}",
+      "credentialRecoveryDescription": "Generate a recovery credential without changing the original trial dates.",
+      "credentialRecoveryTitle": "Reset access for {name}?",
+      "deleteConfirm": "Delete account",
+      "deleteDescription": "This permanently removes {name}'s identity-only account. Deletion is blocked if managed domain data exists.",
+      "deleteTitle": "Permanently delete {name}?",
+      "initiateTransferDescription": "Create a protected, time-limited ownership transfer request.",
+      "initiateTransferTitle": "Transfer ownership to {name}?",
+      "promoteOperatorConfirm": "Promote to operator",
+      "promoteOperatorDescription": "{name} will become a platform operator. Existing sessions will be revoked before the new access takes effect.",
+      "promoteOperatorTitle": "Promote {name} to operator?",
+      "revokeSessionsConfirm": "Revoke sessions",
+      "revokeSessionsDescription": "All current sessions for {name} will be closed. The account remains active.",
+      "revokeSessionsTitle": "Revoke sessions for {name}?",
+      "recoverMfaDescription": "Verify your password and current authenticator code before resetting this operator's MFA.",
+      "recoverMfaTitle": "Reset MFA for {name}?",
+      "suspendConfirm": "Suspend",
+      "suspendDescription": "{name} will lose access and all current sessions will be revoked.",
+      "suspendTitle": "Suspend {name}?"
+    },
+    "roleValues": {
+      "owner": "Owner",
+      "operator": "Operator",
+      "platform_admin": "Platform Administrator",
+      "trial_user": "Trial User",
+      "unconfiguredAdmin": "Unconfigured administrator"
+    },
+    "statusValues": {
+      "active": "Active",
+      "suspended": "Suspended"
+    },
+    "filters": {
+      "active": "active",
+      "filter": "filter",
+      "filters": "filters",
+      "search": "Search",
+      "role": "Role",
+      "status": "Status",
+      "clearAll": "Clear all"
+    },
+    "create": {
+      "trigger": "Create User",
+      "modalTitle": "Create trial account",
+      "modalDescription": "Create a trial account. A server-generated temporary password remains valid for 72 hours and workspace access stays blocked until replacement.",
+      "successToast": "User created successfully",
+      "credential": {
+        "title": "Temporary credential ready",
+        "warning": "This password is shown only now. Save it securely before closing this dialog; it cannot be retrieved later.",
+        "email": "Account email",
+        "password": "Temporary password",
+        "copy": "Copy password",
+        "copied": "Copied",
+        "expires": "Expiration",
+        "expiresValue": "Valid until {date} UTC",
+        "delivery": "Share it only through the approved private channel. Never place it in audit notes or public links.",
+        "copiedConfirmation": "Password copied. Deliver it through the approved private channel.",
+        "copyFailed": "The password could not be copied automatically. Select and copy it manually.",
+        "done": "I saved it"
+      }
+    },
+    "credentialReissue": {
+      "action": {
+        "activation": "Reissue activation credential",
+        "recovery": "Reset access"
+      },
+      "cancel": "Cancel",
+      "channels": {
+        "in_person": "In person",
+        "other": "Other approved private channel",
+        "phone": "Phone",
+        "secure_message": "Secure message"
+      },
+      "closeWithoutDelivery": "Close without confirming delivery",
+      "confirmDelivery": "Credential delivered",
+      "confirmingDelivery": "Confirming delivery...",
+      "confirmationLabel": "I confirm that I intend to invalidate the current credential, revoke every session, and issue a new temporary credential.",
+      "deliveredAt": "Delivery confirmed",
+      "deliveryChannelLabel": "Delivery channel",
+      "deliveryConfirmedDescription": "Delivery was recorded using the {channel} category. No private channel details were stored.",
+      "deliveryConfirmedTitle": "Credential delivery confirmed",
+      "deliveryNoLongerAvailable": "This issuance is no longer current or its delivery has already been confirmed. Refresh the user record.",
+      "deliveryDescription": "After handing over the credential through an approved private channel, record only the general channel category.",
+      "deferredDeliveryNotice": "This records delivery of the current issuance only. The credential will not be shown again or replaced.",
+      "deliveryPrivacyNotice": "Do not enter an address, phone number, handle, conversation, or the credential itself.",
+      "deliveryTitle": "Delivery still unconfirmed",
+      "done": "Done",
+      "expiresAt": "Temporary credential expires",
+      "issuedAt": "Issued",
+      "issuanceState": "Credential issuance",
+      "issuing": "Issuing credential...",
+      "latestIssuance": "Latest temporary credential issuance",
+      "missingExpiryError": "The operation did not return a usable expiration time. Do not deliver this credential; start a new recovery issuance.",
+      "otherNoteDescription": "Maximum 200 characters. Do not include credentials or private contact details.",
+      "otherNoteLabel": "Brief reason note",
+      "otherNotePlaceholder": "Add a concise non-sensitive reason",
+      "purpose": {
+        "activation": "Activation: the 14-day trial starts only after the user replaces this credential.",
+        "recovery": "Recovery: the original trial activation and expiration dates will not change."
+      },
+      "purposeLabel": "Purpose",
+      "reasonDescription": "Choose the verified administrative reason for this operation.",
+      "reasonLabel": "Reason",
+      "reasons": {
+        "expired_credential": "Credential expired",
+        "failure_recovery": "Recover from a previous failure",
+        "forgotten_password": "Password forgotten",
+        "other": "Other",
+        "suspected_compromise": "Possible credential compromise"
+      },
+      "revokedSessions": "{count, plural, =0 {No active sessions were found.} one {# session was revoked.} other {# sessions were revoked.}}",
+      "securityNotice": "The new password is generated only on the server and will be shown once after a successful operation.",
+      "status": {
+        "delivered": "Delivered",
+        "failed": "Failed",
+        "issuedNotDelivered": "Issued · delivery unconfirmed",
+        "prepared": "Preparing",
+        "superseded": "Superseded"
+      },
+      "submit": {
+        "activation": "Reissue activation credential",
+        "recovery": "Reset access"
+      },
+      "suspendedTitle": "Account remains suspended",
+      "suspendedWarning": "This operation does not reactivate the account. The user cannot begin the credential-replacement flow until an administrator explicitly reactivates the account.",
+      "validation": {
+        "channelRequired": "Choose a delivery channel category.",
+        "confirmationRequired": "Confirm the operation before continuing.",
+        "noteRequired": "Add a brief note only when the reason is Other.",
+        "noteTooLong": "Keep the note to 200 characters or fewer.",
+        "reasonRequired": "Choose a reason."
+      }
+    },
+    "edit": {
+      "successToast": "User updated successfully"
+    },
+    "localeValues": {
+      "en": "English",
+      "es": "Spanish"
+    },
+    "mfaRecovery": {
+      "activeWarning": "The operator remains active but cannot sign in until a new MFA enrollment is completed.",
+      "cancel": "Cancel",
+      "confirmationLabel": "I confirm that I intend to reset MFA for {name} and revoke every active session.",
+      "done": "Done",
+      "enrollmentWarning": "A new MFA enrollment is required at the next eligible sign-in.",
+      "noSecretsWarning": "No previous secret or backup code is recovered, generated, or shown.",
+      "passwordDescription": "Re-enter your current owner password. It is never stored in this form.",
+      "passwordLabel": "Current password",
+      "reasonDescription": "Choose the verified administrative category for this recovery.",
+      "reasonLabel": "Recovery reason",
+      "reasons": {
+        "lost_all_factors": "Authenticator and backup codes lost",
+        "lost_device": "Authenticator device lost",
+        "operational_recovery": "Approved operational recovery",
+        "other": "Other approved reason",
+        "suspected_compromise": "Suspected factor compromise"
+      },
+      "referenceDescription": "Optional, maximum 120 characters. Use a non-sensitive ticket or incident reference only.",
+      "referenceLabel": "Operational reference",
+      "referencePlaceholder": "Example: OPS-2026-104",
+      "sessionsWarning": "Every operator session will be revoked immediately.",
+      "submit": "Reset MFA and revoke sessions",
+      "submitting": "Resetting MFA...",
+      "successDescription": "{count, plural, =0 {No active sessions were found.} one {# session was revoked.} other {# sessions were revoked.}}",
+      "successEnrollment": "The operator must sign in again and complete a new MFA enrollment before administrative access resumes.",
+      "successTitle": "Operator MFA reset completed",
+      "suspensionWarning": "The suspension remains in place. Enrollment is unavailable until the account is reactivated through the authorized flow.",
+      "targetSummary": "Operator selected for controlled MFA recovery",
+      "totpDescription": "Enter the current six-digit code from your owner authenticator.",
+      "totpLabel": "Current authenticator code",
+      "validation": {
+        "confirmationRequired": "Confirm the recovery before continuing.",
+        "passwordRequired": "Enter your current password.",
+        "reasonRequired": "Choose a recovery reason.",
+        "referenceInvalid": "Use a single-line, non-sensitive reference.",
+        "referenceTooLong": "Keep the reference to 120 characters or fewer.",
+        "totpInvalid": "Enter a valid six-digit authenticator code."
+      },
+      "warningTitle": "This is a security recovery"
+    },
+    "ownershipTransfer": {
+      "accept": {
+        "confirmationLabel": "I confirm that {target} will become owner, {owner} will become operator, and both sessions will close.",
+        "description": "Revalidate your credentials before accepting ownership.",
+        "irreversibleWarning": "This transfer cannot be reversed automatically.",
+        "roleWarning": "You become owner and the current owner becomes an operator in one atomic transition.",
+        "sessionsWarning": "Every session for both administrators will close.",
+        "signInAgain": "Both administrators must sign in again before their new capabilities take effect.",
+        "submit": "Accept ownership",
+        "title": "Accept ownership transfer",
+        "warningTitle": "This changes the platform owner"
+      },
+      "cancel": {
+        "confirmationLabel": "I confirm that I intend to cancel the transfer from {owner} to {target}.",
+        "description": "Revalidate your credentials before cancelling this pending request.",
+        "submit": "Cancel transfer",
+        "terminalWarning": "Cancellation is final; this request cannot later be accepted.",
+        "title": "Cancel ownership transfer",
+        "warningTitle": "Cancel the pending request"
+      },
+      "close": "Close",
+      "closeDialog": "Close ownership transfer dialog",
+      "currentOwner": "Current owner",
+      "decline": {
+        "confirmationLabel": "I confirm that I intend to decline the transfer from {owner} to {target}.",
+        "description": "Revalidate your credentials before declining this pending request.",
+        "submit": "Decline transfer",
+        "terminalWarning": "Declining is final; this request cannot later be accepted.",
+        "title": "Decline ownership transfer",
+        "warningTitle": "Decline the pending request"
+      },
+      "done": "Done",
+      "expiresAt": "Expires {date}",
+      "initiate": {
+        "confirmationLabel": "I confirm that I intend to invite {target} to replace {owner} as platform owner.",
+        "expiryNotice": "The operator must accept from their own recent MFA session within 30 minutes.",
+        "noImmediateChange": "Creating the request does not change either administrator's role or capabilities.",
+        "submit": "Create transfer request",
+        "successDescription": "{target} can now accept or decline from their own authenticated session.",
+        "successTitle": "Ownership transfer requested",
+        "warningTitle": "Two participants are required"
+      },
+      "loading": "Checking for a pending ownership transfer...",
+      "noUrlTokens": "No reusable transfer token is placed in a URL.",
+      "panelTitle": "Ownership transfer",
+      "passwordDescription": "Re-enter your current password. It is not persisted in the browser.",
+      "passwordLabel": "Current password",
+      "proposedOwner": "Proposed owner",
+      "result": {
+        "accepted": { "description": "Ownership changed atomically and both administrators' sessions were revoked.", "title": "Ownership transferred" },
+        "cancelled": { "description": "The request can no longer be accepted.", "title": "Transfer cancelled" },
+        "declined": { "description": "The request can no longer be accepted.", "title": "Transfer declined" },
+        "expired": { "description": "The request expired and cannot be accepted.", "title": "Transfer expired" },
+        "invalidated": { "description": "Account state changed and the request can no longer proceed.", "title": "Transfer invalidated" },
+        "pending": { "description": "The request remains pending.", "title": "Transfer pending" }
+      },
+      "status": {
+        "accepted": "Accepted",
+        "cancelled": "Cancelled",
+        "declined": "Declined",
+        "expired": "Expired",
+        "invalidated": "Invalidated",
+        "pending": "Pending"
+      },
+      "statusHelp": {
+        "accepted": "Both administrators must sign in again to receive their current capabilities.",
+        "cancelled": "This request was cancelled and cannot be replayed.",
+        "declined": "The proposed owner declined this request.",
+        "expired": "This request passed its acceptance window and cannot be used.",
+        "invalidated": "A role, status, version, or MFA change invalidated this request.",
+        "pending": "Only the current owner may cancel; only the proposed owner may accept or decline."
+      },
+      "submitting": "Verifying and submitting...",
+      "summary": "{owner} proposes transferring ownership to {target}.",
+      "totpDescription": "Enter the current six-digit code from your authenticator.",
+      "totpLabel": "Current authenticator code",
+      "validation": {
+        "confirmationRequired": "Confirm the exact ownership action before continuing.",
+        "passwordRequired": "Enter your current password.",
+        "totpInvalid": "Enter a valid six-digit authenticator code."
+      }
+    },
+    "resendInvitation": {
+      "successToast": "Invitation resent successfully"
+    },
+    "report": {
+      "generating": "Generating...",
+      "export": "Export",
+      "retry": "Retry"
+    },
+    "errors": {
+      "USER_NOT_FOUND": "User not found.",
+      "EMAIL_ALREADY_EXISTS": "A user with this email address already exists.",
+      "UNAUTHENTICATED": "You must sign in to perform this action.",
+      "FORBIDDEN": "You do not have permission to perform this action.",
+      "ACCOUNT_INACTIVE": "This account is not active.",
+      "ADMIN_PROFILE_REQUIRED": "This administrator account needs an owner or operator profile.",
+      "ADMIN_PROFILE_DEMOTION_BLOCKED": "This operator cannot become a trial user because the account identity or workspace is incomplete.",
+      "ADMIN_PROFILE_INCONSISTENT": "This account has an inconsistent administrator profile.",
+      "ADMIN_TARGET_FORBIDDEN": "Only the owner can manage administrator accounts.",
+      "OWNER_PROTECTED": "The platform owner account cannot be demoted or managed with trial-user actions.",
+      "INVALID_ADMIN_PROFILE_TARGET": "This account is not eligible for that administrator profile change.",
+      "STALE_ADMIN_PROFILE_VERSION": "The administrator profile changed. Refresh and try again.",
+      "ACCOUNT_HAS_MANAGED_DATA": "This account contains managed data and cannot be deleted yet.",
+      "ACCOUNT_NOT_READY": "This account is missing an active workspace or credential and cannot be activated.",
+      "CANNOT_DELETE_SELF": "You cannot delete your own account.",
+      "LAST_ADMIN_REQUIRED": "At least one active platform administrator must remain.",
+      "VALIDATION_ERROR": "Review the submitted information.",
+      "PROVISIONING_FAILED": "The account could not be provisioned completely. Review the account state before retrying.",
+      "TRIAL_USER_REQUIRED": "Only trial-user accounts can be deleted directly.",
+      "CANNOT_DEACTIVATE_SELF": "You cannot deactivate your own account.",
+      "CANNOT_REVOKE_SELF": "Use sign out instead of revoking your own sessions here.",
+      "CANNOT_DEACTIVATE_LAST_MANAGER": "Cannot deactivate the last active administrator.",
+      "INVALID_CURRENT_PASSWORD": "The current password you entered is incorrect.",
+      "INVALID_MFA_RECOVERY_TARGET": "This account is not eligible for operator MFA recovery.",
+      "INVALID_OWNERSHIP_TARGET": "This operator is not eligible to receive ownership.",
+      "INVALID_PASSWORD_RESET_TOKEN": "The password reset link is invalid or has expired.",
+      "INVALID_TWO_FACTOR_CODE": "The authenticator code is invalid or expired.",
+      "INVITATION_FAILED": "Failed to send the invitation. Please try again.",
+      "MFA_FACTOR_STATE_CHANGED": "The MFA state changed. Refresh before retrying.",
+      "MFA_TEMPORARILY_LOCKED": "MFA verification is temporarily locked. Wait before retrying.",
+      "OWNERSHIP_INVARIANT_VIOLATION": "The ownership invariant could not be verified. No transfer was applied.",
+      "OWNERSHIP_SWAP_INCOMPLETE": "The ownership transition did not complete. Access was closed; refresh and follow the recovery procedure.",
+      "OWNERSHIP_TRANSFER_EXPIRED": "This ownership transfer has expired.",
+      "OWNERSHIP_TRANSFER_NOT_FOUND": "This ownership transfer no longer exists.",
+      "OWNERSHIP_TRANSFER_PENDING": "Another ownership transfer is already pending.",
+      "OWNERSHIP_TRANSFER_RESOLVED": "This ownership transfer has already been resolved.",
+      "RECENT_SESSION_REQUIRED": "Sign in again to create a recent session before performing this operation.",
+      "SELF_RECOVERY_FORBIDDEN": "You cannot use operator MFA recovery on your own account.",
+      "STATE_CHANGED": "The administrator state changed. Refresh and try again.",
+      "UPDATE_ERROR": "Failed to update the user. Please try again.",
+      "INTERNAL_ERROR": "An unexpected error occurred. Please try again.",
+      "AUTH_ERROR": "You must be logged in to perform this action.",
+      "CREDENTIAL_ISSUANCE_IN_PROGRESS": "Another credential issuance is still in progress. Wait or use failure recovery after it becomes repairable.",
+      "CREDENTIAL_NOT_DELIVERABLE": "This credential issuance cannot be marked as delivered.",
+      "CREDENTIAL_POST_ROTATION_FAILED": "The password may have changed, but the secure transition did not complete. Start a new recovery issuance; do not use the displayed value.",
+      "CREDENTIAL_REISSUE_FAILED": "The credential could not be issued. The account remains blocked; retry this operation safely.",
+      "CREDENTIAL_SUPERSEDED": "A newer credential replaced this issuance. Refresh before continuing.",
+      "DELIVERY_CONFIRMATION_FAILED": "Delivery could not be confirmed. The credential remains issued with delivery unconfirmed.",
+      "DELIVERY_CONFLICT": "Delivery was already confirmed using different information. Refresh to see the current state.",
+      "DUPLICATE_OPERATION": "This operation was already submitted. Close this dialog and intentionally start a new issuance if needed.",
+      "INVALID_CREDENTIAL_TARGET": "Only managed trial-user accounts can receive a temporary credential.",
+      "INVALID_TRIAL_STATE": "The trial dates are inconsistent. Repair the account state before issuing a credential.",
+      "ISSUANCE_NOT_FOUND": "This credential issuance no longer exists. Refresh before continuing.",
+      "STALE_CREDENTIAL_VERSION": "The credential state changed. Refresh before starting another issuance."
+    },
+    "success": {
+      "activate": "User activated.",
+      "delete": "User account deleted.",
+      "demoteOperator": "Operator access removed. {count, plural, =0 {No active sessions were found.} one {# session was revoked.} other {# sessions were revoked.}}",
+      "promoteOperator": "User promoted to operator. {count, plural, =0 {No active sessions were found.} one {# session was revoked.} other {# sessions were revoked.}}",
+      "revokeSessions": "{count, plural, =0 {No active sessions were found.} one {# session revoked.} other {# sessions revoked.}}",
+      "suspend": "User suspended. {count, plural, =0 {No active sessions were found.} one {# session was revoked.} other {# sessions were revoked.}}"
+    },
+    "suspendSuccess": "User suspended",
+    "suspendedCount": "{count, plural, one {# user suspended} other {# users suspended}}"
+  }
+}

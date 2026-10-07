@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prisma ORM"
+  short_description: "Guía opcional para Prisma y PostgreSQL"
+  default_prompt: "Use $prisma-orm to add Prisma ORM to this Next.js project."

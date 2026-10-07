@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "crons": [
+    {
+      "path": "/api/cron/conversation-audio-cleanup",
+      "schedule": "0 0 * * *"
+    },
+    {
+      "path": "/api/cron/conversation-processing",
+      "schedule": "30 0 * * *"
+    }
+  ]
+}

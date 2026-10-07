@@ -1,0 +1,1427 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/persistence/generated"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// This schema is the physical starting point for docs/data-model.md. Invariants
+// that PostgreSQL/Prisma cannot express alone are listed in prisma/README.md
+// and must be added to the first reviewed migration or enforced transactionally.
+
+enum AppRole {
+  trial_user     @map("TRIAL_USER")
+  platform_admin @map("PLATFORM_ADMIN")
+}
+
+enum AdminProfile {
+  owner    @map("OWNER")
+  operator @map("OPERATOR")
+}
+
+enum AdminProfileMutationKind {
+  promote_operator       @map("PROMOTE_OPERATOR")
+  demote_operator        @map("DEMOTE_OPERATOR")
+  bootstrap_owner        @map("BOOTSTRAP_OWNER")
+  bootstrap_operator     @map("BOOTSTRAP_OPERATOR")
+  transfer_promote_owner @map("TRANSFER_PROMOTE_OWNER")
+  transfer_demote_owner  @map("TRANSFER_DEMOTE_OWNER")
+}
+
+enum AdminSecurityOperationKind {
+  operator_mfa_recovery       @map("OPERATOR_MFA_RECOVERY")
+  owner_mfa_break_glass       @map("OWNER_MFA_BREAK_GLASS")
+  ownership_transfer_initiate @map("OWNERSHIP_TRANSFER_INITIATE")
+  ownership_transfer_cancel   @map("OWNERSHIP_TRANSFER_CANCEL")
+  ownership_transfer_decline  @map("OWNERSHIP_TRANSFER_DECLINE")
+  ownership_transfer_accept   @map("OWNERSHIP_TRANSFER_ACCEPT")
+  ownership_transfer_expire   @map("OWNERSHIP_TRANSFER_EXPIRE")
+}
+
+enum AdminSecurityOperationStatus {
+  pending   @map("PENDING")
+  succeeded @map("SUCCEEDED")
+  denied    @map("DENIED")
+  failed    @map("FAILED")
+}
+
+enum MfaRecoveryReason {
+  lost_all_factors     @map("LOST_ALL_FACTORS")
+  lost_device          @map("LOST_DEVICE")
+  suspected_compromise @map("SUSPECTED_COMPROMISE")
+  operational_recovery @map("OPERATIONAL_RECOVERY")
+  other                @map("OTHER")
+}
+
+enum OwnershipTransferStatus {
+  pending     @map("PENDING")
+  accepted    @map("ACCEPTED")
+  declined    @map("DECLINED")
+  cancelled   @map("CANCELLED")
+  expired     @map("EXPIRED")
+  invalidated @map("INVALIDATED")
+}
+
+enum UserStatus {
+  active    @map("ACTIVE")
+  suspended @map("SUSPENDED")
+  deleting  @map("DELETING")
+  deleted   @map("DELETED")
+}
+
+enum AppLocale {
+  en @map("EN")
+  es @map("ES")
+}
+
+enum TemporaryPasswordPurpose {
+  activation @map("ACTIVATION")
+  recovery   @map("RECOVERY")
+}
+
+enum TemporaryCredentialReason {
+  expired_credential   @map("EXPIRED_CREDENTIAL")
+  forgotten_password   @map("FORGOTTEN_PASSWORD")
+  suspected_compromise @map("SUSPECTED_COMPROMISE")
+  failure_recovery     @map("FAILURE_RECOVERY")
+  other                @map("OTHER")
+}
+
+enum TemporaryCredentialIssuanceStatus {
+  prepared   @map("PREPARED")
+  issued     @map("ISSUED")
+  superseded @map("SUPERSEDED")
+  failed     @map("FAILED")
+}
+
+enum TemporaryCredentialDeliveryChannel {
+  in_person      @map("IN_PERSON")
+  phone          @map("PHONE")
+  secure_message @map("SECURE_MESSAGE")
+  other          @map("OTHER")
+}
+
+enum WorkspaceLifecycle {
+  ACTIVE
+  DELETING
+  DELETED
+}
+
+enum ServiceType {
+  INSTALLATION
+  REPAIR
+  MAINTENANCE
+  INSPECTION
+  OTHER
+}
+
+enum RequestPriority {
+  LOW
+  NORMAL
+  HIGH
+}
+
+enum ServiceRequestStatus {
+  PENDING
+  IN_PROGRESS
+  RESOLVED
+  CANCELLED
+}
+
+enum ConversationSourceType {
+  MICROPHONE
+  UPLOAD
+}
+
+enum ConversationStatus {
+  DRAFT
+  AUDIO_READY
+  QUEUED
+  TRANSCRIBING
+  DIARIZING
+  TRANSCRIBED
+  EXTRACTING
+  VALIDATING
+  NEEDS_REVIEW
+  READY
+  RECORD_PLAN_PENDING
+  COMPLETED
+  FAILED
+  QUOTA_BLOCKED
+  CANCELLED
+}
+
+enum DeletionState {
+  ACTIVE
+  DELETE_REQUESTED
+  DELETING
+  DELETED
+  FAILED
+}
+
+enum ArtifactVerificationState {
+  PENDING
+  UPLOADED
+  VERIFIED
+  REJECTED
+  DELETED
+}
+
+enum UploadGrantStatus {
+  ISSUED
+  COMPLETED
+  CONSUMED
+  EXPIRED
+  REVOKED
+}
+
+enum DiarizationStatus {
+  PENDING
+  AVAILABLE
+  UNAVAILABLE
+  FAILED
+}
+
+enum ProposalAuthorKind {
+  EXTRACTION
+  HUMAN
+}
+
+enum ProposalRevisionStatus {
+  CANDIDATE
+  READY
+  SUPERSEDED
+  INVALIDATED
+}
+
+enum ProposalFieldTarget {
+  CLIENT
+  REQUEST
+}
+
+enum ProposalFieldProvenance {
+  EXTRACTED
+  MANUAL
+  DEFAULT
+}
+
+enum FindingSeverity {
+  BLOCKING
+  WARNING
+  INFO
+}
+
+enum FindingCode {
+  MISSING_REQUIRED
+  INVALID_FORMAT
+  NONEXISTENT_EVIDENCE
+  AMBIGUITY
+  CONTRADICTION
+  LOW_CONFIDENCE
+  SENSITIVE_DATA_OMITTED
+}
+
+enum ProcessingRunStatus {
+  ACCEPTED
+  RUNNING
+  SUCCEEDED
+  FAILED
+  CANCELLED
+  QUOTA_BLOCKED
+}
+
+enum ProcessingStage {
+  QUEUED
+  TRANSCRIBING
+  DIARIZING
+  EXTRACTING
+  VALIDATING
+  PUBLISHING
+}
+
+enum CheckpointOutcome {
+  PENDING
+  SUCCEEDED
+  RETRYABLE_FAILURE
+  TERMINAL_FAILURE
+  SKIPPED
+}
+
+enum ProviderInvocationStatus {
+  PENDING
+  SUCCEEDED
+  FAILED
+  RATE_LIMITED
+  CANCELLED
+}
+
+enum CreditEntryKind {
+  GRANT
+  RESERVE
+  CONSUME
+  RESTORE
+  ADJUSTMENT
+}
+
+enum CreditReservationStatus {
+  ACTIVE
+  CONSUMED
+  RESTORED
+}
+
+enum RecordPlanKind {
+  MANUAL_CLIENT_CREATE
+  MANUAL_REQUEST_CREATE
+  CONVERSATION_BATCH_CREATE
+}
+
+enum RecordPlanStatus {
+  PREPARED
+  APPROVED
+  DENIED
+  COMMITTED
+  INVALIDATED
+  EXPIRED
+}
+
+enum RecordApprovalDecision {
+  APPROVED
+  DENIED
+}
+
+enum RecordOrigin {
+  MANUAL
+  CONVERSATION
+}
+
+enum OperationOutcome {
+  PENDING
+  SUCCEEDED
+  FAILED
+}
+
+enum OutboxStatus {
+  PENDING
+  PROCESSING
+  DELIVERED
+  FAILED
+}
+
+enum AssistantMessageRole {
+  USER
+  ASSISTANT
+  TOOL
+  SYSTEM
+}
+
+enum AssistantMessageStatus {
+  PENDING
+  STREAMING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+
+enum ToolInvocationStatus {
+  PENDING
+  AWAITING_APPROVAL
+  SUCCEEDED
+  DENIED
+  FAILED
+  CANCELLED
+}
+
+enum AuditOutcome {
+  ALLOWED
+  DENIED
+  SUCCEEDED
+  FAILED
+}
+
+enum CleanupTaskStatus {
+  PENDING
+  RUNNING
+  SUCCEEDED
+  FAILED
+  CANCELLED
+}
+
+enum PolicyStatus {
+  ACTIVE
+  DISABLED
+  ARCHIVED
+}
+
+enum CircuitState {
+  CLOSED
+  OPEN
+  HALF_OPEN
+}
+
+// Better Auth-compatible identity records. Auth implementation is intentionally
+// deferred; credentials stay in Account.password as a provider-owned hash only.
+model User {
+  id                               String                        @id @default(cuid())
+  email                            String                        @unique @db.VarChar(320)
+  emailVerified                    Boolean                       @default(false) @map("email_verified")
+  name                             String                        @db.VarChar(201)
+  image                            String?
+  role                             AppRole                       @default(trial_user)
+  adminProfile                     AdminProfile?                 @map("admin_profile")
+  adminProfileVersion              Int                           @default(0) @map("admin_profile_version")
+  status                           UserStatus                    @default(active)
+  locale                           AppLocale                     @default(en)
+  temporaryPasswordChangeRequired  Boolean                       @default(false) @map("temporary_password_change_required")
+  temporaryPasswordExpiresAt       DateTime?                     @map("temporary_password_expires_at")
+  temporaryPasswordPurpose         TemporaryPasswordPurpose?     @map("temporary_password_purpose")
+  temporaryCredentialVersion       Int                           @default(0) @map("temporary_credential_version")
+  trialActivatedAt                 DateTime?                     @map("trial_activated_at")
+  trialExpiresAt                   DateTime?                     @map("trial_expires_at")
+  initialCreditAllocation          Int                           @default(10) @map("initial_credit_allocation")
+  twoFactorEnabled                 Boolean                       @default(false) @map("two_factor_enabled")
+  banned                           Boolean                       @default(false)
+  banReason                        String?                       @map("ban_reason")
+  banExpires                       DateTime?                     @map("ban_expires")
+  createdAt                        DateTime                      @default(now()) @map("created_at")
+  updatedAt                        DateTime                      @updatedAt @map("updated_at")
+  sessions                         Session[]
+  accounts                         Account[]
+  twoFactor                        TwoFactor?
+  workspace                        Workspace?
+  createdClients                   Client[]                      @relation("ClientCreatedBy")
+  updatedClients                   Client[]                      @relation("ClientUpdatedBy")
+  createdRequests                  ServiceRequest[]              @relation("RequestCreatedBy")
+  updatedRequests                  ServiceRequest[]              @relation("RequestUpdatedBy")
+  humanProposalRevisions           ProposalRevision[]            @relation("ProposalHumanAuthor")
+  readyProposalRevisions           ProposalRevision[]            @relation("ProposalReadyBy")
+  createdRecordPlans               RecordPlan[]                  @relation("RecordPlanCreatedBy")
+  approvals                        RecordApproval[]
+  operationReceipts                OperationReceipt[]            @relation("OperationActor")
+  assistantThreads                 AssistantThread[]
+  assistantMessages                AssistantMessage[]            @relation("AssistantMessageAuthor")
+  auditEvents                      AuditEvent[]                  @relation("AuditActor")
+  cleanupTasks                     CleanupTask[]                 @relation("CleanupRequestedBy")
+  updatedPlatformSettings          PlatformSettings[]            @relation("PlatformSettingsUpdatedBy")
+  temporaryCredentialTargets       TemporaryCredentialIssuance[] @relation("TemporaryCredentialTarget")
+  initiatedTemporaryCredentials    TemporaryCredentialIssuance[] @relation("TemporaryCredentialInitiator")
+  deliveredTemporaryCredentials    TemporaryCredentialIssuance[] @relation("TemporaryCredentialDeliverer")
+  adminProfileMutationTargets      AdminProfileMutation[]        @relation("AdminProfileMutationTarget")
+  initiatedAdminProfileMutations   AdminProfileMutation[]        @relation("AdminProfileMutationInitiator")
+  initiatedAdminSecurityOperations AdminSecurityOperation[]      @relation("AdminSecurityOperationActor")
+  targetedAdminSecurityOperations  AdminSecurityOperation[]      @relation("AdminSecurityOperationTarget")
+  ownedOwnershipTransfers          OwnershipTransfer[]           @relation("OwnershipTransferOwner")
+  targetedOwnershipTransfers       OwnershipTransfer[]           @relation("OwnershipTransferTarget")
+
+  @@index([role, status])
+  @@index([adminProfile, status])
+  @@index([temporaryPasswordChangeRequired, temporaryPasswordExpiresAt], map: "users_temporary_password_change_required_temporary_password_exp")
+  @@index([trialExpiresAt])
+  @@map("users")
+}
+
+model TwoFactor {
+  id                      String    @id @default(cuid())
+  secret                  String
+  backupCodes             String    @map("backup_codes")
+  userId                  String    @unique @map("user_id")
+  verified                Boolean   @default(true)
+  failedVerificationCount Int       @default(0) @map("failed_verification_count")
+  lockedUntil             DateTime? @map("locked_until")
+  user                    User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([secret])
+  @@map("two_factor")
+}
+
+model AdminSecurityOperation {
+  id                     String                       @id @default(cuid())
+  operationId            String                       @unique @map("operation_id") @db.Uuid
+  kind                   AdminSecurityOperationKind
+  parameterFingerprint   String                       @map("parameter_fingerprint") @db.VarChar(64)
+  actorUserId            String?                      @map("actor_user_id")
+  targetUserId           String?                      @map("target_user_id")
+  ownershipTransferId    String?                      @map("ownership_transfer_id")
+  recoveryReason         MfaRecoveryReason?           @map("recovery_reason")
+  operationalReference   String?                      @map("operational_reference") @db.VarChar(120)
+  expectedActorVersion   Int?                         @map("expected_actor_version")
+  expectedTargetVersion  Int?                         @map("expected_target_version")
+  committedActorVersion  Int?                         @map("committed_actor_version")
+  committedTargetVersion Int?                         @map("committed_target_version")
+  status                 AdminSecurityOperationStatus @default(pending)
+  safeFailureCode        String?                      @map("safe_failure_code") @db.VarChar(64)
+  revokedActorSessions   Int                          @default(0) @map("revoked_actor_sessions")
+  revokedTargetSessions  Int                          @default(0) @map("revoked_target_sessions")
+  createdAt              DateTime                     @default(now()) @map("created_at")
+  completedAt            DateTime?                    @map("completed_at")
+  actor                  User?                        @relation("AdminSecurityOperationActor", fields: [actorUserId], references: [id], onDelete: SetNull)
+  target                 User?                        @relation("AdminSecurityOperationTarget", fields: [targetUserId], references: [id], onDelete: SetNull)
+  ownershipTransfer      OwnershipTransfer?           @relation(fields: [ownershipTransferId], references: [id], onDelete: Restrict)
+
+  @@index([targetUserId, kind, createdAt], map: "admin_security_operations_target_kind_created_idx")
+  @@index([actorUserId, createdAt], map: "admin_security_operations_actor_created_idx")
+  @@index([ownershipTransferId, createdAt], map: "admin_security_operations_transfer_created_idx")
+  @@map("admin_security_operations")
+}
+
+model OwnershipTransfer {
+  id                   String                   @id @default(cuid())
+  initiatedOperationId String                   @unique @map("initiated_operation_id") @db.Uuid
+  ownerUserId          String                   @map("owner_user_id")
+  targetUserId         String                   @map("target_user_id")
+  ownerVersion         Int                      @map("owner_version")
+  targetVersion        Int                      @map("target_version")
+  status               OwnershipTransferStatus  @default(pending)
+  pendingKey           String?                  @unique @default("ownership") @map("pending_key") @db.VarChar(32)
+  expiresAt            DateTime                 @map("expires_at")
+  initiatedAt          DateTime                 @default(now()) @map("initiated_at")
+  resolvedAt           DateTime?                @map("resolved_at")
+  owner                User                     @relation("OwnershipTransferOwner", fields: [ownerUserId], references: [id], onDelete: Restrict)
+  target               User                     @relation("OwnershipTransferTarget", fields: [targetUserId], references: [id], onDelete: Restrict)
+  operations           AdminSecurityOperation[]
+
+  @@index([status, expiresAt], map: "ownership_transfers_status_expires_idx")
+  @@index([ownerUserId, initiatedAt], map: "ownership_transfers_owner_created_idx")
+  @@index([targetUserId, initiatedAt], map: "ownership_transfers_target_created_idx")
+  @@map("ownership_transfers")
+}
+
+model AdminProfileMutation {
+  id                String                   @id @default(cuid())
+  operationId       String                   @unique @map("operation_id") @db.Uuid
+  kind              AdminProfileMutationKind
+  targetUserId      String?                  @map("target_user_id")
+  initiatedByUserId String?                  @map("initiated_by_user_id")
+  fromRole          AppRole                  @map("from_role")
+  fromAdminProfile  AdminProfile?            @map("from_admin_profile")
+  toRole            AppRole                  @map("to_role")
+  toAdminProfile    AdminProfile?            @map("to_admin_profile")
+  targetVersion     Int                      @map("target_version")
+  revokedSessions   Int                      @default(0) @map("revoked_sessions")
+  createdAt         DateTime                 @default(now()) @map("created_at")
+  target            User?                    @relation("AdminProfileMutationTarget", fields: [targetUserId], references: [id], onDelete: SetNull)
+  initiatedBy       User?                    @relation("AdminProfileMutationInitiator", fields: [initiatedByUserId], references: [id], onDelete: SetNull)
+
+  @@index([targetUserId, createdAt], map: "admin_profile_mutations_target_created_idx")
+  @@index([initiatedByUserId, createdAt], map: "admin_profile_mutations_initiator_created_idx")
+  @@map("admin_profile_mutations")
+}
+
+model TemporaryCredentialIssuance {
+  id                String                              @id @default(cuid())
+  operationId       String                              @unique @map("operation_id") @db.Uuid
+  targetUserId      String                              @map("target_user_id")
+  initiatedByUserId String?                             @map("initiated_by_user_id")
+  deliveredByUserId String?                             @map("delivered_by_user_id")
+  version           Int
+  purpose           TemporaryPasswordPurpose
+  reason            TemporaryCredentialReason
+  reasonNote        String?                             @map("reason_note") @db.VarChar(200)
+  status            TemporaryCredentialIssuanceStatus   @default(prepared)
+  preparedAt        DateTime                            @default(now()) @map("prepared_at")
+  issuedAt          DateTime?                           @map("issued_at")
+  expiresAt         DateTime?                           @map("expires_at")
+  failedAt          DateTime?                           @map("failed_at")
+  supersededAt      DateTime?                           @map("superseded_at")
+  safeFailureCode   String?                             @map("safe_failure_code") @db.VarChar(64)
+  deliveryChannel   TemporaryCredentialDeliveryChannel? @map("delivery_channel")
+  deliveredAt       DateTime?                           @map("delivered_at")
+  supersededById    String?                             @unique @map("superseded_by_id")
+  target            User                                @relation("TemporaryCredentialTarget", fields: [targetUserId], references: [id], onDelete: Restrict)
+  initiatedBy       User?                               @relation("TemporaryCredentialInitiator", fields: [initiatedByUserId], references: [id], onDelete: SetNull)
+  deliveredBy       User?                               @relation("TemporaryCredentialDeliverer", fields: [deliveredByUserId], references: [id], onDelete: SetNull)
+  supersededBy      TemporaryCredentialIssuance?        @relation("TemporaryCredentialSupersession", fields: [supersededById], references: [id], onDelete: SetNull)
+  supersedes        TemporaryCredentialIssuance?        @relation("TemporaryCredentialSupersession")
+
+  @@unique([targetUserId, version])
+  @@index([targetUserId, status, version], map: "temporary_credential_issuances_target_user_id_status_version_id")
+  @@index([initiatedByUserId, preparedAt], map: "temporary_credential_issuances_initiated_by_user_id_prepared_at")
+  @@index([deliveredByUserId, deliveredAt], map: "temporary_credential_issuances_delivered_by_user_id_delivered_a")
+  @@map("temporary_credential_issuances")
+}
+
+model Session {
+  id             String   @id @default(cuid())
+  expiresAt      DateTime @map("expires_at")
+  token          String   @unique
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+  ipAddress      String?  @map("ip_address")
+  userAgent      String?  @map("user_agent")
+  userId         String   @map("user_id")
+  impersonatedBy String?  @map("impersonated_by")
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("session")
+}
+
+model RateLimit {
+  id          String @id @default(cuid())
+  key         String @unique
+  count       Int
+  lastRequest BigInt @map("last_request")
+
+  @@map("rate_limit")
+}
+
+model Account {
+  id                    String    @id @default(cuid())
+  accountId             String    @map("account_id")
+  providerId            String    @map("provider_id")
+  userId                String    @map("user_id")
+  accessToken           String?   @map("access_token")
+  refreshToken          String?   @map("refresh_token")
+  idToken               String?   @map("id_token")
+  accessTokenExpiresAt  DateTime? @map("access_token_expires_at")
+  refreshTokenExpiresAt DateTime? @map("refresh_token_expires_at")
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now()) @map("created_at")
+  updatedAt             DateTime  @updatedAt @map("updated_at")
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([providerId, accountId])
+  @@index([userId])
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime @map("expires_at")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  @@index([identifier])
+  @@map("verification")
+}
+
+model Workspace {
+  id                  String               @id @default(cuid())
+  ownerId             String               @unique @map("owner_id")
+  lifecycle           WorkspaceLifecycle   @default(ACTIVE)
+  createdAt           DateTime             @default(now()) @map("created_at")
+  updatedAt           DateTime             @updatedAt @map("updated_at")
+  creditInitializedAt DateTime?            @map("credit_initialized_at")
+  owner               User                 @relation(fields: [ownerId], references: [id], onDelete: Restrict)
+  clients             Client[]
+  serviceRequests     ServiceRequest[]
+  conversations       Conversation[]
+  processingRuns      ProcessingRun[]
+  proposalRevisions   ProposalRevision[]
+  recordPlans         RecordPlan[]
+  operationReceipts   OperationReceipt[]
+  creditEntries       CreditEntry[]
+  creditReservations  CreditReservation[]
+  assistantThreads    AssistantThread[]
+  auditEvents         AuditEvent[]
+  cleanupTasks        CleanupTask[]
+  outboxEvents        OutboxEvent[]
+  uploadGrants        UploadGrant[]
+  providerInvocations ProviderInvocation[]
+
+  @@unique([id, ownerId])
+  @@map("workspaces")
+}
+
+model Client {
+  id                  String             @id @default(cuid())
+  workspaceId         String             @map("workspace_id")
+  name                String
+  email               String?            @db.VarChar(320)
+  normalizedEmail     String?            @map("normalized_email") @db.VarChar(320)
+  phone               String?            @db.VarChar(64)
+  normalizedPhone     String?            @map("normalized_phone") @db.VarChar(64)
+  company             String?
+  address             String?
+  notes               String?
+  creationOperationId String             @unique @map("creation_operation_id")
+  createdByUserId     String             @map("created_by_user_id")
+  updatedByUserId     String             @map("updated_by_user_id")
+  version             Int                @default(1)
+  createdAt           DateTime           @default(now()) @map("created_at")
+  updatedAt           DateTime           @updatedAt @map("updated_at")
+  workspace           Workspace          @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  creationOperation   OperationReceipt   @relation("ClientCreationOperation", fields: [creationOperationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  createdBy           User               @relation("ClientCreatedBy", fields: [createdByUserId], references: [id], onDelete: Restrict)
+  updatedBy           User               @relation("ClientUpdatedBy", fields: [updatedByUserId], references: [id], onDelete: Restrict)
+  serviceRequests     ServiceRequest[]
+  selectedByReceipts  OperationReceipt[] @relation("ReceiptSelectedClient")
+  recordPlans         RecordPlan[]       @relation("RecordPlanSelectedClient")
+
+  @@unique([id, workspaceId])
+  @@unique([creationOperationId, workspaceId])
+  @@index([workspaceId, normalizedEmail])
+  @@index([workspaceId, normalizedPhone])
+  @@index([workspaceId, createdAt])
+  @@map("clients")
+}
+
+model ServiceRequest {
+  id                   String               @id @default(cuid())
+  workspaceId          String               @map("workspace_id")
+  clientId             String               @map("client_id")
+  title                String
+  description          String
+  serviceType          ServiceType          @map("service_type")
+  priority             RequestPriority      @default(NORMAL)
+  status               ServiceRequestStatus @default(PENDING)
+  preferredSchedule    String?              @map("preferred_schedule")
+  serviceAddress       String?              @map("service_address")
+  nextSteps            String?              @map("next_steps")
+  creationOperationId  String               @map("creation_operation_id")
+  sourceProposalItemId String?              @map("source_proposal_item_id")
+  createdByUserId      String               @map("created_by_user_id")
+  updatedByUserId      String               @map("updated_by_user_id")
+  version              Int                  @default(1)
+  createdAt            DateTime             @default(now()) @map("created_at")
+  updatedAt            DateTime             @updatedAt @map("updated_at")
+  workspace            Workspace            @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  client               Client               @relation(fields: [clientId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  creationOperation    OperationReceipt     @relation("RequestCreationOperation", fields: [creationOperationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  createdBy            User                 @relation("RequestCreatedBy", fields: [createdByUserId], references: [id], onDelete: Restrict)
+  updatedBy            User                 @relation("RequestUpdatedBy", fields: [updatedByUserId], references: [id], onDelete: Restrict)
+
+  @@unique([id, workspaceId])
+  @@index([workspaceId, clientId, createdAt])
+  @@index([workspaceId, status])
+  @@index([workspaceId, sourceProposalItemId])
+  @@map("service_requests")
+}
+
+model Conversation {
+  id                        String                       @id @default(cuid())
+  workspaceId               String                       @map("workspace_id")
+  sourceType                ConversationSourceType       @map("source_type")
+  locale                    AppLocale
+  status                    ConversationStatus           @default(DRAFT)
+  currentRunId              String?                      @unique @map("current_run_id")
+  currentProposalRevisionId String?                      @unique @map("current_proposal_revision_id")
+  completedOperationId      String?                      @unique @map("completed_operation_id")
+  correlationId             String                       @map("correlation_id")
+  version                   Int                          @default(1)
+  deletionState             DeletionState                @default(ACTIVE) @map("deletion_state")
+  createdAt                 DateTime                     @default(now()) @map("created_at")
+  updatedAt                 DateTime                     @updatedAt @map("updated_at")
+  workspace                 Workspace                    @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  audioArtifact             AudioArtifact?
+  uploadGrants              UploadGrant[]
+  runs                      ProcessingRun[]              @relation("ConversationRuns")
+  currentRun                ProcessingRun?               @relation("ConversationCurrentRun", fields: [currentRunId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  proposalRevisions         ProposalRevision[]           @relation("ConversationProposalRevisions")
+  currentProposalRevision   ProposalRevision?            @relation("ConversationCurrentProposal", fields: [currentProposalRevisionId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  completedOperation        OperationReceipt?            @relation("ConversationCompletedOperation", fields: [completedOperationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  recordPlans               RecordPlan[]
+  operationReceipts         OperationReceipt[]           @relation("ReceiptSourceConversation")
+  assistantReferences       AssistantResourceReference[]
+  originalTranscript        OriginalTranscript?
+  diarizationVersions       DiarizationVersion[]
+
+  @@unique([id, workspaceId])
+  @@unique([currentRunId, workspaceId])
+  @@unique([currentProposalRevisionId, workspaceId])
+  @@unique([completedOperationId, workspaceId])
+  @@index([workspaceId, status, createdAt])
+  @@index([workspaceId, deletionState])
+  @@index([correlationId])
+  @@map("conversations")
+}
+
+model AudioArtifact {
+  id                String                    @id @default(cuid())
+  workspaceId       String                    @map("workspace_id")
+  conversationId    String                    @unique @map("conversation_id")
+  storageKey        String                    @unique @map("storage_key")
+  originalFilename  String?                   @map("original_filename")
+  verifiedMimeType  String?                   @map("verified_mime_type") @db.VarChar(127)
+  verifiedContainer String?                   @map("verified_container") @db.VarChar(64)
+  byteSize          BigInt?                   @map("byte_size")
+  durationMs        Int?                      @map("duration_ms")
+  checksumAlgorithm String?                   @map("checksum_algorithm") @db.VarChar(32)
+  checksum          String?                   @db.VarChar(256)
+  verificationState ArtifactVerificationState @default(PENDING) @map("verification_state")
+  deletionState     DeletionState             @default(ACTIVE) @map("deletion_state")
+  createdAt         DateTime                  @default(now()) @map("created_at")
+  updatedAt         DateTime                  @updatedAt @map("updated_at")
+  conversation      Conversation              @relation(fields: [conversationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  uploadGrants      UploadGrant[]
+
+  @@unique([id, workspaceId])
+  @@unique([conversationId, workspaceId])
+  @@index([workspaceId, verificationState])
+  @@index([workspaceId, deletionState])
+  @@map("audio_artifacts")
+}
+
+model UploadGrant {
+  id                 String            @id @default(cuid())
+  workspaceId        String            @map("workspace_id")
+  conversationId     String            @map("conversation_id")
+  expectedArtifactId String            @unique @map("expected_artifact_id")
+  stagingStorageKey  String            @unique @map("staging_storage_key")
+  declaredMimeType   String            @map("declared_mime_type") @db.VarChar(127)
+  declaredByteSize   BigInt            @map("declared_byte_size")
+  permittedMimeTypes Json              @map("permitted_mime_types")
+  maximumBytes       BigInt            @map("maximum_bytes")
+  expiresAt          DateTime          @map("expires_at")
+  status             UploadGrantStatus @default(ISSUED)
+  completedAt        DateTime?         @map("completed_at")
+  consumedAt         DateTime?         @map("consumed_at")
+  idempotencyKey     String            @unique @map("idempotency_key")
+  createdAt          DateTime          @default(now()) @map("created_at")
+  workspace          Workspace         @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  conversation       Conversation      @relation(fields: [conversationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  expectedArtifact   AudioArtifact     @relation(fields: [expectedArtifactId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+
+  @@unique([expectedArtifactId, workspaceId])
+  @@index([workspaceId, conversationId, expiresAt])
+  @@index([status, expiresAt])
+  @@map("upload_grants")
+}
+
+model ProcessingRun {
+  id                     String                 @id @default(cuid())
+  workspaceId            String                 @map("workspace_id")
+  conversationId         String                 @map("conversation_id")
+  idempotencyKey         String                 @unique @map("idempotency_key")
+  workflowRunId          String?                @unique @map("workflow_run_id")
+  previousRunId          String?                @map("previous_run_id")
+  status                 ProcessingRunStatus    @default(ACCEPTED)
+  stage                  ProcessingStage        @default(QUEUED)
+  taskProfileVersion     String?                @map("task_profile_version")
+  policyVersion          String?                @map("policy_version")
+  correlationId          String                 @map("correlation_id")
+  terminalReason         String?                @map("terminal_reason")
+  retryable              Boolean                @default(false)
+  startedAt              DateTime?              @map("started_at")
+  finishedAt             DateTime?              @map("finished_at")
+  createdAt              DateTime               @default(now()) @map("created_at")
+  workspace              Workspace              @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  conversation           Conversation           @relation("ConversationRuns", fields: [conversationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  previousRun            ProcessingRun?         @relation("ProcessingRetryChain", fields: [previousRunId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  retryRuns              ProcessingRun[]        @relation("ProcessingRetryChain")
+  reservation            CreditReservation?
+  currentForConversation Conversation?          @relation("ConversationCurrentRun")
+  checkpoints            ProcessingCheckpoint[]
+  transcript             OriginalTranscript?
+  diarizationVersions    DiarizationVersion[]
+  proposalRevisions      ProposalRevision[]
+  providerInvocations    ProviderInvocation[]
+  creditEntries          CreditEntry[]
+
+  @@unique([id, workspaceId])
+  @@index([workspaceId, conversationId, createdAt])
+  @@index([workspaceId, status, stage])
+  @@index([correlationId])
+  @@map("processing_runs")
+}
+
+model ProcessingCheckpoint {
+  id                   String            @id @default(cuid())
+  workspaceId          String            @map("workspace_id")
+  runId                String            @map("run_id")
+  stage                ProcessingStage
+  attempt              Int
+  leaseReference       String?           @map("lease_reference")
+  outcome              CheckpointOutcome @default(PENDING)
+  committedArtifactIds Json?             @map("committed_artifact_ids")
+  safeError            String?           @map("safe_error")
+  createdAt            DateTime          @default(now()) @map("created_at")
+  updatedAt            DateTime          @updatedAt @map("updated_at")
+  run                  ProcessingRun     @relation(fields: [runId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+
+  @@unique([runId, stage, attempt])
+  @@index([workspaceId, runId, stage])
+  @@map("processing_checkpoints")
+}
+
+model OriginalTranscript {
+  id                 String               @id @default(cuid())
+  workspaceId        String               @map("workspace_id")
+  conversationId     String               @unique @map("conversation_id")
+  processingRunId    String               @unique @map("processing_run_id")
+  text               String
+  language           AppLocale
+  finalizedAt        DateTime             @map("finalized_at")
+  contentFingerprint String               @map("content_fingerprint") @db.VarChar(128)
+  createdAt          DateTime             @default(now()) @map("created_at")
+  conversation       Conversation         @relation(fields: [conversationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  processingRun      ProcessingRun        @relation(fields: [processingRunId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  evidence           TranscriptEvidence[]
+  proposalRevisions  ProposalRevision[]   @relation("ProposalTranscript")
+
+  @@unique([id, workspaceId])
+  @@unique([conversationId, workspaceId])
+  @@unique([processingRunId, workspaceId])
+  @@index([workspaceId, conversationId])
+  @@map("original_transcripts")
+}
+
+model TranscriptEvidence {
+  id               String                  @id @default(cuid())
+  workspaceId      String                  @map("workspace_id")
+  transcriptId     String                  @map("transcript_id")
+  stableEvidenceId String                  @map("stable_evidence_id")
+  startOffset      Int                     @map("start_offset")
+  endOffset        Int                     @map("end_offset")
+  startMs          Int?                    @map("start_ms")
+  endMs            Int?                    @map("end_ms")
+  createdAt        DateTime                @default(now()) @map("created_at")
+  transcript       OriginalTranscript      @relation(fields: [transcriptId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  proposalFields   ProposalFieldEvidence[]
+  speakerSegments  SpeakerSegment[]
+
+  @@unique([transcriptId, stableEvidenceId])
+  @@unique([id, workspaceId])
+  @@index([workspaceId, transcriptId, startOffset])
+  @@map("transcript_evidence")
+}
+
+model DiarizationVersion {
+  id                String             @id @default(cuid())
+  workspaceId       String             @map("workspace_id")
+  conversationId    String             @map("conversation_id")
+  processingRunId   String             @map("processing_run_id")
+  version           Int
+  status            DiarizationStatus  @default(PENDING)
+  warnings          Json?
+  createdAt         DateTime           @default(now()) @map("created_at")
+  conversation      Conversation       @relation(fields: [conversationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  processingRun     ProcessingRun      @relation(fields: [processingRunId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  speakerSegments   SpeakerSegment[]
+  proposalRevisions ProposalRevision[] @relation("ProposalDiarization")
+
+  @@unique([id, workspaceId])
+  @@unique([conversationId, version])
+  @@index([workspaceId, conversationId, status])
+  @@map("diarization_versions")
+}
+
+model SpeakerSegment {
+  id                   String              @id @default(cuid())
+  workspaceId          String              @map("workspace_id")
+  diarizationVersionId String              @map("diarization_version_id")
+  evidenceId           String?             @map("evidence_id")
+  startMs              Int                 @map("start_ms")
+  endMs                Int                 @map("end_ms")
+  speakerLabel         String?             @map("speaker_label") @db.VarChar(128)
+  confidence           Decimal?            @db.Decimal(5, 4)
+  createdAt            DateTime            @default(now()) @map("created_at")
+  diarizationVersion   DiarizationVersion  @relation(fields: [diarizationVersionId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  evidence             TranscriptEvidence? @relation(fields: [evidenceId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+
+  @@index([workspaceId, diarizationVersionId, startMs])
+  @@map("speaker_segments")
+}
+
+model ProposalRevision {
+  id                     String                 @id @default(cuid())
+  workspaceId            String                 @map("workspace_id")
+  conversationId         String                 @map("conversation_id")
+  revisionNumber         Int                    @map("revision_number")
+  parentRevisionId       String?                @map("parent_revision_id")
+  producingRunId         String?                @map("producing_run_id")
+  transcriptId           String?                @map("transcript_id")
+  diarizationVersionId   String?                @map("diarization_version_id")
+  schemaVersion          String                 @map("schema_version")
+  taskProfileVersion     String                 @map("task_profile_version")
+  promptVersion          String                 @map("prompt_version")
+  policyVersion          String                 @map("policy_version")
+  authorKind             ProposalAuthorKind     @map("author_kind")
+  authorUserId           String?                @map("author_user_id")
+  validationSummary      Json?                  @map("validation_summary")
+  status                 ProposalRevisionStatus @default(CANDIDATE)
+  readyAt                DateTime?              @map("ready_at")
+  readyByUserId          String?                @map("ready_by_user_id")
+  createdAt              DateTime               @default(now()) @map("created_at")
+  operationKey           String?                @unique @map("operation_key")
+  inputFingerprint       String?                @map("input_fingerprint") @db.VarChar(64)
+  sealedAt               DateTime?              @map("sealed_at")
+  workspace              Workspace              @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  conversation           Conversation           @relation("ConversationProposalRevisions", fields: [conversationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  parentRevision         ProposalRevision?      @relation("ProposalRevisionLineage", fields: [parentRevisionId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  childRevisions         ProposalRevision[]     @relation("ProposalRevisionLineage")
+  producingRun           ProcessingRun?         @relation(fields: [producingRunId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  transcript             OriginalTranscript?    @relation("ProposalTranscript", fields: [transcriptId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  diarizationVersion     DiarizationVersion?    @relation("ProposalDiarization", fields: [diarizationVersionId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  authorUser             User?                  @relation("ProposalHumanAuthor", fields: [authorUserId], references: [id], onDelete: SetNull)
+  readyByUser            User?                  @relation("ProposalReadyBy", fields: [readyByUserId], references: [id], onDelete: SetNull)
+  currentForConversation Conversation?          @relation("ConversationCurrentProposal")
+  clientDraft            ProposalClientDraft?
+  requestItems           ProposalRequestItem[]
+  fields                 ProposalField[]
+  findings               ProposalFinding[]
+  recordPlans            RecordPlan[]
+  operationReceipts      OperationReceipt[]     @relation("ReceiptSourceRevision")
+
+  @@unique([id, workspaceId])
+  @@unique([conversationId, revisionNumber])
+  @@index([workspaceId, conversationId, status])
+  @@map("proposal_revisions")
+}
+
+model ProposalClientDraft {
+  id              String           @id @default(cuid())
+  workspaceId     String           @map("workspace_id")
+  revisionId      String           @unique @map("revision_id")
+  stableItemId    String           @map("stable_item_id")
+  name            String?
+  email           String?          @db.VarChar(320)
+  normalizedEmail String?          @map("normalized_email") @db.VarChar(320)
+  phone           String?          @db.VarChar(64)
+  normalizedPhone String?          @map("normalized_phone") @db.VarChar(64)
+  company         String?
+  address         String?
+  notes           String?
+  createdAt       DateTime         @default(now()) @map("created_at")
+  revision        ProposalRevision @relation(fields: [revisionId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+
+  @@unique([revisionId, stableItemId])
+  @@unique([revisionId, workspaceId])
+  @@map("proposal_client_drafts")
+}
+
+model ProposalRequestItem {
+  id                String           @id @default(cuid())
+  workspaceId       String           @map("workspace_id")
+  revisionId        String           @map("revision_id")
+  stableItemId      String           @map("stable_item_id")
+  displayOrder      Int              @map("display_order")
+  title             String?
+  description       String?
+  serviceType       ServiceType?     @map("service_type")
+  priority          RequestPriority?
+  preferredSchedule String?          @map("preferred_schedule")
+  serviceAddress    String?          @map("service_address")
+  nextSteps         String?          @map("next_steps")
+  createdAt         DateTime         @default(now()) @map("created_at")
+  revision          ProposalRevision @relation(fields: [revisionId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  fields            ProposalField[]
+
+  @@unique([id, workspaceId])
+  @@unique([revisionId, stableItemId])
+  @@unique([revisionId, displayOrder])
+  @@map("proposal_request_items")
+}
+
+model ProposalField {
+  id                 String                  @id @default(cuid())
+  workspaceId        String                  @map("workspace_id")
+  revisionId         String                  @map("revision_id")
+  target             ProposalFieldTarget
+  requestItemId      String?                 @map("request_item_id")
+  fieldKey           String                  @map("field_key") @db.VarChar(128)
+  observedValue      String?                 @map("observed_value")
+  normalizedValue    String?                 @map("normalized_value")
+  provenance         ProposalFieldProvenance
+  confidence         Decimal?                @db.Decimal(5, 4)
+  validationFindings Json?                   @map("validation_findings")
+  createdAt          DateTime                @default(now()) @map("created_at")
+  revision           ProposalRevision        @relation(fields: [revisionId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  requestItem        ProposalRequestItem?    @relation(fields: [requestItemId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  evidenceLinks      ProposalFieldEvidence[]
+  findings           ProposalFinding[]
+
+  @@unique([revisionId, target, requestItemId, fieldKey])
+  @@unique([id, workspaceId])
+  @@index([workspaceId, revisionId])
+  @@map("proposal_fields")
+}
+
+model ProposalFieldEvidence {
+  proposalFieldId String             @map("proposal_field_id")
+  evidenceId      String             @map("evidence_id")
+  workspaceId     String             @map("workspace_id")
+  createdAt       DateTime           @default(now()) @map("created_at")
+  proposalField   ProposalField      @relation(fields: [proposalFieldId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  evidence        TranscriptEvidence @relation(fields: [evidenceId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+
+  @@id([proposalFieldId, evidenceId, workspaceId])
+  @@map("proposal_field_evidence")
+}
+
+model ProposalFinding {
+  id          String           @id @default(cuid())
+  workspaceId String           @map("workspace_id")
+  revisionId  String           @map("revision_id")
+  fieldId     String?          @map("field_id")
+  code        FindingCode
+  severity    FindingSeverity
+  safeMessage String?          @map("safe_message")
+  resolvedAt  DateTime?        @map("resolved_at")
+  createdAt   DateTime         @default(now()) @map("created_at")
+  revision    ProposalRevision @relation(fields: [revisionId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  field       ProposalField?   @relation(fields: [fieldId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+
+  @@index([workspaceId, revisionId, severity])
+  @@map("proposal_findings")
+}
+
+model CreditReservation {
+  id               String                  @id @default(cuid())
+  workspaceId      String                  @map("workspace_id")
+  processingRunId  String                  @unique @map("processing_run_id")
+  quantity         Int
+  status           CreditReservationStatus @default(ACTIVE)
+  reservedAt       DateTime                @default(now()) @map("reserved_at")
+  settledAt        DateTime?               @map("settled_at")
+  settlementReason String?                 @map("settlement_reason")
+  operationKey     String                  @unique @map("operation_key")
+  createdAt        DateTime                @default(now()) @map("created_at")
+  workspace        Workspace               @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  processingRun    ProcessingRun           @relation(fields: [processingRunId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  entries          CreditEntry[]
+
+  @@unique([id, workspaceId])
+  @@unique([processingRunId, workspaceId])
+  @@index([workspaceId, status])
+  @@map("credit_reservations")
+}
+
+model CreditEntry {
+  id              String             @id @default(cuid())
+  workspaceId     String             @map("workspace_id")
+  kind            CreditEntryKind
+  quantity        Int
+  reservationId   String?            @map("reservation_id")
+  processingRunId String?            @map("processing_run_id")
+  actorUserId     String?            @map("actor_user_id")
+  reason          String?
+  operationKey    String             @unique @map("operation_key")
+  createdAt       DateTime           @default(now()) @map("created_at")
+  workspace       Workspace          @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  reservation     CreditReservation? @relation(fields: [reservationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  processingRun   ProcessingRun?     @relation(fields: [processingRunId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+
+  @@index([workspaceId, createdAt])
+  @@index([workspaceId, kind])
+  @@map("credit_entries")
+}
+
+model ProviderInvocation {
+  id                 String                   @id @default(cuid())
+  workspaceId        String?                  @map("workspace_id")
+  processingRunId    String?                  @map("processing_run_id")
+  assistantMessageId String?                  @map("assistant_message_id")
+  capability         String                   @db.VarChar(128)
+  providerAlias      String                   @map("provider_alias") @db.VarChar(128)
+  modelAlias         String?                  @map("model_alias") @db.VarChar(128)
+  providerJobId      String?                  @map("provider_job_id") @db.VarChar(191)
+  providerUpdatedAt  DateTime?                @map("provider_updated_at")
+  taskProfileVersion String?                  @map("task_profile_version")
+  promptFingerprint  String?                  @map("prompt_fingerprint") @db.VarChar(128)
+  schemaFingerprint  String?                  @map("schema_fingerprint") @db.VarChar(128)
+  latencyMs          Int?                     @map("latency_ms")
+  usage              Json?
+  status             ProviderInvocationStatus @default(PENDING)
+  safeError          String?                  @map("safe_error")
+  correlationId      String                   @map("correlation_id")
+  createdAt          DateTime                 @default(now()) @map("created_at")
+  processingRun      ProcessingRun?           @relation(fields: [processingRunId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  assistantMessage   AssistantMessage?        @relation(fields: [assistantMessageId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  workspace          Workspace?               @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+
+  @@unique([processingRunId, capability])
+  @@index([workspaceId, capability, createdAt])
+  @@index([correlationId])
+  @@index([providerAlias, providerJobId])
+  @@map("provider_invocations")
+}
+
+model RecordPlan {
+  id                    String            @id @default(cuid())
+  workspaceId           String            @map("workspace_id")
+  kind                  RecordPlanKind
+  status                RecordPlanStatus  @default(PREPARED)
+  normalizedPayload     Json?             @map("normalized_payload")
+  payloadPurgedAt       DateTime?         @map("payload_purged_at")
+  selectedClientId      String?           @map("selected_client_id")
+  selectedClientVersion Int?              @map("selected_client_version")
+  duplicateCandidates   Json?             @map("duplicate_candidates")
+  duplicateDecision     String?           @map("duplicate_decision")
+  sourceConversationId  String?           @map("source_conversation_id")
+  sourceRevisionId      String?           @map("source_revision_id")
+  planVersion           Int               @default(1) @map("plan_version")
+  planHash              String            @unique @map("plan_hash") @db.VarChar(128)
+  operationIntent       String            @unique @map("operation_intent")
+  expiresAt             DateTime          @map("expires_at")
+  invalidatedAt         DateTime?         @map("invalidated_at")
+  createdByUserId       String            @map("created_by_user_id")
+  createdAt             DateTime          @default(now()) @map("created_at")
+  updatedAt             DateTime          @updatedAt @map("updated_at")
+  workspace             Workspace         @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  selectedClient        Client?           @relation("RecordPlanSelectedClient", fields: [selectedClientId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  sourceConversation    Conversation?     @relation(fields: [sourceConversationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  sourceRevision        ProposalRevision? @relation(fields: [sourceRevisionId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  createdBy             User              @relation("RecordPlanCreatedBy", fields: [createdByUserId], references: [id], onDelete: Restrict)
+  approvals             RecordApproval[]
+  receipt               OperationReceipt?
+  toolInvocations       ToolInvocation[]
+
+  @@unique([id, workspaceId])
+  @@index([workspaceId, status, expiresAt])
+  @@index([workspaceId, sourceConversationId])
+  @@map("record_plans")
+}
+
+model RecordApproval {
+  id              String                 @id @default(cuid())
+  workspaceId     String                 @map("workspace_id")
+  planId          String                 @map("plan_id")
+  planHash        String                 @map("plan_hash") @db.VarChar(128)
+  userId          String                 @map("user_id")
+  decision        RecordApprovalDecision
+  expiresAt       DateTime               @map("expires_at")
+  decidedAt       DateTime               @default(now()) @map("decided_at")
+  createdAt       DateTime               @default(now()) @map("created_at")
+  plan            RecordPlan             @relation(fields: [planId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  user            User                   @relation(fields: [userId], references: [id], onDelete: Restrict)
+  toolInvocations ToolInvocation[]
+
+  @@unique([planId, planHash, userId])
+  @@unique([id, workspaceId])
+  @@index([workspaceId, planId, expiresAt])
+  @@map("record_approvals")
+}
+
+model OperationReceipt {
+  id                    String            @id @default(cuid())
+  workspaceId           String            @map("workspace_id")
+  planId                String?           @unique @map("plan_id")
+  operationIntent       String            @unique @map("operation_intent")
+  idempotencyKey        String            @unique @map("idempotency_key")
+  origin                RecordOrigin
+  outcome               OperationOutcome  @default(PENDING)
+  sourceConversationId  String?           @map("source_conversation_id")
+  sourceRevisionId      String?           @map("source_revision_id")
+  sourceDeleted         Boolean           @default(false) @map("source_deleted")
+  selectedClientId      String?           @map("selected_client_id")
+  resultRequestIds      Json?             @map("result_request_ids")
+  actorUserId           String            @map("actor_user_id")
+  completedAt           DateTime?         @map("completed_at")
+  createdAt             DateTime          @default(now()) @map("created_at")
+  workspace             Workspace         @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  plan                  RecordPlan?       @relation(fields: [planId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  sourceConversation    Conversation?     @relation("ReceiptSourceConversation", fields: [sourceConversationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  sourceRevision        ProposalRevision? @relation("ReceiptSourceRevision", fields: [sourceRevisionId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  selectedClient        Client?           @relation("ReceiptSelectedClient", fields: [selectedClientId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  actor                 User              @relation("OperationActor", fields: [actorUserId], references: [id], onDelete: Restrict)
+  createdClient         Client?           @relation("ClientCreationOperation")
+  createdRequests       ServiceRequest[]  @relation("RequestCreationOperation")
+  completedConversation Conversation?     @relation("ConversationCompletedOperation")
+  outboxEvents          OutboxEvent[]
+  toolInvocations       ToolInvocation[]
+
+  @@unique([id, workspaceId])
+  @@unique([planId, workspaceId])
+  @@index([workspaceId, outcome, createdAt])
+  @@index([workspaceId, sourceConversationId])
+  @@map("operation_receipts")
+}
+
+model OutboxEvent {
+  id             String            @id @default(cuid())
+  workspaceId    String            @map("workspace_id")
+  operationId    String?           @map("operation_id")
+  eventType      String            @map("event_type") @db.VarChar(128)
+  aggregateType  String            @map("aggregate_type") @db.VarChar(128)
+  aggregateId    String            @map("aggregate_id")
+  payload        Json?
+  status         OutboxStatus      @default(PENDING)
+  attempts       Int               @default(0)
+  correlationId  String            @map("correlation_id")
+  idempotencyKey String            @unique @map("idempotency_key")
+  availableAt    DateTime          @default(now()) @map("available_at")
+  deliveredAt    DateTime?         @map("delivered_at")
+  safeError      String?           @map("safe_error")
+  createdAt      DateTime          @default(now()) @map("created_at")
+  workspace      Workspace         @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  operation      OperationReceipt? @relation(fields: [operationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+
+  @@index([status, availableAt])
+  @@index([workspaceId, aggregateType, aggregateId])
+  @@index([correlationId])
+  @@map("outbox_events")
+}
+
+model AssistantThread {
+  id              String                       @id @default(cuid())
+  workspaceId     String                       @map("workspace_id")
+  ownerUserId     String                       @map("owner_user_id")
+  title           String?
+  createdAt       DateTime                     @default(now()) @map("created_at")
+  updatedAt       DateTime                     @updatedAt @map("updated_at")
+  workspace       Workspace                    @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  owner           User                         @relation(fields: [ownerUserId], references: [id], onDelete: Restrict)
+  messages        AssistantMessage[]
+  resources       AssistantResourceReference[]
+  toolInvocations ToolInvocation[]
+
+  @@unique([id, workspaceId])
+  @@index([workspaceId, ownerUserId, updatedAt])
+  @@map("assistant_threads")
+}
+
+model AssistantMessage {
+  id                  String                 @id @default(cuid())
+  workspaceId         String                 @map("workspace_id")
+  threadId            String                 @map("thread_id")
+  authorUserId        String?                @map("author_user_id")
+  role                AssistantMessageRole
+  content             String?
+  status              AssistantMessageStatus @default(PENDING)
+  createdAt           DateTime               @default(now()) @map("created_at")
+  updatedAt           DateTime               @updatedAt @map("updated_at")
+  thread              AssistantThread        @relation(fields: [threadId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  author              User?                  @relation("AssistantMessageAuthor", fields: [authorUserId], references: [id], onDelete: SetNull)
+  providerInvocations ProviderInvocation[]
+  toolInvocations     ToolInvocation[]
+
+  @@unique([id, workspaceId])
+  @@index([workspaceId, threadId, createdAt])
+  @@map("assistant_messages")
+}
+
+model AssistantResourceReference {
+  id             String          @id @default(cuid())
+  workspaceId    String          @map("workspace_id")
+  threadId       String          @map("thread_id")
+  conversationId String?         @map("conversation_id")
+  resourceType   String          @map("resource_type") @db.VarChar(128)
+  resourceId     String          @map("resource_id")
+  createdAt      DateTime        @default(now()) @map("created_at")
+  thread         AssistantThread @relation(fields: [threadId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  conversation   Conversation?   @relation(fields: [conversationId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+
+  @@unique([threadId, resourceType, resourceId])
+  @@index([workspaceId, conversationId])
+  @@map("assistant_resource_references")
+}
+
+model ToolInvocation {
+  id                 String               @id @default(cuid())
+  workspaceId        String               @map("workspace_id")
+  threadId           String               @map("thread_id")
+  messageId          String               @map("message_id")
+  toolCode           String               @map("tool_code") @db.VarChar(128)
+  arguments          Json?
+  result             Json?
+  status             ToolInvocationStatus @default(PENDING)
+  recordPlanId       String?              @map("record_plan_id")
+  recordApprovalId   String?              @map("record_approval_id")
+  operationReceiptId String?              @map("operation_receipt_id")
+  correlationId      String               @map("correlation_id")
+  createdAt          DateTime             @default(now()) @map("created_at")
+  updatedAt          DateTime             @updatedAt @map("updated_at")
+  thread             AssistantThread      @relation(fields: [threadId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  message            AssistantMessage     @relation(fields: [messageId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  recordPlan         RecordPlan?          @relation(fields: [recordPlanId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  recordApproval     RecordApproval?      @relation(fields: [recordApprovalId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+  operationReceipt   OperationReceipt?    @relation(fields: [operationReceiptId, workspaceId], references: [id, workspaceId], onDelete: Restrict)
+
+  @@index([workspaceId, threadId, createdAt])
+  @@index([correlationId])
+  @@map("tool_invocations")
+}
+
+model AuditEvent {
+  id             String       @id @default(cuid())
+  workspaceId    String?      @map("workspace_id")
+  actorUserId    String?      @map("actor_user_id")
+  targetUserId   String?      @map("target_user_id")
+  resourceType   String       @map("resource_type") @db.VarChar(128)
+  resourceId     String?      @map("resource_id")
+  action         String       @db.VarChar(128)
+  outcome        AuditOutcome
+  declaredReason String?      @map("declared_reason")
+  correlationId  String       @map("correlation_id")
+  safeMetadata   Json?        @map("safe_metadata")
+  createdAt      DateTime     @default(now()) @map("created_at")
+  workspace      Workspace?   @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  actor          User?        @relation("AuditActor", fields: [actorUserId], references: [id], onDelete: SetNull)
+
+  @@index([workspaceId, createdAt])
+  @@index([actorUserId, createdAt])
+  @@index([correlationId])
+  @@map("audit_events")
+}
+
+model CleanupTask {
+  id                String            @id @default(cuid())
+  workspaceId       String?           @map("workspace_id")
+  resourceType      String            @map("resource_type") @db.VarChar(128)
+  resourceId        String            @map("resource_id")
+  storageKey        String?           @map("storage_key")
+  providerReference String?           @map("provider_reference") @db.VarChar(191)
+  deletionIntent    String            @map("deletion_intent") @db.VarChar(128)
+  status            CleanupTaskStatus @default(PENDING)
+  attempts          Int               @default(0)
+  requestedByUserId String?           @map("requested_by_user_id")
+  correlationId     String            @map("correlation_id")
+  safeError         String?           @map("safe_error")
+  availableAt       DateTime          @default(now()) @map("available_at")
+  completedAt       DateTime?         @map("completed_at")
+  createdAt         DateTime          @default(now()) @map("created_at")
+  updatedAt         DateTime          @updatedAt @map("updated_at")
+  workspace         Workspace?        @relation(fields: [workspaceId], references: [id], onDelete: Restrict)
+  requestedBy       User?             @relation("CleanupRequestedBy", fields: [requestedByUserId], references: [id], onDelete: SetNull)
+
+  @@unique([resourceType, resourceId, deletionIntent])
+  @@index([status, availableAt])
+  @@index([workspaceId, createdAt])
+  @@index([correlationId])
+  @@map("cleanup_tasks")
+}
+
+model TaskProfile {
+  id            String       @id @default(cuid())
+  capability    String       @db.VarChar(128)
+  version       String       @db.VarChar(128)
+  providerAlias String       @map("provider_alias") @db.VarChar(128)
+  modelAlias    String?      @map("model_alias") @db.VarChar(128)
+  schemaVersion String?      @map("schema_version")
+  promptVersion String?      @map("prompt_version")
+  policyVersion String?      @map("policy_version")
+  runtimeLimits Json         @map("runtime_limits")
+  status        PolicyStatus @default(ACTIVE)
+  createdAt     DateTime     @default(now()) @map("created_at")
+  updatedAt     DateTime     @updatedAt @map("updated_at")
+
+  @@unique([capability, version])
+  @@index([capability, status])
+  @@map("task_profiles")
+}
+
+model PlatformPolicy {
+  id             String       @id @default(cuid())
+  policyKey      String       @unique @map("policy_key") @db.VarChar(128)
+  version        String       @db.VarChar(128)
+  status         PolicyStatus @default(ACTIVE)
+  featureEnabled Boolean      @default(true) @map("feature_enabled")
+  circuitState   CircuitState @default(CLOSED) @map("circuit_state")
+  runtimeLimits  Json?        @map("runtime_limits")
+  configuration  Json?
+  createdAt      DateTime     @default(now()) @map("created_at")
+  updatedAt      DateTime     @updatedAt @map("updated_at")
+
+  @@unique([policyKey, version])
+  @@index([status, featureEnabled])
+  @@map("platform_policies")
+}
+
+model PlatformSettings {
+  id                    String   @id @default("public-access") @db.VarChar(32)
+  accessContactEmail    String   @map("access_contact_email") @db.VarChar(320)
+  accessRequestsEnabled Boolean  @default(false) @map("access_requests_enabled")
+  version               Int      @default(0)
+  updatedByUserId       String?  @map("updated_by_user_id")
+  createdAt             DateTime @default(now()) @map("created_at")
+  updatedAt             DateTime @updatedAt @map("updated_at")
+  updatedBy             User?    @relation("PlatformSettingsUpdatedBy", fields: [updatedByUserId], references: [id], onDelete: SetNull)
+
+  @@index([updatedByUserId])
+  @@map("platform_settings")
+}

@@ -1,0 +1,155 @@
+import "server-only";
+
+import prisma, { Prisma, WidgetType as PrismaWidgetType } from "@/lib/persistence/prisma";
+import { requireCurrentActor } from "@/lib/auth/current-actor";
+import type { ServiceResponse } from "@/lib/api-responses";
+import type {
+  CreateWidgetDto,
+  EditWidgetDto,
+  Widget,
+  WidgetDetails,
+  WidgetFiltersDto,
+  WidgetUserOption,
+  WidgetUsersForSelectQuery,
+  WidgetUsersForSelectResponse,
+  WidgetsResponse,
+} from "../types/widget.types";
+
+const WIDGET_SELECT = {
+  id: true, name: true, description: true, isActive: true, type: true,
+  createdById: true, createdAt: true, updatedById: true, updatedAt: true,
+  createdByUser: { select: { id: true, fullName: true, email: true } },
+  updatedByUser: { select: { id: true, fullName: true, email: true } },
+} satisfies Prisma.WidgetSelect;
+
+type DatabaseWidget = Prisma.WidgetGetPayload<{ select: typeof WIDGET_SELECT }>;
+const typeFromPrisma = { TYPE_A: "type_a", TYPE_B: "type_b" } as const;
+const typeToPrisma = { type_a: PrismaWidgetType.TYPE_A, type_b: PrismaWidgetType.TYPE_B } as const;
+
+// `@/lib/persistence/prisma` is a project-owned boundary supplied by its
+// official Prisma setup. This reference does not prescribe that setup.
+// This authenticates the request only. Before copying this reference, apply
+// the project's owner/role/tenant authorization scope to every query; see
+// .agent/skills/prisma-orm/references/service-patterns.md.
+
+function toWidget(widget: DatabaseWidget): Widget {
+  return {
+    id: widget.id, name: widget.name, description: widget.description,
+    isActive: widget.isActive, type: typeFromPrisma[widget.type],
+    createdBy: widget.createdById, createdAt: widget.createdAt.toISOString(),
+    updatedBy: widget.updatedById, updatedAt: widget.updatedAt.toISOString(),
+    createdByUser: { id: widget.createdByUser.id, full_name: widget.createdByUser.fullName, email: widget.createdByUser.email },
+    updatedByUser: widget.updatedByUser && { id: widget.updatedByUser.id, full_name: widget.updatedByUser.fullName, email: widget.updatedByUser.email },
+  };
+}
+
+function persistenceError(error: unknown): ServiceResponse<never> {
+  if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2025") return { success: false, error: { code: "NOT_FOUND", message: "Widget not found." } };
+  if (error instanceof Prisma.PrismaClientKnownRequestError && error.code === "P2002") return { success: false, error: { code: "WIDGET_ALREADY_EXISTS", message: "A widget with this name already exists for its creator." } };
+  console.error("Widget persistence operation failed", error);
+  return { success: false, error: { code: "INTERNAL_ERROR", message: "Unable to complete the widget operation." } };
+}
+
+function normalizePagination(filters: WidgetFiltersDto) {
+  const page = Math.max(1, Math.floor(filters.page ?? 1));
+  const limit = Math.min(100, Math.max(1, Math.floor(filters.limit ?? 10)));
+  return { page, limit, skip: (page - 1) * limit };
+}
+
+export async function getAllWidgets(filters: WidgetFiltersDto = {}): Promise<WidgetsResponse> {
+  await requireCurrentActor();
+  const { page, limit, skip } = normalizePagination(filters);
+  const search = filters.search?.trim();
+  const where: Prisma.WidgetWhereInput = {
+    ...(filters.isActive === undefined ? {} : { isActive: filters.isActive }),
+    ...(filters.createdBy ? { createdById: filters.createdBy } : {}),
+    ...(search ? { OR: [{ name: { contains: search, mode: "insensitive" } }, { description: { contains: search, mode: "insensitive" } }] } : {}),
+  };
+  const order = filters.sortOrder === "desc" ? "desc" : "asc";
+  const orderBy: Record<string, Prisma.WidgetOrderByWithRelationInput> = {
+    name: { name: order }, createdAt: { createdAt: order }, updatedAt: { updatedAt: order }, type: { type: order },
+  };
+  const [widgets, total] = await prisma.$transaction([
+    prisma.widget.findMany({ where, select: WIDGET_SELECT, skip, take: limit, orderBy: orderBy[filters.sortBy ?? "name"] ?? orderBy.name }),
+    prisma.widget.count({ where }),
+  ]);
+  return { widgets: widgets.map(toWidget), pagination: { page, limit, total, totalPages: Math.ceil(total / limit) || 0 } };
+}
+
+export async function getWidgetById(id: string): Promise<ServiceResponse<WidgetDetails>> {
+  try {
+    await requireCurrentActor();
+    const widget = await prisma.widget.findUnique({ where: { id }, select: WIDGET_SELECT });
+    return widget ? { success: true, data: toWidget(widget) } : { success: false, error: { code: "NOT_FOUND", message: "Widget not found." } };
+  } catch (error) { return persistenceError(error); }
+}
+
+export async function getWidgetUsersForSelect(query: WidgetUsersForSelectQuery = {}): Promise<ServiceResponse<WidgetUsersForSelectResponse>> {
+  const page = Math.max(1, Math.floor(query.page ?? 1));
+  const limit = Math.min(100, Math.max(1, Math.floor(query.limit ?? 25)));
+  const where: Prisma.UserWhereInput = query.search?.trim() ? { fullName: { contains: query.search.trim(), mode: "insensitive" } } : {};
+  try {
+    await requireCurrentActor();
+    const [users, total] = await prisma.$transaction([
+      prisma.user.findMany({ where, select: { id: true, fullName: true }, skip: (page - 1) * limit, take: limit, orderBy: { fullName: "asc" } }),
+      prisma.user.count({ where }),
+    ]);
+    const options: WidgetUserOption[] = users.map((user) => ({ id: user.id, label: user.fullName }));
+    return { success: true, data: { users: options, pagination: { page, limit, total, totalPages: Math.ceil(total / limit) || 0 } } };
+  } catch (error) { return persistenceError(error); }
+}
+
+export async function createWidget(dto: CreateWidgetDto): Promise<ServiceResponse<WidgetDetails>> {
+  try {
+    const actor = await requireCurrentActor();
+    const widget = await prisma.widget.create({ data: { name: dto.name, description: dto.description ?? null, isActive: dto.isActive ?? true, type: typeToPrisma[dto.type ?? "type_a"], createdById: actor.id }, select: WIDGET_SELECT });
+    return { success: true, data: toWidget(widget) };
+  } catch (error) { return persistenceError(error); }
+}
+
+export async function editWidget(id: string, dto: EditWidgetDto): Promise<ServiceResponse<WidgetDetails>> {
+  const updates: Prisma.WidgetUpdateInput = {
+    ...(dto.name !== undefined ? { name: dto.name } : {}),
+    ...(dto.description !== undefined ? { description: dto.description } : {}),
+    ...(dto.isActive !== undefined ? { isActive: dto.isActive } : {}),
+    ...(dto.type !== undefined ? { type: typeToPrisma[dto.type] } : {}),
+  };
+  if (Object.keys(updates).length === 0) return { success: false, error: { code: "NO_CHANGES", message: "At least one widget field must be provided." } };
+  try {
+    const actor = await requireCurrentActor();
+    const widget = await prisma.widget.update({ where: { id }, data: { ...updates, updatedByUser: { connect: { id: actor.id } } }, select: WIDGET_SELECT });
+    return { success: true, data: toWidget(widget) };
+  } catch (error) { return persistenceError(error); }
+}
+
+export async function toggleWidgetActive(id: string, isActive: boolean) { return editWidget(id, { isActive }); }
+
+export async function deleteWidget(id: string): Promise<ServiceResponse<void>> {
+  try { await requireCurrentActor(); await prisma.widget.delete({ where: { id } }); return { success: true, data: undefined }; } catch (error) { return persistenceError(error); }
+}
+
+export async function deleteWidgetsBulk(ids: string[]): Promise<ServiceResponse<{ deleted: number; failed: string[] }>> {
+  const uniqueIds = [...new Set(ids.filter(Boolean))];
+  try {
+    await requireCurrentActor();
+    return await prisma.$transaction(async (tx) => {
+      const existing = await tx.widget.findMany({ where: { id: { in: uniqueIds } }, select: { id: true } });
+      const existingIds = new Set(existing.map((widget) => widget.id));
+      const result = await tx.widget.deleteMany({ where: { id: { in: [...existingIds] } } });
+      return { success: true, data: { deleted: result.count, failed: uniqueIds.filter((id) => !existingIds.has(id)) } };
+    });
+  } catch (error) { return persistenceError(error); }
+}
+
+export async function toggleWidgetsBulk(ids: string[], isActive: boolean): Promise<ServiceResponse<{ updated: number; failed: string[] }>> {
+  const uniqueIds = [...new Set(ids.filter(Boolean))];
+  try {
+    const actor = await requireCurrentActor();
+    return await prisma.$transaction(async (tx) => {
+      const existing = await tx.widget.findMany({ where: { id: { in: uniqueIds } }, select: { id: true } });
+      const existingIds = new Set(existing.map((widget) => widget.id));
+      const result = await tx.widget.updateMany({ where: { id: { in: [...existingIds] } }, data: { isActive, updatedById: actor.id } });
+      return { success: true, data: { updated: result.count, failed: uniqueIds.filter((id) => !existingIds.has(id)) } };
+    });
+  } catch (error) { return persistenceError(error); }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Behavior Testing"
+  short_description: "Focused tests and efficient verification"
+  default_prompt: "Use $behavior-testing to add the smallest valuable tests for this behavior change."

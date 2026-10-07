@@ -1,0 +1,1757 @@
+{
+  "accessRequestForm": {
+    "fullName": "Nombre completo",
+    "fullNamePlaceholder": "Tu nombre",
+    "email": "Correo de trabajo",
+    "emailPlaceholder": "tu@empresa.com",
+    "organization": "Organización",
+    "organizationPlaceholder": "Empresa o equipo",
+    "organizationDescription": "Opcional. Nos ayuda a comprender el contexto de tu solicitud.",
+    "message": "¿Qué te gustaría evaluar?",
+    "messagePlaceholder": "Describe brevemente tu caso de uso y qué deseas validar con la demo.",
+    "messageDescription": "No incluyas contraseñas, información de pago, grabaciones ni datos personales sensibles.",
+    "privacyNotice": "Al continuar se prepara un correo en tu aplicación de email. Este sitio no almacena el contenido del formulario. Revisa el mensaje y envíalo desde tu cuenta para completar la solicitud.",
+    "submit": "Preparar solicitud de acceso",
+    "preparing": "Preparando correo...",
+    "preparedTitle": "Tu correo está listo",
+    "preparedDescription": "Revisa y envía el mensaje dirigido a {email}. Enviarlo no crea una cuenta ni reserva capacidad.",
+    "validation": {
+      "nameRequired": "Introduce tu nombre completo.",
+      "invalidEmail": "Introduce un correo electrónico válido.",
+      "messageRequired": "Describe qué te gustaría evaluar.",
+      "messageTooShort": "Añade algo más de contexto (al menos 20 caracteres).",
+      "tooLong": "Este campo supera la longitud permitida."
+    },
+    "emailTemplate": {
+      "subject": "Solicitud de acceso a Conversation Processing Demo",
+      "name": "Nombre",
+      "email": "Correo de respuesta",
+      "organization": "Organización",
+      "message": "Contexto de evaluación",
+      "notProvided": "No indicada"
+    }
+  },
+  "accessRequests": {
+    "eyebrow": "Acceso controlado",
+    "title": "Solicita una prueba evaluada de la demo.",
+    "description": "Cuéntanos qué deseas evaluar. El equipo revisa cada solicitud según la capacidad disponible y responde al correo que indiques.",
+    "formTitle": "Cuéntanos tu caso de uso",
+    "formDescription": "Preparar este mensaje no crea una identidad, concede créditos ni garantiza el acceso.",
+    "unavailableTitle": "Las solicitudes de acceso están pausadas temporalmente",
+    "unavailableDescription": "El equipo no acepta nuevas solicitudes por este canal en este momento. Vuelve a consultarlo más adelante.",
+    "steps": {
+      "send": {
+        "title": "Envía tu contexto",
+        "description": "Tu aplicación de correo se abre con un mensaje estructurado que revisas antes de enviar."
+      },
+      "review": {
+        "title": "Revisión humana",
+        "description": "El equipo evalúa el encaje y la capacidad gratuita disponible; no se reserva una plaza automáticamente."
+      },
+      "reply": {
+        "title": "Respuesta personal",
+        "description": "Si es posible ofrecer acceso, el equipo te contacta de forma privada con los próximos pasos."
+      }
+    },
+    "errors": {
+      "VALIDATION_ERROR": "Revisa los datos de contacto y el mensaje.",
+      "CONTACT_NOT_CONFIGURED": "Las solicitudes de acceso están pausadas temporalmente.",
+      "INTERNAL_ERROR": "No se pudo preparar la solicitud. Inténtalo de nuevo más tarde."
+    }
+  },
+  "activateAccount": {
+    "title": "Completa tu Perfil",
+    "description": "Por favor proporciona tu información para activar tu cuenta",
+    "userInformation": "Información del Usuario",
+    "security": "Seguridad",
+    "email": "Correo Electrónico",
+    "fullName": "Nombre Completo",
+    "fullNamePlaceholder": "Juan Pérez",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Ingresa tu contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "confirmPasswordPlaceholder": "Confirma tu contraseña",
+    "cancel": "Cancelar",
+    "activating": "Activando...",
+    "activate": "Activar Cuenta"
+  },
+  "app": {
+    "name": "Conversation Processing Demo",
+    "version": "Demo",
+    "subtitle": "Flujo de conversaciones con revisión humana"
+  },
+  "clientDetails": {
+    "title": "Detalles del cliente",
+    "description": "Información de contacto y solicitudes asociadas guardadas en tu espacio de trabajo.",
+    "editTitle": "Editar cliente",
+    "editDescription": "Actualiza la información de contacto guardada del cliente.",
+    "deleteTitle": "¿Eliminar a {name}?",
+    "deleteDescription": "Esta acción elimina el cliente permanentemente. No se pueden eliminar clientes con solicitudes asociadas.",
+    "deleteConfirm": "Eliminar cliente",
+    "cancel": "Cancelar"
+  },
+  "clientForm": {
+    "contactHint": "Introduce un nombre y al menos un correo electrónico o teléfono internacional.",
+    "phoneHint": "Incluye + y el código de país. No se asume ningún país.",
+    "cancel": "Cancelar",
+    "review": "Revisar cliente",
+    "save": "Guardar cambios",
+    "saving": "Guardando…",
+    "editDuplicatesTitle": "{count, plural, one {# posible duplicado} other {# posibles duplicados}}",
+    "editDuplicatesHint": "La información de contacto modificada coincide con otro cliente. Revisa las coincidencias antes de guardar.",
+    "acknowledgeEditDuplicates": "He revisado las coincidencias y quiero guardar estos cambios de contacto.",
+    "preparing": "Preparando revisión…",
+    "previewTitle": "Revisa el cliente que se creará",
+    "previewHint": "Comprueba estos valores normalizados antes de confirmar la creación.",
+    "expiresAt": "Revisión válida hasta {date} (UTC).",
+    "expired": "Esta revisión ya no es válida. Vuelve al formulario y prepara otra revisión.",
+    "duplicatesTitle": "{count, plural, one {# posible duplicado} other {# posibles duplicados}}",
+    "duplicatesHint": "Selecciona un cliente existente para abrir sus detalles o confirma expresamente que necesitas otro cliente.",
+    "useExisting": "Usar existente: {name}",
+    "acknowledgeDuplicates": "He revisado las coincidencias y quiero crear un cliente independiente.",
+    "back": "Volver al formulario",
+    "confirm": "Confirmar y crear cliente",
+    "confirming": "Confirmando…",
+    "retryConfirmation": "Comprobar y reintentar esta confirmación",
+    "validation": {
+      "nameRequired": "Introduce el nombre del cliente.",
+      "invalidEmail": "Introduce un correo electrónico válido.",
+      "invalidPhone": "Introduce un teléfono internacional que comience con + y el código de país.",
+      "contactRequired": "Introduce un correo electrónico o un teléfono internacional.",
+      "tooLong": "Este campo supera la longitud permitida."
+    }
+  },
+  "clients": {
+    "title": "Clientes",
+    "description": "Gestiona los contactos de tu espacio de trabajo.",
+    "loading": "Cargando clientes…",
+    "empty": "No se encontraron clientes. Crea uno o ajusta la búsqueda.",
+    "searchPlaceholder": "Buscar por nombre, correo, teléfono o empresa…",
+    "notProvided": "No indicado",
+    "actions": "Acciones",
+    "actionsFor": "Acciones para {name}",
+    "view": "Ver cliente",
+    "editAction": "Editar cliente",
+    "deleteAction": "Eliminar cliente",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "detailsTabs": {
+      "information": "Información",
+      "requests": "Solicitudes"
+    },
+    "fields": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "company": "Empresa",
+      "address": "Dirección",
+      "notes": "Notas",
+      "createdAt": "Creado"
+    },
+    "create": {
+      "trigger": "Nuevo cliente",
+      "title": "Crear cliente",
+      "description": "Introduce los datos, revisa las coincidencias y confirma la creación.",
+      "success": "Cliente creado correctamente."
+    },
+    "edit": {
+      "success": "Cliente actualizado correctamente."
+    },
+    "delete": {
+      "success": "Cliente eliminado correctamente."
+    },
+    "errors": {
+      "VALIDATION_ERROR": "Revisa la información del cliente e inténtalo de nuevo.",
+      "UNAUTHENTICATED": "Inicia sesión de nuevo para continuar.",
+      "ACCOUNT_INACTIVE": "Esta cuenta está inactiva.",
+      "FORBIDDEN": "No tienes acceso a este cliente.",
+      "NOT_FOUND": "El cliente o la revisión ya no están disponibles.",
+      "SENSITIVE_DATA": "Elimina información de pago, credenciales o datos personales sensibles antes de continuar.",
+      "PLAN_STALE": "Esta revisión ha cambiado. Vuelve al formulario y revisa el cliente de nuevo.",
+      "PLAN_EXPIRED": "Esta revisión ha caducado. Vuelve al formulario y revisa el cliente de nuevo.",
+      "DUPLICATES_CHANGED": "Las posibles coincidencias han cambiado. Vuelve al formulario y revísalas de nuevo.",
+      "DUPLICATE_ACKNOWLEDGMENT_REQUIRED": "Revisa los posibles duplicados y confirma que quieres crear un cliente independiente.",
+      "STALE_VERSION": "Este cliente cambió mientras trabajabas. Cierra y vuelve a abrir el formulario para cargar la versión más reciente.",
+      "CLIENT_HAS_REQUESTS": "Reasigna o elimina las solicitudes de este cliente antes de eliminarlo.",
+      "CONFIRMATION_UNCERTAIN": "No se pudo verificar el resultado. Mantén esta ventana abierta y reintenta la misma confirmación para recuperar el resultado de forma segura.",
+      "CONFIRMATION_REAUTHENTICATE": "Mantén esta ventana abierta. Inicia sesión de nuevo con la misma cuenta en otra pestaña y reintenta aquí esta confirmación para recuperar su resultado.",
+      "INTERNAL_ERROR": "No se pudo cargar o guardar la información del cliente. Inténtalo de nuevo."
+    }
+  },
+  "common": {
+    "error": "Ocurrió un error",
+    "notFound": "Página no encontrada",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "view": "Ver",
+    "search": "Buscar",
+    "loading": "Cargando...",
+    "submit": "Enviar",
+    "confirm": "Confirmar",
+    "back": "Atrás",
+    "events": "Eventos",
+    "incidents": "Incidentes",
+    "overrides": "Anulaciones",
+    "corrections": "Correcciones",
+    "transactions": "Transacciones",
+    "date": "Fecha",
+    "users": "Usuarios",
+    "type": "Tipo",
+    "role": "Rol",
+    "status": "Estado",
+    "filters": "Filtros",
+    "actions": "Acciones",
+    "columns": "Columnas",
+    "noData": "Sin datos",
+    "selectDate": "Selecciona una fecha"
+  },
+  "conversationCreation": {
+    "acknowledgeDuplicates": "He revisado estas coincidencias y quiero crear un cliente distinto para todas estas solicitudes.",
+    "back": "Volver a editar",
+    "client": "Identificador del cliente",
+    "completedAt": "Confirmado el {date}",
+    "confirmExisting": "{count, plural, one {Crear # solicitud} other {Crear # solicitudes}}",
+    "confirmNew": "{count, plural, one {Crear cliente y # solicitud} other {Crear cliente y # solicitudes}}",
+    "confirming": "Confirmando…",
+    "created": "{count, plural, one {Cliente vinculado y # solicitud creada.} other {Cliente vinculado y # solicitudes creadas.}}",
+    "deletedClient": "Cliente eliminado posteriormente",
+    "duplicatesHint": "Elige un cliente para todo el lote. Las coincidencias se buscan por el email o teléfono de esta revisión.",
+    "duplicatesTitle": "{count, plural, one {# posible duplicado} other {# posibles duplicados}}",
+    "errors": {
+      "ACCOUNT_INACTIVE": "Tu cuenta está inactiva.",
+      "CONFIRMATION_REAUTHENTICATE": "Vuelve a iniciar sesión y reintenta esta confirmación para recuperar su resultado.",
+      "CONFIRMATION_UNCERTAIN": "No pudimos comprobar el resultado. Reintenta esta misma confirmación para recuperarlo sin duplicados; no inicies otra creación.",
+      "DUPLICATE_ACKNOWLEDGMENT_REQUIRED": "Confirma que revisaste los posibles duplicados antes de crear un cliente distinto.",
+      "DUPLICATES_CHANGED": "Las coincidencias de clientes cambiaron. Recarga y revisa de nuevo el resumen.",
+      "FORBIDDEN": "No tienes acceso a esta conversación.",
+      "INTERNAL_ERROR": "No pudimos cargar o preparar la creación. Inténtalo de nuevo.",
+      "INVALID_TRANSITION": "Esta conversación ya no está lista para crear registros. Vuelve a la revisión.",
+      "NOT_FOUND": "La conversación, el plan o el cliente ya no están disponibles.",
+      "PLAN_EXPIRED": "Este resumen caducó. Vuelve a generarlo y revísalo.",
+      "PLAN_STALE": "La revisión o el cliente seleccionado cambiaron. Recarga antes de preparar otro resumen.",
+      "PROPOSAL_NOT_READY": "Guarda las correcciones y marca primero la revisión actual como lista.",
+      "SENSITIVE_DATA": "Elimina los datos sensibles antes de continuar.",
+      "STALE_VERSION": "La conversación cambió. Recarga y comprueba la revisión actual.",
+      "UNAUTHENTICATED": "Inicia sesión para continuar.",
+      "VALIDATION_ERROR": "Comprueba la revisión y la selección del cliente.",
+      "CLIENT_CHANGED": "El cliente seleccionado ha cambiado. Recarga y revisa el resumen de nuevo."
+    },
+    "existingClient": "Cliente guardado que se reutilizará",
+    "expired": "Este resumen caducó o cambió. Revisa un resumen nuevo antes de confirmar.",
+    "expiresAt": "Resumen válido hasta {date}.",
+    "hint": "Confirma el cliente y todas las solicitudes que aparecen a continuación. El lote completo se guardará conjuntamente, sin consumir otro crédito.",
+    "loading": "Cargando creación…",
+    "newClient": "Cliente que se creará",
+    "operation": "Identificador del recibo",
+    "preserveClient": "Estos son los datos guardados del cliente. Reutilizarlo no los modificará.",
+    "receiptHint": "Los registros están disponibles en Clientes y Solicitudes. Este recibo se conserva aunque después se eliminen registros.",
+    "receiptTitle": "Recibo de creación",
+    "regenerate": "Volver a generar resumen",
+    "reload": "Recargar estado actual",
+    "replayed": "Esta conversación ya se confirmó. Este es el resultado existente.",
+    "requestNumber": "Solicitud {number}",
+    "requests": "{count, plural, one {# solicitud} other {# solicitudes}}",
+    "retry": "Reintentar",
+    "retryConfirmation": "Recuperar resultado de confirmación",
+    "start": "Crear cliente y solicitudes",
+    "title": "Revisar creación final",
+    "useExisting": "Usar {name}",
+    "useNew": "Crear un cliente distinto",
+    "viewClient": "Ver cliente",
+    "viewRequest": "Ver solicitud {number}"
+  },
+  "conversationDetails": {
+    "title": "Detalles de la conversación",
+    "description": "Audio e información guardada de esta conversación.",
+    "loading": "Cargando conversación",
+    "loadingSubtitle": "Espera un momento",
+    "notFound": "Esta conversación ya no está disponible.",
+    "retry": "Intentar de nuevo",
+    "verification": "Audio: {state}",
+    "verificationStates": {
+      "pending": "Verificación pendiente",
+      "uploaded": "Subido",
+      "verified": "Verificado",
+      "rejected": "Rechazado"
+    },
+    "originalFilename": "Nombre de archivo original",
+    "mimeType": "Tipo de medio verificado",
+    "container": "Contenedor verificado",
+    "fileSize": "Tamaño verificado",
+    "megabytes": "{value} MB",
+    "audio": "Audio privado",
+    "audioError": "No se pudo cargar el audio privado.",
+    "retryAudio": "Volver a cargar el audio",
+    "audioUnsupported": "Tu navegador no puede reproducir este audio.",
+    "tabs": {
+      "label": "Vistas de detalle de la conversación",
+      "information": "Información",
+      "transcript": "Transcripción"
+    },
+    "transcriptPending": "La transcripción original aparecerá aquí cuando termine el procesamiento.",
+    "deleteTitle": "¿Eliminar esta conversación?",
+    "deleteDescription": "El acceso se retirará de inmediato. Luego, el audio privado se limpiará de forma segura.",
+    "deleteConfirm": "Eliminar conversación",
+    "cancel": "Cancelar"
+  },
+  "conversationProcessing": {
+    "title": "Procesamiento",
+    "description": "Transcribe este audio privado y prepara una propuesta para revisión humana.",
+    "start": "Procesar",
+    "starting": "Iniciando…",
+    "currentStage": "Etapa actual",
+    "progress": "Progreso del procesamiento: {stage}",
+    "credits": {
+      "title": "Saldo de créditos de procesamiento",
+      "available": "Disponibles",
+      "reserved": "Reservados",
+      "consumed": "Consumidos"
+    },
+    "stages": {
+      "queued": "En cola",
+      "transcribing": "Transcribiendo",
+      "diarizing": "Separando hablantes",
+      "extracting": "Extrayendo propuesta",
+      "validating": "Validando",
+      "publishing": "Publicando"
+    },
+    "noCredits": "No hay créditos de procesamiento disponibles.",
+    "unavailable": "El procesamiento no está disponible para esta conversación.",
+    "retryable": "Puedes volver a intentar procesar esta conversación.",
+    "preservedReviewFailure": "Esta ejecución ha terminado. Tu propuesta guardada y tus correcciones siguen disponibles en Revisión. Puedes volver a marcar esa versión como lista o elegir Generar otra propuesta para iniciar una nueva ejecución.",
+    "notRetryable": "Esta ejecución ha terminado y no se reintentará automáticamente. Si el botón Procesar está disponible, puedes iniciar una nueva ejecución.",
+    "errors": {
+      "PROCESSING_FAILED": "No se pudo completar el procesamiento.",
+      "EXTRACTION_ACCESS_DENIED": "Groq denegó el acceso. Revisa las credenciales del proveedor y el acceso de red antes de reintentar.",
+      "EXTRACTION_DISABLED": "La extracción con IA está deshabilitada. La transcripción sigue disponible.",
+      "EXTRACTION_INVALID_RESPONSE": "No se pudo validar la extracción. La transcripción sigue disponible y se liberó la reserva.",
+      "EXTRACTION_SUBMISSION_UNCERTAIN": "No se pudo confirmar el resultado de la extracción. Se liberó la reserva; puedes iniciar otro intento.",
+      "PROVIDER_ERROR": "El servicio de voz no pudo completar esta transcripción.",
+      "PROVIDER_TIMEOUT": "El servicio de voz no terminó a tiempo.",
+      "TRANSCRIPTION_FAILED": "No se pudo transcribir el audio.",
+      "DIARIZATION_FAILED": "La transcripción se guardó, pero no se pudieron separar los hablantes.",
+      "SPEECH_PROVIDER_NOT_CONFIGURED": "El servicio de voz no está configurado.",
+      "SPEECH_PROVIDER_REJECTED": "El servicio de voz rechazó esta solicitud de transcripción.",
+      "SPEECH_PROVIDER_INVALID_RESPONSE": "El servicio de voz devolvió un resultado de transcripción no válido.",
+      "SPEECH_TRANSCRIPTION_FAILED": "El servicio de voz no pudo transcribir este audio.",
+      "SUBMISSION_UNCERTAIN": "No se pudo confirmar de forma segura el envío de la transcripción.",
+      "TRANSCRIPTION_POLL_TIMEOUT": "La transcripción no terminó dentro del tiempo permitido."
+    }
+  },
+  "conversationRecording": {
+    "trigger": "Grabar conversación",
+    "title": "Grabar una conversación",
+    "description": "Captura una conversación con el micrófono de este dispositivo y revísala antes de guardarla.",
+    "close": "Cerrar diálogo de grabación",
+    "consentTitle": "Aviso de grabación y consentimiento",
+    "consentDescription": "Informa a todos los participantes de que la conversación será grabada y procesada antes de comenzar.",
+    "consentLabel": "Confirmo que los participantes han sido informados y aceptan esta grabación.",
+    "consentHint": "Esta confirmación es obligatoria para cada nueva sesión de grabación.",
+    "limits": "Audio WebM · hasta {maxSize} MB y {maxDuration} minutos. El servidor verifica la grabación final antes de permitir su procesamiento.",
+    "localeLabel": "Idioma del audio",
+    "localePlaceholder": "Selecciona el idioma",
+    "locales": { "en": "Inglés", "es": "Español" },
+    "start": "Iniciar grabación",
+    "stop": "Detener grabación",
+    "cancel": "Cancelar",
+    "active": "Grabación en curso",
+    "maximumDuration": "Máximo {minutes} minutos",
+    "microphoneActivity": "Actividad del micrófono",
+    "activityValue": "{value}%",
+    "permissionPending": "Responde a la solicitud de permiso del micrófono de tu navegador.",
+    "finalizingHint": "Estamos conservando el audio capturado para que puedas revisarlo.",
+    "reviewTitle": "Revisa tu grabación",
+    "recordingMetadata": "{duration} · {size} MB · almacenada solo en este navegador hasta que la guardes",
+    "audioUnsupported": "Tu navegador no puede reproducir esta grabación.",
+    "save": "Guardar conversación",
+    "retrySave": "Reintentar guardado",
+    "discard": "Descartar grabación",
+    "discardTitle": "¿Descartar esta grabación?",
+    "discardDescription": "La grabación local se eliminará y no podrá recuperarse.",
+    "closeDiscardDescription": "Al cerrar este diálogo se eliminará la grabación local sin guardar.",
+    "discardConfirm": "Descartar grabación",
+    "keepRecording": "Conservar grabación",
+    "tryAgain": "Intentar de nuevo",
+    "failureHint": "Puedes reintentar el micrófono o cerrar este diálogo e importar un archivo de audio.",
+    "unavailable": "La grabación con micrófono no está disponible temporalmente.",
+    "success": "La grabación se guardó y verificó correctamente.",
+    "stages": {
+      "requesting": "Esperando permiso para usar el micrófono…",
+      "stopping": "Finalizando grabación…"
+    },
+    "notices": {
+      "limitReached": {
+        "title": "Se alcanzó el límite de grabación",
+        "description": "La grabación se detuvo automáticamente al alcanzar el límite configurado. Revisa el audio antes de guardarlo."
+      },
+      "interrupted": {
+        "title": "La grabación se interrumpió",
+        "description": "El micrófono se detuvo inesperadamente. La parte capturada sigue disponible para revisarla, guardarla o descartarla."
+      }
+    },
+    "errors": {
+      "unsupportedBrowser": "La grabación con micrófono requiere la versión de escritorio de Chrome o Edge con soporte de audio WebM.",
+      "permissionDenied": "Se denegó el permiso del micrófono. Permite el acceso en la configuración del navegador e inténtalo de nuevo.",
+      "deviceNotFound": "No se encontró ningún micrófono en este dispositivo.",
+      "deviceUnavailable": "El micrófono no está disponible o lo está usando otra aplicación.",
+      "captureFailed": "La grabación se interrumpió antes de capturar audio utilizable.",
+      "emptyRecording": "No se capturó audio. Comprueba el micrófono e inténtalo de nuevo.",
+      "recordingTooLarge": "La grabación supera el tamaño permitido para este espacio y no puede guardarse."
+    },
+    "validation": {
+      "consentRequired": "Confirma el consentimiento de los participantes antes de grabar.",
+      "localeRequired": "Selecciona el idioma hablado en la conversación."
+    }
+  },
+  "conversationReview": {
+    "reprocessing": {
+      "start": "Generar otra propuesta",
+      "startHint": "Repite la extracción desde la transcripción original conservando tus correcciones guardadas.",
+      "saveFirst": "Guarda tus cambios antes de generar otra propuesta.",
+      "noCredits": "Necesitas un crédito disponible para generar otra propuesta.",
+      "confirmTitle": "¿Generar otra propuesta?",
+      "confirmDescription": "Se reserva un crédito. Publicar una propuesta revisable lo consume, aunque conserves tu versión anterior; un fallo terminal libera la reserva. Tus correcciones guardadas se conservan. Se invalidan la preparación y cualquier vista previa de creación anterior. Tendrás que revisar y preparar la creación de nuevo.",
+      "confirm": "Generar propuesta · 1 crédito",
+      "processing": "Hay otra extracción en curso. Tu revisión guardada sigue disponible debajo en modo de lectura. No se sustituirá automáticamente.",
+      "failed": "La nueva extracción falló. Tu revisión anterior se conserva: puedes revisarla, volver a marcarla como lista o reintentar.",
+      "compareTitle": "Comparar propuestas",
+      "compareDescription": "Tu revisión guardada sigue siendo el punto de partida. Selecciona solo los valores nuevos que quieras adoptar. Las solicitudes nunca se vinculan automáticamente.",
+      "current": "Revisión guardada",
+      "candidate": "Nueva propuesta",
+      "fieldSource": "{field} ({source})",
+      "takeField": "Adoptar nuevo valor de {field}",
+      "noTarget": "Sin solicitud existente seleccionada",
+      "currentRequests": "Solicitudes guardadas",
+      "removeHint": "Las solicitudes guardadas se conservan salvo que elijas eliminarlas expresamente. Una solicitud vinculada no puede eliminarse al mismo tiempo.",
+      "removeCurrent": "Eliminar solicitud {number}: {title}",
+      "inspectCurrent": "Ver solicitud guardada y evidencia",
+      "candidateRequest": "Nueva propuesta · solicitud {number}",
+      "requestChoice": "¿Qué hacer con esta solicitud?",
+      "ignoreRequest": "No adoptar esta solicitud",
+      "addRequest": "Añadir como solicitud nueva",
+      "mapRequest": "Usar campos seleccionados en la solicitud {number}: {title}",
+      "addHint": "Añadir una solicitud nueva adopta todos sus campos.",
+      "mapHint": "Selecciona los campos que quieras adoptar. Los demás conservan sus valores guardados.",
+      "selectionSummary": "{count, plural, one {# cambio seleccionado} other {# cambios seleccionados}} · {requests, plural, one {# solicitud resultante} other {# solicitudes resultantes}}",
+      "decisionHint": "Adoptar guarda una revisión humana nueva. Tras cualquiera de las decisiones, revisa el resultado y vuelve a marcarlo como listo antes de preparar una nueva vista previa de creación.",
+      "adopt": "Adoptar cambios seleccionados",
+      "keepPrevious": "Conservar revisión guardada",
+      "keepTitle": "¿Conservar la revisión guardada?",
+      "keepDescription": "La nueva propuesta permanecerá en el historial, pero no se adoptarán sus valores ni tus selecciones de comparación. El crédito de extracción se mantiene consumido.",
+      "kept": "Revisión guardada conservada. Revísala y vuelve a marcarla como lista.",
+      "adopted": "Cambios seleccionados guardados en una revisión nueva. Revisa el resultado antes de marcarlo como listo."
+    },
+    "tab": "Revisión",
+    "client": "Cliente propuesto",
+    "contactHint": "Deja en blanco los contactos ausentes. Añade solo información que puedas confirmar.",
+    "requests": "{count, plural, one {# solicitud} other {# solicitudes}}",
+    "requestNumber": "Solicitud {number}",
+    "removeRequestNumber": "Quitar solicitud {number}",
+    "removeRequest": "Quitar",
+    "addRequest": "Añadir solicitud",
+    "evidence": "Evidencia original",
+    "evidenceFor": "Mostrar evidencia de {field}",
+    "showEvidence": "Ver evidencia",
+    "selectField": "Selecciona un campo para consultar su evidencia original.",
+    "observedValue": "Observado en la conversación",
+    "noEvidence": "Este campo no tiene evidencia original vinculada.",
+    "listenEvidence": "Escuchar este fragmento",
+    "noTimestamp": "No está disponible la reproducción desde este fragmento.",
+    "immutableEvidence": "La transcripción y la evidencia originales se conservan al editar un campo.",
+    "provenance": {
+      "extracted": "Extraído",
+      "manual": "Introducido manualmente",
+      "default": "Valor predeterminado"
+    },
+    "findings": "{count, plural, one {# problema} other {# problemas}}",
+    "noFindings": "No se detectaron problemas.",
+    "resolved": "Resuelto",
+    "severity": {
+      "blocking": "Impide marcar como lista",
+      "warning": "Aviso",
+      "info": "Información"
+    },
+    "findingCodes": {
+      "MISSING_REQUIRED": "Falta información obligatoria. Completa el campo y guarda para volver a comprobarlo.",
+      "INVALID_FORMAT": "Este valor no cumple las reglas del campo. Corrígelo y guarda para volver a comprobarlo.",
+      "NONEXISTENT_EVIDENCE": "No se pudo validar este campo y se descartó su valor propuesto. Revisa la transcripción original, completa o corrige el campo y registra tu decisión. Los demás datos verificados siguen disponibles.",
+      "AMBIGUITY": "La conversación admite varias interpretaciones. Registra tu decisión.",
+      "CONTRADICTION": "La conversación contiene información contradictoria. Registra qué información has confirmado.",
+      "LOW_CONFIDENCE": "Este valor requiere una revisión cuidadosa.",
+      "SENSITIVE_DATA_OMITTED": "Se omitió información sensible de la propuesta."
+    },
+    "contactReview": {
+      "phone": "No se pudo confirmar con seguridad el teléfono a partir de la transcripción. Revisa su evidencia, corrígelo o déjalo vacío y registra tu decisión. El resto de la información extraída sigue disponible.",
+      "email": "No se pudo confirmar con seguridad el email a partir de la transcripción. Revisa su evidencia, corrígelo o déjalo vacío y registra tu decisión. El resto de la información extraída sigue disponible."
+    },
+    "resolutionReason": "Tu decisión y su motivo",
+    "resolutionHint": "Al guardar, esta decisión se registra con la nueva revisión y tu nombre.",
+    "history": "Historial de revisiones",
+    "moreHistory": "Cargar revisiones anteriores",
+    "preview": "Revisión de solo lectura",
+    "returnToDraft": "Volver a mi borrador",
+    "emptyValue": "No indicado",
+    "revisionAttribution": "Revisión {number} · {author} · {date}",
+    "aiAuthor": "Extracción con IA",
+    "unknownAuthor": "Miembro del espacio",
+    "readyAttribution": "Marcada como lista por {author} · {date}",
+    "draftHint": "Guarda borradores incompletos mientras trabajas. Puedes marcar una propuesta guardada como lista cuando completes los datos obligatorios y resuelvas los problemas bloqueantes.",
+    "invalidDraft": "Comprueba la longitud de los campos y conserva entre 1 y 50 solicitudes antes de guardar.",
+    "save": "Guardar revisión",
+    "saving": "Guardando…",
+    "saved": "Revisión guardada.",
+    "markReady": "Marcar como lista",
+    "markedReady": "La propuesta está lista.",
+    "unsaved": "Hay cambios sin guardar. Guarda antes de marcar como lista.",
+    "readyHint": "Esta revisión guardada se puede marcar como lista.",
+    "notReadyHint": "Resuelve los problemas bloqueantes y completa los campos obligatorios antes de marcar como lista.",
+    "pending": "La propuesta aparecerá aquí cuando termine la extracción.",
+    "loading": "Cargando propuesta…",
+    "retry": "Reintentar",
+    "conflictHint": "Se guardó otro cambio antes que el tuyo. Tu borrador local sigue aquí. Consulta la versión actual antes de decidir si quieres descartarlo.",
+    "viewCurrent": "Ver versión actual",
+    "discardReload": "Descartar y recargar",
+    "discardTitle": "¿Descartar cambios sin guardar?",
+    "discardDescription": "Se perderán las ediciones sin guardar. Las revisiones guardadas seguirán disponibles.",
+    "discardClose": "Descartar y cerrar",
+    "keepEditing": "Seguir editando",
+    "continueExtraction": "Continuar extracción",
+    "continuing": "Continuando extracción…",
+    "errors": {
+      "INTERNAL_ERROR": "No se pudo cargar o guardar la propuesta. Inténtalo de nuevo.",
+      "REPROCESSING_CANDIDATE_PENDING": "Compara la propuesta pendiente y adopta cambios o conserva tu revisión guardada antes de continuar.",
+      "INSUFFICIENT_CREDITS": "Necesitas un crédito disponible para generar otra propuesta.",
+      "PROCESSING_ALREADY_ACTIVE": "Ya hay otra extracción en curso. Actualiza para ver su progreso.",
+      "AUDIO_NOT_VERIFIED": "El audio original ya no está disponible para procesarlo.",
+      "STALE_VERSION": "La conversación ha cambiado desde que abriste esta revisión.",
+      "NOT_FOUND": "Esta conversación o revisión ya no está disponible.",
+      "VALIDATION_ERROR": "Comprueba los valores de la propuesta e inténtalo de nuevo.",
+      "INVALID_STATUS_TRANSITION": "Esta acción no está disponible en el estado actual de la conversación.",
+      "PROPOSAL_NOT_READY": "Resuelve los problemas bloqueantes y completa los campos obligatorios primero.",
+      "SENSITIVE_DATA_DETECTED": "Elimina la información sensible de la propuesta antes de guardar.",
+      "IDEMPOTENCY_CONFLICT": "Este intento de guardado entra en conflicto con una operación anterior. Recarga la revisión actual.",
+      "EXTRACTION_DISABLED": "La extracción con IA no está disponible en este momento.",
+      "EXTRACTION_CONFIGURATION_ERROR": "El servicio de extracción no está configurado correctamente."
+    }
+  },
+  "conversationTranscript": {
+    "original": "Transcripción original",
+    "completedAt": "Completada el {date}",
+    "locales": { "en": "Inglés", "es": "Español" },
+    "warnings": {
+      "title": "Aviso sobre la separación de hablantes",
+      "diarizationUnavailable": "No hay una separación fiable de hablantes. La transcripción original completa sigue disponible.",
+      "DIARIZATION_UNAVAILABLE": "No hay una separación fiable de hablantes. La transcripción original completa sigue disponible.",
+      "ALIGNMENT_FALLBACK": "La alineación por palabras no fue fiable, por lo que la transcripción se muestra solo con evidencia global.",
+      "SPEAKER_LABELS_UNAVAILABLE": "El servicio de voz no devolvió etiquetas de hablante fiables."
+    },
+    "segments": {
+      "title": "Segmentos de evidencia",
+      "description": "Evidencia de la transcripción alineada en el tiempo cuando hay tiempos fiables.",
+      "empty": "No hay segmentos de hablantes fiables. Usa la transcripción original completa de arriba.",
+      "speaker": "Hablante {speaker}",
+      "evidence": "Evidencia de la transcripción",
+      "timeRange": "{start}–{end}",
+      "confidence": "Confianza {value}"
+    }
+  },
+  "conversationUpload": {
+    "trigger": "Importar audio",
+    "title": "Importar una conversación",
+    "description": "Sube una grabación preparada para verificarla de forma segura.",
+    "close": "Cerrar diálogo de importación",
+    "fileLabel": "Archivo de audio",
+    "choose": "Arrastra un archivo de audio o haz clic para seleccionarlo",
+    "drop": "Suelta el archivo de audio aquí",
+    "acceptedTypes": "MP3/MPEG, M4A/MP4, WAV, OGG o WebM · hasta {maxSize} MB y {maxDuration} minutos",
+    "consentHint": "Sube únicamente conversaciones que tengas autorización para grabar y procesar.",
+    "remove": "Quitar el archivo seleccionado",
+    "selected": "Archivo de audio seleccionado",
+    "size": "{size} MB",
+    "progress": "Subiendo: {value}%",
+    "localeLabel": "Idioma del audio",
+    "localePlaceholder": "Selecciona el idioma",
+    "locales": { "en": "Inglés", "es": "Español" },
+    "submit": "Subir y verificar",
+    "cancel": "Cancelar",
+    "cancelUpload": "Cancelar subida",
+    "retry": "Reintentar subida",
+    "unavailable": "La importación de audio no está disponible temporalmente.",
+    "success": "El audio se importó y verificó correctamente.",
+    "stages": {
+      "idle": "Listo para subir",
+      "preparing": "Preparando subida segura…",
+      "uploading": "Subiendo audio…",
+      "verifying": "Verificando audio…",
+      "discarding": "Descartando subida…",
+      "failed": "Subida interrumpida",
+      "success": "Audio verificado"
+    },
+    "validation": {
+      "fileRequired": "Selecciona un archivo de audio.",
+      "fileTooLarge": "El archivo de audio supera el límite permitido para este espacio.",
+      "unsupportedFile": "Usa uno de los formatos de audio compatibles indicados arriba.",
+      "localeRequired": "Selecciona el idioma hablado en el audio."
+    }
+  },
+  "conversations": {
+    "title": "Conversaciones",
+    "description": "Graba, importa, revisa y gestiona de forma segura las conversaciones del espacio de trabajo.",
+    "loading": "Cargando conversaciones…",
+    "empty": "No se encontraron conversaciones. Graba o importa un audio, o ajusta los filtros.",
+    "notAvailable": "No disponible",
+    "actions": "Acciones",
+    "actionsFor": "Acciones para la conversación del {label}",
+    "view": "Ver conversación",
+    "deleteAction": "Eliminar conversación",
+    "retry": "Intentar de nuevo",
+    "close": "Cerrar",
+    "fields": { "source": "Origen", "locale": "Idioma", "status": "Estado", "duration": "Duración", "createdAt": "Creada", "updatedAt": "Actualizada" },
+    "filters": { "allSources": "Todos los orígenes", "allLocales": "Todos los idiomas", "allStatuses": "Todos los estados" },
+    "sources": { "upload": "Archivo importado", "microphone": "Micrófono" },
+    "locales": { "en": "Inglés", "es": "Español" },
+    "statuses": {
+      "draft": "Borrador", "audio_ready": "Audio listo", "queued": "En cola", "transcribing": "Transcribiendo",
+      "diarizing": "Separando hablantes", "transcribed": "Transcrita", "extracting": "Extrayendo", "validating": "Validando", "needs_review": "Necesita revisión",
+      "ready": "Lista", "record_plan_pending": "Plan pendiente", "completed": "Completada", "failed": "Fallida",
+      "quota_blocked": "Límite de créditos alcanzado", "cancelled": "Cancelada"
+    },
+    "delete": { "success": "La conversación se eliminó correctamente." },
+    "errors": {
+      "VALIDATION_ERROR": "Revisa la información de la conversación e inténtalo de nuevo.",
+      "UNAUTHENTICATED": "Inicia sesión de nuevo para continuar.",
+      "ACCOUNT_INACTIVE": "Esta cuenta está inactiva.",
+      "FORBIDDEN": "No tienes acceso a esta conversación.",
+      "NOT_FOUND": "La conversación ya no está disponible.",
+      "STALE_VERSION": "Esta conversación cambió. Actualiza la página e inténtalo de nuevo.",
+      "SPEECH_DISABLED": "El procesamiento de voz no está disponible temporalmente.",
+      "EXTRACTION_DISABLED": "La extracción con IA está deshabilitada. Actívala antes de procesar.",
+      "EXTRACTION_CONFIGURATION_ERROR": "El servicio de extracción no está configurado correctamente.",
+      "INSUFFICIENT_CREDITS": "No hay suficientes créditos disponibles para procesar esta conversación.",
+      "AUDIO_NOT_READY": "El audio debe terminar su verificación antes de poder procesarse.",
+      "PROCESSING_ALREADY_ACTIVE": "Esta conversación ya se está procesando.",
+      "IDEMPOTENCY_CONFLICT": "Este intento de procesamiento entra en conflicto con una solicitud anterior. Actualiza e inténtalo de nuevo.",
+      "INVALID_STATUS_TRANSITION": "Esta conversación no se puede procesar desde su estado actual.",
+      "AUDIO_NOT_VERIFIED": "El audio debe terminar su verificación antes de poder procesarse.",
+      "UPLOAD_EXPIRED": "La subida segura venció. Inicia de nuevo la importación.",
+      "UPLOAD_INCOMPLETE": "La subida de audio se interrumpió. Reinténtala o elige otro archivo.",
+      "UPLOAD_MISMATCH": "El audio almacenado no coincide con el archivo seleccionado. Elige el archivo de nuevo y reinténtalo.",
+      "MEDIA_TOO_LARGE": "El audio subido supera el tamaño permitido.",
+      "MEDIA_TOO_LONG": "El audio subido supera la duración permitida.",
+      "UNSUPPORTED_MEDIA": "El archivo subido no tiene un formato de audio compatible.",
+      "MEDIA_VERIFICATION_FAILED": "No se pudo verificar el audio. Revisa el archivo e inténtalo de nuevo.",
+      "INTERNAL_ERROR": "No se pudo cargar o guardar la información de la conversación. Inténtalo de nuevo."
+    }
+  },
+  "detailsContainer": {
+    "client": "cliente",
+    "loading": "Cargando",
+    "loadingSubtitle": "Por favor espera un momento",
+    "error": "Error al cargar",
+    "notFound": "no encontrado",
+    "serviceRequest": "solicitud de servicio",
+    "user": "usuario"
+  },
+  "error403": {
+    "title": "Acceso Denegado",
+    "description": "No tienes permiso para acceder a esta página",
+    "message": "Por favor contacta a tu administrador si crees que esto es un error.",
+    "goHome": "Ir al Inicio",
+    "goDashboard": "Ir al Dashboard"
+  },
+  "filters": {
+    "activeFilters": "{count, plural, one {# filtro activo} other {# filtros activos}}",
+    "clearAll": "Limpiar todo",
+    "removeFilter": "Quitar filtro",
+    "search": "Busqueda",
+    "searchByName": "Buscar por nombre...",
+    "status": "Estado",
+    "sortBy": "Ordenar por",
+    "sortByStatus": "Estado",
+    "sortByCreated": "Fecha de Creación",
+    "sortAscending": "Ordenar ascendente",
+    "sortDescending": "Ordenar descendente",
+    "searchByNameOrEmail": "Buscar por nombre o correo electrónico...",
+    "eventType": "Tipo de Evento",
+    "user": "Usuario",
+    "sortByName": "Nombre",
+    "sortByEmail": "Correo",
+    "sortByRole": "Rol",
+    "active": "Activo",
+    "inactive": "Inactivo"
+  },
+  "forgotPassword": {
+    "pageTitle": "Olvidé mi Contraseña",
+    "pageDescription": "Ingresa tu correo electrónico y te enviaremos un enlace de restablecimiento",
+    "email": "Correo Electrónico",
+    "emailPlaceholder": "tu@correo.com",
+    "submit": "Enviar Enlace",
+    "submitting": "Enviando...",
+    "successTitle": "Revisa tu correo electrónico",
+    "successDescription": "Si existe una cuenta para {email}, se ha enviado un enlace de restablecimiento.",
+    "cancel": "Volver",
+    "backToLogin": "Volver al Inicio de Sesión"
+  },
+  "imageUpload": {
+    "avatarPreview": "Vista previa del avatar",
+    "dropImageHere": "Suelta la imagen aquí",
+    "processingImage": "Procesando imagen...",
+    "optimizingImage": "Optimizando imagen...",
+    "clickToChangePhoto": "Haz clic para cambiar la foto",
+    "waitForProcessing": "Espera mientras se procesa la imagen...",
+    "dragAndDropOrClick": "Arrastra y suelta una imagen, o haz clic para seleccionar",
+    "fileFormats": "PNG, JPG, GIF hasta {maxSize}MB",
+    "willConvertToWebP": "(se convertirá a WebP)",
+    "preview": "Vista previa"
+  },
+  "landing": {
+    "nav": {
+      "primaryLabel": "Navegación principal",
+      "workflow": "Flujo",
+      "capabilities": "Qué demuestra",
+      "safeguards": "Salvaguardas",
+      "contact": "Solicitar acceso",
+      "signIn": "Iniciar sesión",
+      "openWorkspace": "Abrir demo",
+      "requestAccess": "Solicitar acceso"
+    },
+    "hero": {
+      "badge": "Demostración enfocada de producto",
+      "titleLead": "Convierte conversaciones reales en",
+      "titleAccent": "registros de negocio revisados.",
+      "description": "Conversation Processing Demo recorre un flujo concreto desde audio autorizado hasta evidencia transcrita, propuestas estructuradas de cliente y solicitudes de servicio, revisión humana y una escritura confirmada explícitamente.",
+      "primaryCta": "Solicitar acceso",
+      "secondaryCta": "Ver el flujo",
+      "footnote": "Diseñada para demostrar el patrón de forma segura, sin sugerir decisiones autónomas, escrituras silenciosas ni integraciones de producción inexistentes."
+    },
+    "preview": {
+      "session": "Procesando una grabación preparada para la demo",
+      "duration": "02:18",
+      "transcript": "Evidencia transcrita",
+      "source": "Original preservado",
+      "speakerA": "Hablante A · 00:24",
+      "speakerB": "Hablante B · 00:31",
+      "lineA": "El aire acondicionado de la oficina principal dejó de enfriar ayer.",
+      "lineB": "El martes por la tarde funciona. Pueden contactarme por correo.",
+      "proposal": "Propuesta estructurada",
+      "awaitingReview": "Revisión humana",
+      "client": "Cliente candidato",
+      "clientValue": "Jordan Lee · Northwind Studio",
+      "contactValue": "jordan@example.com",
+      "request": "Solicitud de servicio",
+      "requestValue": "Inspeccionar aire acondicionado de la oficina",
+      "requestMeta": "Inspección · Prioridad normal",
+      "evidenceLinked": "Campos vinculados a evidencia",
+      "ready": "Lista para revisar"
+    },
+    "proof": {
+      "label": "Fundamentos de la demo",
+      "recording": {
+        "title": "Grabar o subir",
+        "description": "Micrófono del navegador y audio preparado"
+      },
+      "bilingual": {
+        "title": "Inglés + español",
+        "description": "Recorridos de producto equivalentes"
+      },
+      "review": {
+        "title": "Humano en el circuito",
+        "description": "Corregir antes de guardar"
+      },
+      "confirmation": {
+        "title": "Sin escrituras silenciosas",
+        "description": "Vista previa y confirmación explícita"
+      }
+    },
+    "workflow": {
+      "eyebrow": "Un recorrido enfocado",
+      "title": "Del contexto hablado a una acción gobernada.",
+      "description": "La demo hace visible cada transformación. La evidencia original permanece separada de la estructura derivada por IA, y la persona que revisa conserva la autoridad.",
+      "steps": {
+        "capture": {
+          "title": "Capturar",
+          "description": "Graba en el navegador o sube un archivo de audio preparado y autorizado."
+        },
+        "transcribe": {
+          "title": "Preservar",
+          "description": "Conserva la transcripción original y separa los segmentos de hablante falibles."
+        },
+        "structure": {
+          "title": "Proponer",
+          "description": "Extrae un cliente candidato y una o varias solicitudes de servicio."
+        },
+        "review": {
+          "title": "Revisar",
+          "description": "Corrige vacíos, ambigüedad, duplicados y evidencia antes de aprobar."
+        },
+        "confirm": {
+          "title": "Confirmar",
+          "description": "Previsualiza el plan exacto y aprueba una creación atómica."
+        }
+      }
+    },
+    "capabilities": {
+      "eyebrow": "Qué demuestra la solución",
+      "title": "Un flujo acotado con límites de producto serios.",
+      "description": "Pensada para conversaciones que deben convertirse en datos operativos útiles sin ocultar incertidumbre ni entregar autoridad a un modelo.",
+      "cards": {
+        "evidence": {
+          "title": "Evidencia antes que automatización",
+          "description": "Los campos propuestos apuntan a evidencia de la transcripción. Los artefactos originales y derivados siguen siendo distintos, y la confianza nunca sustituye la verificación."
+        },
+        "requests": {
+          "title": "Una conversación, varias necesidades",
+          "description": "Una conversación revisada puede preparar un cliente y varias solicitudes independientes, y luego crear el conjunto completo de forma atómica."
+        },
+        "assistant": {
+          "title": "Las mismas reglas para el asistente",
+          "description": "Un asistente de IA limitado al espacio puede recuperar contexto y preparar un plan, pero usa la misma validación, aprobación y ruta de escritura que la interfaz directa."
+        }
+      }
+    },
+    "safeguards": {
+      "eyebrow": "La confianza forma parte de la demo",
+      "title": "La IA propone. La aplicación decide.",
+      "description": "La base objetivo está diseñada alrededor de acceso controlado, evidencia inspeccionable, proveedores acotados y una aprobación exacta; no de una caja negra mágica.",
+      "items": {
+        "workspace": {
+          "title": "Aislamiento por espacio",
+          "description": "El contexto autenticado del servidor define el alcance; ni el navegador ni el modelo pueden elegir otro espacio."
+        },
+        "approval": {
+          "title": "Aprobación vinculada a la operación",
+          "description": "Cada creación muestra el plan exacto vigente. Una aprobación obsoleta, expirada o repetida no crea otro lote."
+        },
+        "provenance": {
+          "title": "Procedencia preservada",
+          "description": "La transcripción original, la segmentación, las correcciones y los registros guardados mantienen funciones e historiales distintos."
+        },
+        "portable": {
+          "title": "Contratos neutrales al proveedor",
+          "description": "Los proveedores de voz y modelos quedan tras capacidades propias de la aplicación para que el patrón demostrado sea reutilizable."
+        }
+      }
+    },
+    "demo": {
+      "badge": "Creada para mostrarse",
+      "title": "Una referencia concreta para tu propio flujo conversacional.",
+      "description": "Usa la demo para explorar cómo se vería una solución similar para intake, servicios de campo, soporte o cualquier proceso donde el contexto hablado deba convertirse en trabajo estructurado y revisado.",
+      "disclosure": "Este repositorio se implementa por fases documentadas. Las pantallas marcadas como demo usan datos representativos y no deben interpretarse como capacidades listas para producción.",
+      "cta": "Solicitar acceso"
+    },
+    "footer": {
+      "description": "Una demostración bilingüe de portafolio sobre procesamiento de conversaciones basado en evidencia y creación de registros confirmada por una persona.",
+      "bilingual": "Experiencia en inglés y español",
+      "copyright": "© {year} Conversation Processing Demo."
+    }
+  },
+  "languageToggle": {
+    "label": "Idioma",
+    "en": "Inglés",
+    "es": "Español"
+  },
+  "loginContent": {
+    "title": "Iniciar Sesión",
+    "description": "Ingrese sus credenciales para acceder a su cuenta"
+  },
+  "loginErrors": {
+    "invalidCredentials": "Correo electrónico o contraseña inválidos.",
+    "loginFailed": "Error al iniciar sesión. Por favor inténtelo de nuevo.",
+    "missing_code": "El enlace está incompleto. Por favor solicite uno nuevo.",
+    "invalid_code": "El enlace ha expirado o ya fue utilizado. Por favor solicite uno nuevo.",
+    "legacy_link": "Este formato de enlace ya no está soportado. Por favor solicite uno nuevo."
+  },
+  "loginForm": {
+    "credentials": "Credenciales",
+    "invalidCredentials": "Correo o contraseña incorrectos.",
+    "invalidEmail": "Ingresa un correo válido.",
+    "passwordRequired": "Ingresa tu contraseña.",
+    "showPassword": "Mostrar contraseña",
+    "hidePassword": "Ocultar contraseña",
+    "email": "Correo Electrónico",
+    "emailPlaceholder": "Ingrese su correo electrónico",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Ingrese su contraseña",
+    "signingIn": "Iniciando sesión...",
+    "signIn": "Iniciar Sesión",
+    "dontHaveAccount": "¿No tienes una cuenta?. Contacta con un administrador, para solicitar la creación de tu cuenta",
+    "signUp": "Registrarse",
+    "forgotPassword": "¿Olvidaste tu contraseña?"
+  },
+  "metadata": {
+    "title": "Conversation Processing Demo",
+    "description": "Una demostración enfocada en convertir conversaciones grabadas en registros revisados de clientes y solicitudes de servicio."
+  },
+  "multiFileUpload": {
+    "uploadFiles": "Subir archivos",
+    "dropFilesHere": "Suelta los archivos aquí",
+    "processingFiles": "Procesando archivos...",
+    "dragAndDropOrClick": "Arrastra y suelta archivos, o haz clic para seleccionar",
+    "maxFilesReached": "Máximo {maxFiles} archivos alcanzado",
+    "fileSizeInfo": "Hasta {maxSize}MB por archivo • {remaining} restantes",
+    "uploadedFiles": "Archivos subidos ({count}/{max})",
+    "clearAll": "Limpiar todo",
+    "processing": "Procesando...",
+    "maxFilesAllowed": "Máximo {maxFiles} archivos permitidos"
+  },
+  "operationalDashboard": {
+    "title": "Resumen de trabajo",
+    "description": "Continúa trabajando con tus clientes y solicitudes de servicio actuales.",
+    "metrics": {
+      "totalClients": "Clientes",
+      "totalRequests": "Solicitudes de servicio",
+      "pending": "Pendientes",
+      "inProgress": "En progreso",
+      "resolved": "Resueltas",
+      "cancelled": "Canceladas"
+    },
+    "sections": {
+      "summary": "Resumen actual del espacio de trabajo",
+      "recentRequests": "Solicitudes de servicio recientes",
+      "recentRequestsDescription": "Las cinco solicitudes actualizadas más recientemente, listas para continuar el trabajo."
+    },
+    "navigation": {
+      "label": "Navegación del espacio de trabajo",
+      "clients": "Ver todos los clientes",
+      "requests": "Ver todas las solicitudes",
+      "allRequests": "Abrir solicitudes"
+    },
+    "loading": "Cargando datos del espacio de trabajo",
+    "noRecentRequests": "Todavía no hay solicitudes de servicio recientes.",
+    "retry": "Intentar de nuevo",
+    "errors": {
+      "INTERNAL_ERROR": "No se pudieron cargar los datos del espacio de trabajo."
+    }
+  },
+  "pagination": {
+    "showing": "Mostrando",
+    "of": "de",
+    "rows": "Filas",
+    "previousPage": "Página anterior",
+    "nextPage": "Página siguiente"
+  },
+  "platformSettings": {
+    "title": "Configuración de la plataforma",
+    "description": "Revisa el contacto público de acceso y controla si se admiten nuevas solicitudes.",
+    "contact": {
+      "title": "Contacto para acceso a la demo",
+      "description": "El formulario público prepara un correo en la aplicación del visitante. No almacena los datos del formulario ni crea una cuenta.",
+      "ownerOnly": "Solo el propietario puede cambiar el correo de contacto.",
+      "success": "Correo de contacto para acceso actualizado."
+    },
+    "admission": {
+      "title": "Admisión de solicitudes de acceso",
+      "description": "Pausa nuevas solicitudes públicas sin cambiar el correo de contacto configurado.",
+      "statusLabel": "Estado actual",
+      "enabled": "Aceptando solicitudes",
+      "paused": "Solicitudes pausadas",
+      "pause": "Pausar solicitudes de acceso",
+      "pausing": "Pausando...",
+      "resume": "Reanudar solicitudes de acceso",
+      "resuming": "Reanudando...",
+      "ownerOnlyResume": "Las solicitudes de acceso están pausadas. Solo el propietario puede reanudarlas.",
+      "pauseSuccess": "Solicitudes de acceso pausadas.",
+      "resumeSuccess": "Solicitudes de acceso reanudadas."
+    },
+    "security": {
+      "title": "Seguridad de la cuenta administradora",
+      "description": "La autenticación de dos factores es obligatoria. Sustituye tus códigos de respaldo desde una sesión verificada reciente; los anteriores se invalidan inmediatamente.",
+      "manageBackupCodes": "Gestionar códigos de respaldo"
+    },
+    "form": {
+      "contactEmail": "Correo de contacto para acceso",
+      "contactEmailPlaceholder": "acceso-demo@empresa.com",
+      "contactEmailDescription": "Las solicitudes se dirigen a este buzón. Usa una dirección empresarial supervisada, no una cuenta personal.",
+      "save": "Guardar correo de contacto",
+      "saving": "Guardando...",
+      "validation": {
+        "invalidEmail": "Introduce un correo de contacto válido."
+      }
+    },
+    "errors": {
+      "UNAUTHENTICATED": "Inicia sesión de nuevo para continuar.",
+      "ACCOUNT_INACTIVE": "Esta cuenta está inactiva.",
+      "ADMIN_PROFILE_REQUIRED": "Esta cuenta administradora necesita un perfil de propietario u operador antes de acceder a la configuración.",
+      "ADMIN_PROFILE_INCONSISTENT": "Esta cuenta tiene un perfil de administración incoherente.",
+      "FORBIDDEN": "No tienes permiso para gestionar la configuración de la plataforma.",
+      "SETTINGS_CONFLICT": "La configuración de la plataforma cambió. Actualiza y vuelve a intentarlo.",
+      "SETTINGS_NOT_CONFIGURED": "La configuración de la plataforma aún no está definida.",
+      "VALIDATION_ERROR": "Revisa el correo de contacto configurado.",
+      "INTERNAL_ERROR": "No se pudo cargar o guardar la configuración de la plataforma."
+    }
+  },
+  "refresh": {
+    "dataRefreshed": "Datos actualizados",
+    "refreshData": "Actualizar Datos",
+    "refreshDataAria": "Actualizar datos"
+  },
+  "requestDetails": {
+    "title": "Detalles de la solicitud",
+    "description": "Información de la solicitud guardada en tu espacio de trabajo.",
+    "editTitle": "Editar solicitud de servicio",
+    "editDescription": "Actualiza la información, prioridad o cliente asignado de la solicitud.",
+    "statusTitle": "¿Cambiar el estado de {title}?",
+    "statusDescription": "Esto moverá {title} a {status}.",
+    "deleteTitle": "¿Eliminar {title}?",
+    "deleteDescription": "Esto elimina permanentemente la solicitud. Se conservarán su cliente y la conversación de origen.",
+    "deleteConfirm": "Eliminar solicitud",
+    "cancel": "Cancelar"
+  },
+  "requestForm": {
+    "hint": "Selecciona un cliente existente y describe una necesidad de servicio independiente.",
+    "clientPlaceholder": "Selecciona un cliente",
+    "searchClients": "Buscar clientes…",
+    "noClients": "No se encontraron clientes. Crea primero un cliente.",
+    "scheduleHint": "Es una preferencia, no una cita confirmada.",
+    "cancel": "Cancelar",
+    "review": "Revisar solicitud",
+    "preparing": "Preparando revisión…",
+    "save": "Guardar cambios",
+    "saving": "Guardando…",
+    "previewTitle": "Revisa la solicitud que se creará",
+    "previewHint": "Comprueba el cliente y los valores exactos antes de confirmar.",
+    "expiresAt": "Revisión válida hasta {date} (UTC).",
+    "expired": "Esta revisión ha caducado. Vuelve y prepara otra revisión.",
+    "back": "Volver al formulario",
+    "confirm": "Confirmar y crear solicitud",
+    "confirming": "Confirmando…",
+    "retryConfirmation": "Comprobar y reintentar esta confirmación",
+    "validation": {
+      "clientRequired": "Selecciona un cliente.",
+      "titleRequired": "Introduce el título de la solicitud.",
+      "descriptionRequired": "Describe el servicio solicitado.",
+      "serviceTypeRequired": "Selecciona un tipo de servicio.",
+      "priorityRequired": "Selecciona una prioridad.",
+      "tooLong": "Este campo supera la longitud permitida."
+    }
+  },
+  "requests": {
+    "title": "Solicitudes de servicio",
+    "description": "Registra y consulta las necesidades de servicio de tu espacio de trabajo.",
+    "empty": "No se encontraron solicitudes. Crea una o ajusta los filtros.",
+    "searchPlaceholder": "Buscar por título, descripción o cliente…",
+    "notProvided": "No indicado",
+    "actions": "Acciones",
+    "actionsFor": "Acciones para {title}",
+    "view": "Ver solicitud",
+    "editAction": "Editar solicitud",
+    "deleteAction": "Eliminar solicitud",
+    "retry": "Reintentar",
+    "close": "Cerrar",
+    "fields": {
+      "client": "Cliente",
+      "title": "Título",
+      "description": "Descripción",
+      "serviceType": "Tipo de servicio",
+      "priority": "Prioridad",
+      "status": "Estado",
+      "preferredSchedule": "Disponibilidad preferida",
+      "serviceAddress": "Dirección del servicio",
+      "nextSteps": "Próximos pasos",
+      "createdAt": "Creada",
+      "updatedAt": "Actualizada"
+    },
+    "serviceTypes": {
+      "installation": "Instalación",
+      "repair": "Reparación",
+      "maintenance": "Mantenimiento",
+      "inspection": "Inspección",
+      "other": "Otro"
+    },
+    "priorities": { "low": "Baja", "normal": "Normal", "high": "Alta" },
+    "statuses": { "pending": "Pendiente", "in_progress": "En progreso", "resolved": "Resuelta", "cancelled": "Cancelada" },
+    "statusActions": {
+      "pending": "Mover a pendiente",
+      "in_progress": "Iniciar trabajo",
+      "resolved": "Resolver solicitud",
+      "cancelled": "Cancelar solicitud",
+      "reopen": "Reabrir solicitud"
+    },
+    "summary": { "total": "Total", "pending": "Pendientes", "in_progress": "En progreso", "resolved": "Resueltas", "cancelled": "Canceladas" },
+    "filters": {
+      "allClients": "Todos los clientes",
+      "noClients": "No se encontraron clientes",
+      "searchClients": "Buscar clientes…",
+      "selectedClient": "Cliente seleccionado",
+      "allServiceTypes": "Todos los tipos",
+      "allPriorities": "Todas las prioridades",
+      "allStatuses": "Todos los estados"
+    },
+    "pagination": {
+      "showing": "Mostrando {start}-{end} de {total}",
+      "previous": "Anterior",
+      "next": "Siguiente"
+    },
+    "create": {
+      "trigger": "Nueva solicitud",
+      "title": "Crear solicitud de servicio",
+      "description": "Selecciona un cliente, revisa los valores exactos y confirma la creación.",
+      "success": "Solicitud creada correctamente."
+    },
+    "edit": { "success": "Solicitud actualizada correctamente." },
+    "status": { "success": "Estado de la solicitud actualizado correctamente." },
+    "delete": { "success": "Solicitud eliminada correctamente." },
+    "errors": {
+      "VALIDATION_ERROR": "Revisa la información de la solicitud e inténtalo de nuevo.",
+      "UNAUTHENTICATED": "Inicia sesión de nuevo para continuar.",
+      "ACCOUNT_INACTIVE": "Esta cuenta está inactiva.",
+      "FORBIDDEN": "No tienes acceso a esta solicitud.",
+      "NOT_FOUND": "El cliente, la solicitud o la revisión ya no están disponibles.",
+      "SENSITIVE_DATA": "Elimina información de pago, credenciales o datos personales sensibles antes de continuar.",
+      "PLAN_STALE": "Esta revisión cambió. Vuelve y revisa la solicitud de nuevo.",
+      "PLAN_EXPIRED": "Esta revisión caducó. Vuelve y revisa la solicitud de nuevo.",
+      "CLIENT_CHANGED": "El cliente seleccionado cambió. Vuelve y prepara la solicitud de nuevo.",
+      "INVALID_STATUS_TRANSITION": "Ese cambio de estado no está permitido. Cierra este diálogo y vuelve a abrir la solicitud para ver su estado actual.",
+      "STALE_VERSION": "La solicitud cambió desde que la abriste. Cierra este diálogo y vuelve a abrirla antes de intentarlo otra vez.",
+      "CONFIRMATION_UNCERTAIN": "No se pudo verificar el resultado. Mantén esta ventana abierta y reintenta la misma confirmación.",
+      "INTERNAL_ERROR": "No se pudo cargar o guardar la solicitud. Inténtalo de nuevo."
+    }
+  },
+  "resetPassword": {
+    "pageTitle": "Restablecer Contraseña",
+    "pageDescription": "Ingresa tu nueva contraseña a continuación",
+    "newPassword": "Nueva Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "submit": "Restablecer Contraseña",
+    "submitting": "Restableciendo...",
+    "successTitle": "Contraseña restablecida correctamente",
+    "successDescription": "Tu contraseña ha sido actualizada. Por favor inicia sesión con tu nueva contraseña.",
+    "backToLogin": "Volver al Inicio de Sesión"
+  },
+  "sidebar": {
+    "groups": {
+      "workspace": "GESTIÓN DE CLIENTES",
+      "metrics": "ESPACIO",
+      "admin": "ADMINISTRACIÓN"
+    },
+    "navigation": {
+      "clients": "Clientes",
+      "conversations": "Conversaciones",
+      "dashboard": "Dashboard",
+      "requests": "Solicitudes",
+      "settings": "Configuración",
+      "users": "Usuarios"
+    }
+  },
+  "stats": {
+    "totalUsers": "Total de Usuarios",
+    "platformAdmins": "Administradores de la Plataforma",
+    "trialUsers": "Usuarios de Prueba",
+    "active": "Activos",
+    "suspended": "Suspendidos"
+  },
+  "table": {
+    "name": "Nombre",
+    "email": "Correo",
+    "role": "Rol",
+    "signOutError": "No se pudo cerrar la sesión. Inténtalo de nuevo.",
+    "status": "Estado",
+    "created": "Creado",
+    "actions": "Acciones",
+    "viewDetails": "Ver detalles",
+    "edit": "Editar",
+    "cannotEditYourself": "No puedes editarte a ti mismo",
+    "cannotDeactivateYourself": "No puedes suspender tu propia cuenta",
+    "deactivateUsers": "Suspender usuarios",
+    "deactivateUsersDescription": "Los usuarios seleccionados perderán acceso hasta que se activen nuevamente.",
+    "confirmDeactivate": "Suspender",
+    "deactivate": "Suspender",
+    "activate": "Activar",
+    "user": "usuario",
+    "users": "usuarios",
+    "noUsersFound": "No se encontraron usuarios",
+    "selectAll": "Seleccionar todo",
+    "selectRow": "Seleccionar fila",
+    "noName": "Sin nombre",
+    "resendInvitation": "Reenviar invitación",
+    "confirmDelete": "Eliminar",
+    "suspendUser": "Suspender usuario",
+    "suspendUserDescription": "El usuario perderá acceso hasta que un administrador active la cuenta nuevamente.",
+    "cancel": "Cancelar"
+  },
+  "temporaryPassword": {
+    "title": "Protege tu cuenta de prueba",
+    "description": "Sustituye la contraseña temporal antes de entrar a tu espacio de trabajo. Tu prueba de 14 días comienza sólo cuando este paso finaliza correctamente.",
+    "recoveryTitle": "Sustituye tu contraseña de recuperación",
+    "recoveryDescription": "Elige una contraseña privada para recuperar el acceso. Las fechas originales de activación y vencimiento de tu prueba no cambiarán.",
+    "expiresAt": "Credencial temporal válida hasta {date} UTC.",
+    "currentPassword": "Contraseña temporal",
+    "currentPasswordPlaceholder": "Introduce la contraseña proporcionada por el equipo",
+    "newPassword": "Nueva contraseña",
+    "newPasswordPlaceholder": "Crea una nueva contraseña",
+    "confirmPassword": "Confirma la nueva contraseña",
+    "confirmPasswordPlaceholder": "Repite tu nueva contraseña",
+    "passwordHint": "Usa entre 8 y 128 caracteres y no reutilices la contraseña temporal.",
+    "showPassword": "Mostrar contraseña",
+    "hidePassword": "Ocultar contraseña",
+    "signOut": "Cerrar sesión",
+    "saving": "Protegiendo la cuenta...",
+    "submit": "Cambiar contraseña y continuar",
+    "expiredTitle": "La credencial temporal ha caducado",
+    "expiredSummary": "Esta credencial ya no puede usarse para sustituir la contraseña de la cuenta.",
+    "expiredDescription": "Por tu seguridad, el cambio queda deshabilitado al terminar la ventana de 72 horas de la credencial.",
+    "expiredContact": "Contacta al equipo mediante el canal de solicitud de acceso para que verifique la cuenta y te indique el siguiente paso seguro.",
+    "contactTeam": "Contactar al equipo",
+    "validation": {
+      "currentPasswordRequired": "Introduce la contraseña temporal.",
+      "passwordLength": "La contraseña debe contener entre 8 y 128 caracteres.",
+      "passwordMustChange": "Elige una contraseña distinta de la temporal.",
+      "passwordMismatch": "Las nuevas contraseñas no coinciden."
+    },
+    "errors": {
+      "VALIDATION_ERROR": "Revisa los campos de contraseña e inténtalo de nuevo.",
+      "UNAUTHENTICATED": "Inicia sesión nuevamente con la credencial temporal.",
+      "ACCOUNT_INACTIVE": "Esta cuenta no está activa. Contacta al equipo.",
+      "TEMPORARY_PASSWORD_EXPIRED": "La credencial temporal ha caducado. Contacta al equipo.",
+      "TEMPORARY_PASSWORD_CHANGE_NOT_REQUIRED": "Esta cuenta ya no necesita sustituir una contraseña temporal.",
+      "INVALID_CURRENT_PASSWORD": "La contraseña temporal es incorrecta.",
+      "PASSWORD_REPLACEMENT_FAILED": "La contraseña puede haber cambiado, pero no se pudo completar la actualización de la cuenta. Reintenta con la nueva contraseña o contacta al equipo.",
+      "INTERNAL_ERROR": "No se pudo proteger la cuenta. Inténtalo de nuevo."
+    }
+  },
+  "timeAgo": {
+    "justNow": "ahora mismo",
+    "minutes": "hace {count} minuto{count, plural, one{} other{s}}",
+    "hours": "hace {count} hora{count, plural, one{} other{s}}",
+    "days": "hace {count} día{count, plural, one{} other{s}}",
+    "months": "hace {count} mes{count, plural, one{} other{es}}",
+    "years": "hace {count} año{count, plural, one{} other{s}}"
+  },
+  "twoFactor": {
+    "metadata": { "setupTitle": "Configurar la autenticación de dos factores", "setupDescription": "Protege el acceso administrativo con una aplicación de autenticación.", "challengeTitle": "Verificación de dos factores", "challengeDescription": "Completa el segundo paso de verificación para continuar." },
+    "setup": {
+      "title": "Protege tu cuenta de administrador",
+      "description": "La autenticación de dos factores es obligatoria antes de usar funciones administrativas.",
+      "limitedTitle": "El acceso administrativo está limitado temporalmente",
+      "limitedDescription": "Confirma tu contraseña, conecta una aplicación de autenticación y verifica un código. Hasta completar el proceso sólo puedes configurar MFA o cerrar sesión.",
+      "passwordLabel": "Contraseña actual", "passwordPlaceholder": "Introduce tu contraseña actual", "passwordDescription": "Tu contraseña se verifica de forma segura y esta pantalla nunca la muestra ni la almacena.",
+      "showPassword": "Mostrar contraseña", "hidePassword": "Ocultar contraseña", "signOut": "Cerrar sesión", "start": "Configurar autenticador", "starting": "Iniciando configuración...",
+      "scanTitle": "Conecta tu aplicación de autenticación", "scanDescription": "Escanea este código QR con tu aplicación de autenticación. El QR se genera en este dispositivo y no se envía a un servicio QR externo.", "qrLabel": "Código QR para configurar el autenticador",
+      "manualToggle": "¿No puedes escanear el código QR?", "manualDescription": "Introduce este secreto temporal manualmente en tu aplicación de autenticación. No lo compartas.", "manualSecretLabel": "Secreto temporal de configuración manual",
+      "verificationCodeLabel": "Código de verificación de seis dígitos", "verificationCodeDescription": "Introduce el código actual de tu aplicación de autenticación. Puedes pegar el código completo.",
+      "cancelSetup": "Empezar de nuevo", "verify": "Verificar y activar", "verifying": "Verificando..."
+    },
+    "backupCodes": {
+      "saveTitle": "Guarda ahora estos códigos de respaldo", "saveDescription": "Esta es la única vez que se mostrarán. Cada código funciona una sola vez y se sustituye al regenerarlos.", "listLabel": "Códigos de respaldo de un solo uso",
+      "copy": "Copiar todos los códigos", "copied": "Códigos copiados", "savedConfirmation": "Guardé estos códigos de respaldo en un lugar seguro.",
+      "lossWarning": "Si pierdes el autenticador y todos los códigos de respaldo, contacta al equipo mediante el proceso seguro establecido. La recuperación automática no está disponible.",
+      "continue": "Continuar de forma segura", "continuing": "Continuando..."
+    },
+    "regeneration": {
+      "enabledTitle": "La autenticación de dos factores está activa", "enabledDescription": "Puedes sustituir tus códigos de respaldo tras confirmar tu contraseña actual. Los códigos existentes dejarán de funcionar inmediatamente.",
+      "passwordLabel": "Contraseña actual", "passwordPlaceholder": "Introduce tu contraseña actual", "confirmation": "Entiendo que todos los códigos de respaldo existentes quedarán invalidados.",
+      "warning": "Guarda los nuevos códigos antes de salir de esta página. Los códigos existentes no se pueden revelar.", "regenerate": "Sustituir códigos de respaldo", "regenerating": "Sustituyendo códigos..."
+    },
+    "challenge": {
+      "title": "Verifica que eres tú", "description": "Tu contraseña fue aceptada. Completa la verificación de dos factores antes de crear una sesión utilizable.",
+      "totpLabel": "Código de seis dígitos del autenticador", "totpDescription": "Introduce o pega el código actual de tu aplicación de autenticación.",
+      "backupLabel": "Código de respaldo", "backupPlaceholder": "Introduce un código de respaldo", "backupDescription": "Cada código de respaldo se puede usar una sola vez.",
+      "verify": "Verificar y continuar", "verifying": "Verificando...", "useBackupCode": "Usar un código de respaldo", "useAuthenticator": "Usar un código del autenticador",
+      "lostFactorsTitle": "¿Perdiste ambos métodos de verificación?", "lostFactorsDescription": "Contacta al equipo mediante el proceso seguro establecido. Esta pantalla no puede saltarse la autenticación de dos factores ni prometer recuperación automática.",
+      "restart": "Reiniciar inicio de sesión", "signOut": "Cerrar sesión"
+    },
+    "validation": {
+      "passwordRequired": "Introduce tu contraseña actual.", "invalidTotp": "Introduce el código completo de seis dígitos.", "backupCodeRequired": "Introduce un código de respaldo válido.",
+      "savedConfirmationRequired": "Confirma que guardaste los códigos de respaldo antes de continuar.", "regenerationConfirmationRequired": "Confirma que los códigos de respaldo existentes quedarán invalidados."
+    },
+    "errors": {
+      "INVALID_INPUT": "Revisa la información y vuelve a intentarlo.", "UNAUTHENTICATED": "Tu contexto de verificación ya no es válido. Reinicia el inicio de sesión.", "UNAUTHORIZED": "Esta operación no está disponible para esta cuenta.",
+      "ENROLLMENT_REQUIRED": "Completa la configuración de dos factores antes de continuar.", "ADMIN_MFA_ENROLLMENT_REQUIRED": "Completa la configuración de dos factores antes de continuar.", "INVALID_PASSWORD": "No se pudo verificar la contraseña.",
+      "INVALID_CODE": "No se pudo verificar el código. Compruébalo y vuelve a intentarlo.", "TWO_FACTOR_INVALID_CODE": "No se pudo verificar el código. Compruébalo y vuelve a intentarlo.",
+        "LOCKED_OUT": "Se realizaron demasiados intentos. Espera antes de volver a intentarlo o reinicia la sesión.", "MFA_TEMPORARILY_LOCKED": "Se realizaron demasiados intentos. Espera 15 minutos antes de volver a intentarlo.", "MFA_CHALLENGE_EXPIRED": "Este intento de verificación caducó. Reinicia el inicio de sesión.", "STALE_STATE": "El estado de seguridad cambió. Recarga esta página y vuelve a intentarlo.", "STATE_CHANGED": "El estado de seguridad cambió. Reinicia el inicio de sesión y vuelve a intentarlo.",
+        "CONFLICT": "No se pudo completar la operación porque cambió el estado de seguridad.", "OPERATION_NOT_ALLOWED": "Esta operación no está permitida.", "INTERNAL_ERROR": "No se pudo completar la verificación de forma segura. Vuelve a intentarlo."
+        ,"INVALID_CURRENT_PASSWORD": "No se pudo verificar la contraseña.", "INVALID_TWO_FACTOR_CODE": "No se pudo verificar el código. Compruébalo y vuelve a intentarlo.", "MFA_ALREADY_ENABLED": "La autenticación de dos factores ya está activa.", "MFA_ENROLLMENT_NOT_PENDING": "Inicia la configuración de dos factores antes de verificar un código.", "MFA_STATE_INCONSISTENT": "El estado de seguridad no puede usarse de forma segura. Contacta al equipo mediante el proceso seguro establecido.", "RECENT_SESSION_REQUIRED": "Vuelve a iniciar sesión antes de sustituir los códigos de respaldo.", "TEMPORARY_PASSWORD_CHANGE_REQUIRED": "Sustituye la contraseña temporal antes de configurar la autenticación de dos factores.", "ACCOUNT_INACTIVE": "Esta cuenta no puede completar la operación."
+    }
+  },
+  "user": {
+    "signOut": "Cerrar sesión",
+    "signOutError": "No se pudo cerrar la sesión. Inténtalo de nuevo.",
+    "signingOut": "Cerrando sesión...",
+    "role": "Rol",
+    "signOutDemo": "Modo demo — la autenticación aún no está conectada."
+  },
+  "userDetails": {
+    "title": "Detalles de Usuario",
+    "description": "Información de cuenta y marcas de tiempo.",
+    "editUser": "Editar usuario",
+    "editUserDescription": "Actualiza el nombre y el idioma preferido. El perfil de administración es de solo lectura aquí."
+  },
+  "userDetailsSection": {
+    "account": "Cuenta",
+    "initialCreditAllocation": "Asignación inicial de créditos",
+    "temporaryPasswordExpiresAt": "Caducidad de la credencial temporal",
+    "trialActivatedAt": "Prueba activada",
+    "trialExpiresAt": "Caducidad de la prueba",
+    "timestamps": "Marcas de Tiempo",
+    "lastUpdated": "Última Actualización",
+    "locale": "Idioma preferido",
+    "adminOwnerOnly": "Solo el propietario puede cambiar o gestionar cuentas administradoras.",
+    "unknownUser": "Usuario Desconocido"
+  },
+  "userForm": {
+    "userInformation": "Información de Usuario",
+    "email": "Correo Electrónico",
+    "emailPlaceholder": "usuario@ejemplo.com",
+    "fullName": "Nombre Completo",
+    "fullNamePlaceholder": "Juan Pérez",
+    "access": "Acceso",
+    "generatedTemporaryPasswordNotice": "El servidor generará una contraseña temporal segura y la mostrará una sola vez después de crear la cuenta.",
+    "roleReadOnly": "Los cambios de rol y perfil de administración usan acciones separadas exclusivas del propietario.",
+    "showPassword": "Mostrar contraseña",
+    "hidePassword": "Ocultar contraseña",
+    "creating": "Creando...",
+    "create": "Crear cuenta",
+    "role": "Rol",
+    "rolePlaceholder": "Seleccionar rol",
+    "status": "Estado",
+    "statusPlaceholder": "Seleccionar estado",
+    "locale": "Idioma preferido",
+    "localePlaceholder": "Selecciona un idioma",
+    "initialCreditAllocation": "Asignación inicial de créditos",
+    "initialCreditAllocationDescription": "Configuración almacenada para el futuro registro contable de créditos de procesamiento.",
+    "cancel": "Cancelar",
+    "saving": "Guardando",
+    "save": "Guardar",
+    "sendingInvite": "Enviando Invitación",
+    "sendInvite": "Enviar Invitación",
+    "user": "Usuario",
+    "fullNameLabel": "Nombre completo",
+    "validation": {
+      "nameMin": "El nombre debe contener al menos 2 caracteres.",
+      "invalidEmail": "Ingresa un correo válido.",
+      "initialCreditAllocation": "Ingresa un número entero no negativo."
+    }
+  },
+  "userProfile": {
+    "menuItem": "Ver Perfil",
+    "modalTitle": "Mi Perfil",
+    "modalDescription": "Ver y editar la información de tu cuenta",
+    "noName": "Sin nombre",
+    "editName": "Editar",
+    "loading": "Cargando perfil",
+    "loadingSubtitle": "Por favor espera un momento",
+    "error": "Error al cargar el perfil",
+    "notFound": "Perfil no encontrado",
+    "sections": {
+      "personalInfo": "Información Personal",
+      "systemInfo": "Información del Sistema",
+      "security": "Seguridad de la Cuenta"
+    },
+    "fields": {
+      "fullName": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "role": "Rol",
+      "status": "Estado",
+      "createdAt": "Miembro Desde",
+      "updatedAt": "Última Actualización"
+    },
+    "form": {
+      "fullName": "Nombre Completo",
+      "fullNamePlaceholder": "Tu nombre completo",
+      "save": "Guardar Cambios",
+      "saving": "Guardando...",
+      "cancel": "Cancelar",
+      "successToast": "Perfil actualizado correctamente"
+    },
+    "security": {
+      "changePassword": "Cambiar Contraseña",
+      "forgotPassword": "Olvidé mi Contraseña",
+      "changeTitle": "Cambia tu contraseña",
+      "forgotTitle": "Recuperación de Contraseña",
+      "forgotDescription": "Para restablecer tu contraseña, contacta a tu administrador o usa la página de inicio de sesión.",
+      "currentPassword": "Contraseña Actual",
+      "newPassword": "Nueva Contraseña",
+      "confirmPassword": "Confirmar Nueva Contraseña",
+      "savePassword": "Actualizar Contraseña",
+      "back": "Volver",
+      "changing": "Cambiando...",
+      "comingSoon": "Próximamente",
+      "forgotSent": "Revisa tu correo electrónico",
+      "forgotSentDescription": "Se ha enviado un enlace de restablecimiento a {email}.",
+      "forgotEmail": "Correo Electrónico"
+    }
+  },
+  "users": {
+    "title": "Gestión de Usuarios",
+    "loadingUsers": "Cargando usuarios...",
+    "fetchingUsersData": "Obteniendo datos de usuarios",
+    "description": "Gestionar cuentas de usuarios, roles y acceso.",
+    "accessValues": {
+      "active": "Activo",
+      "suspended": "Suspendido",
+      "temporary_pending": "Cambio de contraseña pendiente",
+      "temporary_expired": "Credencial temporal caducada"
+    },
+    "actions": {
+      "activate": "Activar",
+      "adminOwnerOnly": "Los controles de administración solo están disponibles para el propietario.",
+      "delete": "Eliminar cuenta",
+      "demoteOperator": "Quitar operador",
+      "edit": "Editar",
+      "confirmCredentialDelivery": "Confirmar entrega de credencial",
+      "menuLabel": "Abrir acciones del usuario",
+      "ownerProtected": "El propietario de la plataforma no se puede retirar, suspender ni eliminar desde aquí.",
+      "promoteOperator": "Promover a operador",
+      "promotionRequiresActive": "Solo se puede promover a operador a un usuario de prueba activo.",
+      "recoverOperatorMfa": "Restablecer MFA del operador",
+      "reissueActivationCredential": "Reemitir credencial de activación",
+      "revokeSessions": "Revocar sesiones",
+      "resetAccess": "Restablecer acceso",
+      "suspend": "Suspender",
+      "transferOwnership": "Transferir propiedad",
+      "view": "Ver detalles"
+    },
+    "confirmations": {
+      "activateConfirm": "Activar",
+      "activateDescription": "{name} podrá iniciar sesión nuevamente. No se creará una sesión nueva.",
+      "activateTitle": "¿Activar a {name}?",
+      "cancel": "Cancelar",
+      "demoteOperatorConfirm": "Quitar operador",
+      "demoteOperatorDescription": "{name} pasará a ser usuario de prueba y se revocarán todas sus sesiones activas.",
+      "demoteOperatorTitle": "¿Quitar el acceso de operador a {name}?",
+      "closeCredentialModal": "Cerrar diálogo de credencial",
+      "closeCredentialDeliveryModal": "Cerrar diálogo de confirmación de entrega",
+      "closeSecurityModal": "Cerrar diálogo de seguridad administrativa",
+      "credentialActivationDescription": "Genera una credencial de activación sustituta después de confirmar el motivo.",
+      "credentialActivationTitle": "¿Reemitir la credencial de activación de {name}?",
+      "credentialDeliveryDescription": "Registra la entrega de la credencial vigente sin reemitirla ni volver a mostrarla.",
+      "credentialDeliveryTitle": "Confirmar entrega de credencial a {name}",
+      "credentialRecoveryDescription": "Genera una credencial de recuperación sin cambiar las fechas originales de la prueba.",
+      "credentialRecoveryTitle": "¿Restablecer el acceso de {name}?",
+      "deleteConfirm": "Eliminar cuenta",
+      "deleteDescription": "Esto elimina permanentemente la cuenta de identidad de {name}. Se bloqueará si existen datos administrados de otros dominios.",
+      "deleteTitle": "¿Eliminar permanentemente a {name}?",
+      "initiateTransferDescription": "Crea una solicitud protegida y temporal de transferencia de propiedad.",
+      "initiateTransferTitle": "¿Transferir la propiedad a {name}?",
+      "promoteOperatorConfirm": "Promover a operador",
+      "promoteOperatorDescription": "{name} pasará a ser operador de la plataforma. Las sesiones existentes se revocarán antes de aplicar el nuevo acceso.",
+      "promoteOperatorTitle": "¿Promover a {name} a operador?",
+      "revokeSessionsConfirm": "Revocar sesiones",
+      "revokeSessionsDescription": "Se cerrarán todas las sesiones actuales de {name}. La cuenta permanecerá activa.",
+      "revokeSessionsTitle": "¿Revocar las sesiones de {name}?",
+      "recoverMfaDescription": "Verifica tu contraseña y código actual del autenticador antes de restablecer el MFA de este operador.",
+      "recoverMfaTitle": "¿Restablecer el MFA de {name}?",
+      "suspendConfirm": "Suspender",
+      "suspendDescription": "{name} perderá el acceso y se revocarán todas sus sesiones actuales.",
+      "suspendTitle": "¿Suspender a {name}?"
+    },
+    "roleValues": {
+      "owner": "Propietario",
+      "operator": "Operador",
+      "platform_admin": "Administrador de la Plataforma",
+      "trial_user": "Usuario de Prueba",
+      "unconfiguredAdmin": "Administrador sin configurar"
+    },
+    "statusValues": {
+      "active": "Activo",
+      "suspended": "Suspendido"
+    },
+    "filters": {
+      "active": "activo",
+      "filter": "filtro",
+      "filters": "filtros",
+      "search": "Buscar",
+      "role": "Rol",
+      "status": "Estado",
+      "clearAll": "Limpiar todo"
+    },
+    "resendInvitation": {
+      "successToast": "Invitación reenviada exitosamente"
+    },
+    "create": {
+      "trigger": "Crear Usuario",
+      "modalTitle": "Crear cuenta de prueba",
+      "modalDescription": "Crea una cuenta de prueba. La contraseña temporal generada por el servidor dura 72 horas y el workspace queda bloqueado hasta sustituirla.",
+      "successToast": "Usuario creado correctamente",
+      "credential": {
+        "title": "Credencial temporal lista",
+        "warning": "Esta contraseña sólo se muestra ahora. Guárdala de forma segura antes de cerrar este diálogo; no podrá recuperarse después.",
+        "email": "Correo de la cuenta",
+        "password": "Contraseña temporal",
+        "copy": "Copiar contraseña",
+        "copied": "Copiada",
+        "expires": "Caducidad",
+        "expiresValue": "Válida hasta {date} UTC",
+        "delivery": "Compártela únicamente mediante el canal privado aprobado. Nunca la incluyas en auditorías ni enlaces públicos.",
+        "copiedConfirmation": "Contraseña copiada. Entrégala mediante el canal privado aprobado.",
+        "copyFailed": "No se pudo copiar la contraseña automáticamente. Selecciónala y cópiala manualmente.",
+        "done": "Ya la guardé"
+      }
+    },
+    "credentialReissue": {
+      "action": {
+        "activation": "Reemitir credencial de activación",
+        "recovery": "Restablecer acceso"
+      },
+      "cancel": "Cancelar",
+      "channels": {
+        "in_person": "En persona",
+        "other": "Otro canal privado aprobado",
+        "phone": "Teléfono",
+        "secure_message": "Mensaje seguro"
+      },
+      "closeWithoutDelivery": "Cerrar sin confirmar la entrega",
+      "confirmDelivery": "Credencial entregada",
+      "confirmingDelivery": "Confirmando entrega...",
+      "confirmationLabel": "Confirmo que deseo invalidar la credencial actual, revocar todas las sesiones y emitir una nueva credencial temporal.",
+      "deliveredAt": "Entrega confirmada",
+      "deliveryChannelLabel": "Canal de entrega",
+      "deliveryConfirmedDescription": "La entrega se registró con la categoría {channel}. No se guardaron detalles privados del canal.",
+      "deliveryConfirmedTitle": "Entrega de credencial confirmada",
+      "deliveryNoLongerAvailable": "Esta emisión ya no es la vigente o su entrega ya fue confirmada. Actualiza el registro del usuario.",
+      "deliveryDescription": "Después de entregar la credencial mediante un canal privado aprobado, registra únicamente la categoría general del canal.",
+      "deferredDeliveryNotice": "Esto sólo registra la entrega de la emisión vigente. La credencial no se volverá a mostrar ni será sustituida.",
+      "deliveryPrivacyNotice": "No ingreses direcciones, números de teléfono, usuarios, conversaciones ni la propia credencial.",
+      "deliveryTitle": "Entrega aún no confirmada",
+      "done": "Finalizar",
+      "expiresAt": "Caducidad de la credencial temporal",
+      "issuedAt": "Emitida",
+      "issuanceState": "Emisión de credencial",
+      "issuing": "Emitiendo credencial...",
+      "latestIssuance": "Última emisión de credencial temporal",
+      "missingExpiryError": "La operación no devolvió una caducidad utilizable. No entregues esta credencial; inicia una nueva emisión de recuperación.",
+      "otherNoteDescription": "Máximo 200 caracteres. No incluyas credenciales ni datos privados de contacto.",
+      "otherNoteLabel": "Nota breve del motivo",
+      "otherNotePlaceholder": "Añade un motivo conciso y no sensible",
+      "purpose": {
+        "activation": "Activación: la prueba de 14 días comienza sólo cuando el usuario sustituye esta credencial.",
+        "recovery": "Recuperación: las fechas originales de activación y caducidad de la prueba no cambiarán."
+      },
+      "purposeLabel": "Propósito",
+      "reasonDescription": "Elige el motivo administrativo verificado para esta operación.",
+      "reasonLabel": "Motivo",
+      "reasons": {
+        "expired_credential": "Credencial caducada",
+        "failure_recovery": "Recuperación de un fallo previo",
+        "forgotten_password": "Contraseña olvidada",
+        "other": "Otro",
+        "suspected_compromise": "Posible compromiso de credenciales"
+      },
+      "revokedSessions": "{count, plural, =0 {No se encontraron sesiones activas.} one {Se revocó # sesión.} other {Se revocaron # sesiones.}}",
+      "securityNotice": "La nueva contraseña se genera únicamente en el servidor y se mostrará una sola vez después de una operación exitosa.",
+      "status": {
+        "delivered": "Entregada",
+        "failed": "Fallida",
+        "issuedNotDelivered": "Emitida · entrega no confirmada",
+        "prepared": "En preparación",
+        "superseded": "Sustituida"
+      },
+      "submit": {
+        "activation": "Reemitir credencial de activación",
+        "recovery": "Restablecer acceso"
+      },
+      "suspendedTitle": "La cuenta permanece suspendida",
+      "suspendedWarning": "Esta operación no reactiva la cuenta. El usuario no podrá iniciar el flujo de sustitución de credencial hasta que un administrador reactive la cuenta explícitamente.",
+      "validation": {
+        "channelRequired": "Elige una categoría de canal de entrega.",
+        "confirmationRequired": "Confirma la operación antes de continuar.",
+        "noteRequired": "Añade una nota breve únicamente cuando el motivo sea Otro.",
+        "noteTooLong": "Limita la nota a 200 caracteres.",
+        "reasonRequired": "Elige un motivo."
+      }
+    },
+    "edit": {
+      "successToast": "Usuario actualizado correctamente"
+    },
+    "localeValues": {
+      "en": "Inglés",
+      "es": "Español"
+    },
+    "mfaRecovery": {
+      "activeWarning": "El operador permanece activo, pero no podrá iniciar sesión hasta completar un nuevo enrollment MFA.",
+      "cancel": "Cancelar",
+      "confirmationLabel": "Confirmo que deseo restablecer el MFA de {name} y revocar todas sus sesiones activas.",
+      "done": "Finalizar",
+      "enrollmentWarning": "Se exigirá un nuevo enrollment MFA en el siguiente inicio de sesión elegible.",
+      "noSecretsWarning": "No se recupera, genera ni muestra ningún secreto o backup code anterior.",
+      "passwordDescription": "Vuelve a ingresar tu contraseña actual de propietario. Nunca se guarda en este formulario.",
+      "passwordLabel": "Contraseña actual",
+      "reasonDescription": "Elige la categoría administrativa verificada para esta recuperación.",
+      "reasonLabel": "Motivo de recuperación",
+      "reasons": {
+        "lost_all_factors": "Se perdieron el autenticador y los backup codes",
+        "lost_device": "Se perdió el dispositivo autenticador",
+        "operational_recovery": "Recuperación operativa aprobada",
+        "other": "Otro motivo aprobado",
+        "suspected_compromise": "Posible compromiso del factor"
+      },
+      "referenceDescription": "Opcional, máximo 120 caracteres. Usa solo una referencia no sensible de ticket o incidente.",
+      "referenceLabel": "Referencia operativa",
+      "referencePlaceholder": "Ejemplo: OPS-2026-104",
+      "sessionsWarning": "Todas las sesiones del operador se revocarán de inmediato.",
+      "submit": "Restablecer MFA y revocar sesiones",
+      "submitting": "Restableciendo MFA...",
+      "successDescription": "{count, plural, =0 {No se encontraron sesiones activas.} one {Se revocó # sesión.} other {Se revocaron # sesiones.}}",
+      "successEnrollment": "El operador debe volver a iniciar sesión y completar un nuevo enrollment MFA antes de recuperar el acceso administrativo.",
+      "successTitle": "MFA del operador restablecido",
+      "suspensionWarning": "La suspensión se conserva. El enrollment no estará disponible hasta reactivar la cuenta mediante el flujo autorizado.",
+      "targetSummary": "Operador seleccionado para recuperación controlada de MFA",
+      "totpDescription": "Ingresa el código actual de seis dígitos de tu autenticador de propietario.",
+      "totpLabel": "Código actual del autenticador",
+      "validation": {
+        "confirmationRequired": "Confirma la recuperación antes de continuar.",
+        "passwordRequired": "Ingresa tu contraseña actual.",
+        "reasonRequired": "Elige un motivo de recuperación.",
+        "referenceInvalid": "Usa una referencia no sensible de una sola línea.",
+        "referenceTooLong": "Limita la referencia a 120 caracteres.",
+        "totpInvalid": "Ingresa un código válido de seis dígitos."
+      },
+      "warningTitle": "Esta es una recuperación de seguridad"
+    },
+    "ownershipTransfer": {
+      "accept": {
+        "confirmationLabel": "Confirmo que {target} pasará a propietario, {owner} pasará a operador y se cerrarán las sesiones de ambos.",
+        "description": "Revalida tus credenciales antes de aceptar la propiedad.",
+        "irreversibleWarning": "Esta transferencia no puede revertirse automáticamente.",
+        "roleWarning": "Pasarás a propietario y el propietario actual pasará a operador en una transición atómica.",
+        "sessionsWarning": "Se cerrarán todas las sesiones de ambos administradores.",
+        "signInAgain": "Ambos administradores deben volver a iniciar sesión para que se apliquen sus nuevas capabilities.",
+        "submit": "Aceptar propiedad",
+        "title": "Aceptar transferencia de propiedad",
+        "warningTitle": "Esto cambia el propietario de la plataforma"
+      },
+      "cancel": {
+        "confirmationLabel": "Confirmo que deseo cancelar la transferencia de {owner} a {target}.",
+        "description": "Revalida tus credenciales antes de cancelar esta solicitud pendiente.",
+        "submit": "Cancelar transferencia",
+        "terminalWarning": "La cancelación es final; esta solicitud no podrá aceptarse después.",
+        "title": "Cancelar transferencia de propiedad",
+        "warningTitle": "Cancelar la solicitud pendiente"
+      },
+      "close": "Cerrar",
+      "closeDialog": "Cerrar diálogo de transferencia de propiedad",
+      "currentOwner": "Propietario actual",
+      "decline": {
+        "confirmationLabel": "Confirmo que deseo rechazar la transferencia de {owner} a {target}.",
+        "description": "Revalida tus credenciales antes de rechazar esta solicitud pendiente.",
+        "submit": "Rechazar transferencia",
+        "terminalWarning": "El rechazo es final; esta solicitud no podrá aceptarse después.",
+        "title": "Rechazar transferencia de propiedad",
+        "warningTitle": "Rechazar la solicitud pendiente"
+      },
+      "done": "Finalizar",
+      "expiresAt": "Caduca {date}",
+      "initiate": {
+        "confirmationLabel": "Confirmo que deseo invitar a {target} a sustituir a {owner} como propietario de la plataforma.",
+        "expiryNotice": "El operador debe aceptar desde su propia sesión MFA reciente dentro de 30 minutos.",
+        "noImmediateChange": "Crear la solicitud no cambia el rol ni las capabilities de ningún administrador.",
+        "submit": "Crear solicitud de transferencia",
+        "successDescription": "{target} ya puede aceptar o rechazar desde su propia sesión autenticada.",
+        "successTitle": "Transferencia de propiedad solicitada",
+        "warningTitle": "Se requieren dos participantes"
+      },
+      "loading": "Comprobando si existe una transferencia de propiedad pendiente...",
+      "noUrlTokens": "No se coloca ningún token reutilizable de transferencia en una URL.",
+      "panelTitle": "Transferencia de propiedad",
+      "passwordDescription": "Vuelve a ingresar tu contraseña actual. No se persiste en el navegador.",
+      "passwordLabel": "Contraseña actual",
+      "proposedOwner": "Propietario propuesto",
+      "result": {
+        "accepted": { "description": "La propiedad cambió atómicamente y se revocaron las sesiones de ambos administradores.", "title": "Propiedad transferida" },
+        "cancelled": { "description": "La solicitud ya no puede aceptarse.", "title": "Transferencia cancelada" },
+        "declined": { "description": "La solicitud ya no puede aceptarse.", "title": "Transferencia rechazada" },
+        "expired": { "description": "La solicitud caducó y no puede aceptarse.", "title": "Transferencia caducada" },
+        "invalidated": { "description": "El estado de una cuenta cambió y la solicitud ya no puede continuar.", "title": "Transferencia invalidada" },
+        "pending": { "description": "La solicitud sigue pendiente.", "title": "Transferencia pendiente" }
+      },
+      "status": {
+        "accepted": "Aceptada",
+        "cancelled": "Cancelada",
+        "declined": "Rechazada",
+        "expired": "Caducada",
+        "invalidated": "Invalidada",
+        "pending": "Pendiente"
+      },
+      "statusHelp": {
+        "accepted": "Ambos administradores deben volver a iniciar sesión para recibir sus capabilities actuales.",
+        "cancelled": "Esta solicitud se canceló y no puede reproducirse.",
+        "declined": "El propietario propuesto rechazó esta solicitud.",
+        "expired": "Esta solicitud superó su ventana de aceptación y no puede utilizarse.",
+        "invalidated": "Un cambio de rol, estado, versión o MFA invalidó esta solicitud.",
+        "pending": "Solo el propietario actual puede cancelar; solo el propietario propuesto puede aceptar o rechazar."
+      },
+      "submitting": "Verificando y enviando...",
+      "summary": "{owner} propone transferir la propiedad a {target}.",
+      "totpDescription": "Ingresa el código actual de seis dígitos de tu autenticador.",
+      "totpLabel": "Código actual del autenticador",
+      "validation": {
+        "confirmationRequired": "Confirma la acción exacta de propiedad antes de continuar.",
+        "passwordRequired": "Ingresa tu contraseña actual.",
+        "totpInvalid": "Ingresa un código válido de seis dígitos."
+      }
+    },
+    "report": {
+      "generating": "Generando...",
+      "export": "Exportar",
+      "retry": "Reintentar"
+    },
+    "errors": {
+      "USER_NOT_FOUND": "Usuario no encontrado.",
+      "UNAUTHENTICATED": "Debes iniciar sesión para realizar esta acción.",
+      "FORBIDDEN": "No tienes permiso para realizar esta acción.",
+      "ACCOUNT_INACTIVE": "Esta cuenta no está activa.",
+      "ADMIN_PROFILE_REQUIRED": "Esta cuenta administradora necesita un perfil de propietario u operador.",
+      "ADMIN_PROFILE_DEMOTION_BLOCKED": "Este operador no puede volver a ser usuario de prueba porque su identidad o workspace está incompleto.",
+      "ADMIN_PROFILE_INCONSISTENT": "Esta cuenta tiene un perfil de administración incoherente.",
+      "ADMIN_TARGET_FORBIDDEN": "Solo el propietario puede gestionar cuentas administradoras.",
+      "OWNER_PROTECTED": "La cuenta del propietario de la plataforma no puede degradarse ni gestionarse con acciones de usuarios de prueba.",
+      "INVALID_ADMIN_PROFILE_TARGET": "Esta cuenta no cumple los requisitos para ese cambio de perfil de administración.",
+      "STALE_ADMIN_PROFILE_VERSION": "El perfil de administración cambió. Actualiza y vuelve a intentarlo.",
+      "ACCOUNT_HAS_MANAGED_DATA": "Esta cuenta contiene datos administrados y todavía no puede eliminarse.",
+      "ACCOUNT_NOT_READY": "A esta cuenta le falta un espacio activo o una credencial y no puede activarse.",
+      "CANNOT_DELETE_SELF": "No puedes eliminar tu propia cuenta.",
+      "LAST_ADMIN_REQUIRED": "Debe permanecer al menos un administrador activo de la plataforma.",
+      "VALIDATION_ERROR": "Revisa la información enviada.",
+      "PROVISIONING_FAILED": "No se pudo completar la cuenta. Revisa su estado antes de volver a intentarlo.",
+      "TRIAL_USER_REQUIRED": "Solo las cuentas de usuarios de prueba pueden eliminarse directamente.",
+      "EMAIL_ALREADY_EXISTS": "Ya existe un usuario con esta dirección de correo electrónico.",
+      "CANNOT_DEACTIVATE_SELF": "No puedes desactivar tu propia cuenta.",
+      "CANNOT_REVOKE_SELF": "Usa cerrar sesión en lugar de revocar aquí tus propias sesiones.",
+      "CANNOT_DEACTIVATE_LAST_MANAGER": "No se puede desactivar al último administrador activo.",
+      "INVALID_CURRENT_PASSWORD": "La contraseña actual que ingresaste es incorrecta.",
+      "INVALID_MFA_RECOVERY_TARGET": "Esta cuenta no es elegible para recuperación de MFA de operador.",
+      "INVALID_OWNERSHIP_TARGET": "Este operador no es elegible para recibir la propiedad.",
+      "INVALID_PASSWORD_RESET_TOKEN": "El enlace de restablecimiento de contraseña es inválido o ha expirado.",
+      "INVALID_TWO_FACTOR_CODE": "El código del autenticador es inválido o ha caducado.",
+      "INVITATION_FAILED": "Error al enviar la invitación. Por favor intenta de nuevo.",
+      "MFA_FACTOR_STATE_CHANGED": "El estado de MFA cambió. Actualiza antes de reintentar.",
+      "MFA_TEMPORARILY_LOCKED": "La verificación MFA está bloqueada temporalmente. Espera antes de reintentar.",
+      "OWNERSHIP_INVARIANT_VIOLATION": "No se pudo verificar la invariante de propiedad. No se aplicó ninguna transferencia.",
+      "OWNERSHIP_SWAP_INCOMPLETE": "La transición de propiedad no se completó. Se cerró el acceso; actualiza y sigue el procedimiento de recuperación.",
+      "OWNERSHIP_TRANSFER_EXPIRED": "Esta transferencia de propiedad ha caducado.",
+      "OWNERSHIP_TRANSFER_NOT_FOUND": "Esta transferencia de propiedad ya no existe.",
+      "OWNERSHIP_TRANSFER_PENDING": "Ya existe otra transferencia de propiedad pendiente.",
+      "OWNERSHIP_TRANSFER_RESOLVED": "Esta transferencia de propiedad ya fue resuelta.",
+      "RECENT_SESSION_REQUIRED": "Vuelve a iniciar sesión para crear una sesión reciente antes de realizar esta operación.",
+      "SELF_RECOVERY_FORBIDDEN": "No puedes usar la recuperación de MFA de operador sobre tu propia cuenta.",
+      "STATE_CHANGED": "El estado del administrador cambió. Actualiza y vuelve a intentarlo.",
+      "UPDATE_ERROR": "Error al actualizar el usuario. Por favor intenta de nuevo.",
+      "INTERNAL_ERROR": "Ocurrió un error inesperado. Por favor intenta de nuevo.",
+      "AUTH_ERROR": "Debes estar autenticado para realizar esta acción.",
+      "CREDENTIAL_ISSUANCE_IN_PROGRESS": "Otra emisión de credencial sigue en curso. Espera o usa la recuperación de fallo cuando pueda repararse.",
+      "CREDENTIAL_NOT_DELIVERABLE": "Esta emisión de credencial no puede marcarse como entregada.",
+      "CREDENTIAL_POST_ROTATION_FAILED": "La contraseña puede haber cambiado, pero la transición segura no se completó. Inicia una nueva emisión de recuperación; no uses el valor mostrado.",
+      "CREDENTIAL_REISSUE_FAILED": "No se pudo emitir la credencial. La cuenta permanece bloqueada; reintenta la operación de forma segura.",
+      "CREDENTIAL_SUPERSEDED": "Una credencial más reciente sustituyó esta emisión. Actualiza antes de continuar.",
+      "DELIVERY_CONFIRMATION_FAILED": "No se pudo confirmar la entrega. La credencial permanece emitida con entrega no confirmada.",
+      "DELIVERY_CONFLICT": "La entrega ya se confirmó con información diferente. Actualiza para ver el estado actual.",
+      "DUPLICATE_OPERATION": "Esta operación ya fue enviada. Cierra este diálogo e inicia intencionalmente una nueva emisión si es necesario.",
+      "INVALID_CREDENTIAL_TARGET": "Sólo las cuentas administradas de usuarios de prueba pueden recibir una credencial temporal.",
+      "INVALID_TRIAL_STATE": "Las fechas de prueba son incoherentes. Repara el estado de la cuenta antes de emitir una credencial.",
+      "ISSUANCE_NOT_FOUND": "Esta emisión de credencial ya no existe. Actualiza antes de continuar.",
+      "STALE_CREDENTIAL_VERSION": "El estado de la credencial cambió. Actualiza antes de iniciar otra emisión."
+    },
+    "success": {
+      "activate": "Usuario activado.",
+      "delete": "Cuenta de usuario eliminada.",
+      "demoteOperator": "Acceso de operador eliminado. {count, plural, =0 {No se encontraron sesiones activas.} one {Se revocó # sesión.} other {Se revocaron # sesiones.}}",
+      "promoteOperator": "Usuario promovido a operador. {count, plural, =0 {No se encontraron sesiones activas.} one {Se revocó # sesión.} other {Se revocaron # sesiones.}}",
+      "revokeSessions": "{count, plural, =0 {No se encontraron sesiones activas.} one {# sesión revocada.} other {# sesiones revocadas.}}",
+      "suspend": "Usuario suspendido. {count, plural, =0 {No se encontraron sesiones activas.} one {Se revocó # sesión.} other {Se revocaron # sesiones.}}"
+    },
+    "suspendSuccess": "Usuario suspendido",
+    "suspendedCount": "{count, plural, one {# usuario suspendido} other {# usuarios suspendidos}}"
+  }
+}
